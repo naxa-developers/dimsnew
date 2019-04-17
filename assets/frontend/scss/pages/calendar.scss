@@ -1,0 +1,134 @@
+.calendar{
+    aside.left-sidebar{
+        .card{
+            background-color: transparent;
+            border:none;
+            .card-body{
+                ul{
+                    li{
+                        margin-bottom: 1rem;
+                        a{
+                            color:$color-blue;
+                            padding-left: 1.2rem;
+                            position: relative;
+                            font-family: $montserrat;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .calendar-body{
+        .card{
+            border:none;
+            background-color:transparent;
+            .timeline{
+                position: relative;
+                @include flexvr;
+                justify-content: space-between;
+                align-items: flex-start;
+                height: 100%;
+                width:100%;
+                overflow-y: auto;
+                flex-wrap: nowrap;
+                padding:0.4rem 0;
+                &:after{
+                    content:'';
+                    position: absolute;
+                    width:2px;
+                    height: 100%;
+                    top:0;
+                    bottom:0;
+                    right:0;
+                    left:4rem;
+                    background-color: #D1D1D1;
+                }
+                .timeline-list{
+                    
+                    time{
+                        padding:0.5rem 0.775rem;
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        font-family: $montserrat;
+                        color:$color-blue;
+                        border:1px solid $color-blue;
+                        @include radius30;
+                        background-color: $color-bg;
+                        position: relative;
+                        z-index: 9;
+                        min-width: 160px;
+                    }
+                    ul{
+                        margin-left:4rem;
+                        li{
+                            margin:2rem 0;
+                            .event-list{
+                                padding-left:2.5rem;
+                                position: relative;
+                                &::after{
+                                    content:'';
+                                    position: absolute;
+                                    width:12px;
+                                    height: 12px;
+                                    @include radius50;
+                                    left:-5px;
+                                    top:5px;
+                                    z-index: 1000;
+                                    
+                                }
+                                h5{
+                                    font-size:1rem;
+                                    font-weight: 600; 
+                                }
+                                a{
+                                    color:$color-blue;
+                                    font-size: 1rem;
+                                }
+                                &.green{
+                                    &::after{
+                                    background-color: #1ABC9C;
+                                    -moz-box-shadow: 0 0 0 5px rgba(26,188,156, 0.5);
+                                    box-shadow: 0 0 0 5px rgba(26,188,156, 0.5);
+                                    }
+                                }
+                                &.orange{
+                                    &::after{
+                                    background-color: $color-orange;
+                                    -moz-box-shadow: 0 0 0 5px rgba(247,147,30, 0.5);
+                                    box-shadow: 0 0 0 5px rgba(247,147,30, 0.5);
+                                    }
+                                }
+                                &.purple{
+                                    &::after{
+                                    background-color: $color-secondary;
+                                    -moz-box-shadow: 0 0 0 5px rgba(89,44,135, 0.5);
+                                    box-shadow: 0 0 0 5px rgba(89,44,135, 0.5);
+                                    }
+                                }
+                                &.red{
+                                    &::after{
+                                    background-color: $color-red;
+                                    -moz-box-shadow: 0 0 0 5px rgba(222,53,53, 0.5);
+                                    box-shadow: 0 0 0 5px rgba(222,53,53, 0.5);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:$pt-tab){
+    .calendar{
+        .calendar-body{
+            .card{
+                .card-body{
+                    padding:0;
+                }
+            }
+        }
+    }
+}

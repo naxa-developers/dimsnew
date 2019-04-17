@@ -1,0 +1,161 @@
+.inner-banner{
+    @include coverbg;
+    min-height: 500px;
+    @include flexvr;
+    position: relative;
+    .overlay{
+        @include overlay; 
+    }
+    
+    .breadcrumb-content{
+        position: relative;
+        max-width: 860px;
+        padding:0 1rem;
+        margin:0 auto;
+        text-align: center;
+        h1{
+            text-transform: capitalize;
+        }
+        p{
+            margin:1.5rem 0;
+        }
+        figure{
+            max-width: 160px;
+            width:100%;
+            height: 160px;
+            margin:0 auto;
+            background-color: $color-blue;
+            @include flexvr;
+            margin-bottom: 2rem;
+            svg{
+                fill:$color-white;
+            }
+        }
+        
+    }
+    &.hazard-breadcrumb{
+        padding-bottom: 120px;
+        .overlay{
+            background-color: rgba($color-blue,0.7);
+        }
+        .breadcrumb-content{
+            color:$color-white;
+            form{
+                .input-group{
+                    max-width: 600px;
+                    margin:0 auto;
+                    .form-control {
+                        height: 3rem;
+                        font-size: 1rem;
+                        border-radius: 0;
+                        background-color:$color-bg;
+                        border:none;
+                    }
+                    .input-group-append{
+                        .input-group-text{
+                            background-color: $color-bg;
+                            border-radius: 0;
+                            border:0;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    &.details-breadcrumb{
+        .overlay{
+            background-color: rgba($color-white,0.8);
+        }
+    }
+    &.resource-breadcrumb{
+        @extend .details-breadcrumb;
+    }
+}
+.breadcrumb-form{
+    max-width: 1140px;
+    width:100%;
+    margin:0 auto;
+    padding:0 15px;
+    margin-top:-2rem;
+    select {
+        display: none; 
+    }
+    .nice-select.wide{
+        background-color:$color-white;
+        border:none;
+        border-radius: 0;
+        height: 3rem;
+        font-size: 1rem;
+    }
+    .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+        background-color: $color-blue;
+        color:$color-white;
+    }
+    .nice-select:after {
+        border-bottom: 2px solid $color-blue;
+        border-right: 2px solid $color-blue;
+        height: 10px;
+        width: 10px;
+    }
+    .input-group{
+        .form-control {
+            height: 3rem;
+            font-size: 1rem;
+            border-radius: 0;
+            background-color:$color-white;
+            border:none;
+        }
+        .input-group-append{
+            .input-group-text{
+                background-color: $color-white;
+                border-radius: 0;
+                border:0;
+                font-size: 1.5rem;
+                color:$color-blue;
+            }
+        }
+    }
+}
+@media screen and (max-width:$desktop){
+    .breadcrumb-form{
+        max-width: 960px;
+        width:100%;
+    }
+}
+@media screen and (max-width:$ls-tab){
+    .breadcrumb-form{
+        max-width: 720px;
+        width:100%;
+    }
+}
+@media screen and (max-width:$pt-tab){
+    .inner-banner{
+        
+        .breadcrumb-content{
+            padding:0 1rem;
+            h1{
+                text-transform: capitalize;
+                font-size: 2rem;
+            }
+            p{
+                margin:1rem 0;
+            }
+            
+        }
+        &.hazard-breadcrumb{
+            padding-bottom: 0;
+        }
+    }
+}
+@media screen and (max-width:$mb-xl){
+    .breadcrumb-form{
+        max-width: 540px;
+        width:100%;
+        .form-group, .iset-btn{
+            margin-top:1rem;
+        }
+    }
+}
+

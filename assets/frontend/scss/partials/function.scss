@@ -1,0 +1,15 @@
+$colors: (
+    primaryColor:#565656,
+    whiteColor:#ffffff,
+    secondaryColor:#592c87,
+    bgColor:#f9f9f9,
+    blueColor:#0d89df,
+    greyColor:#e3e3e3,
+    orangeColor:#ffa201,
+    redColor:#ff3363,
+    headingColor:#3b3b3b,
+);
+
+@function color ($color-name){
+    @return map-get($colors, $color-name)
+}

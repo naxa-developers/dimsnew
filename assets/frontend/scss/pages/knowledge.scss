@@ -1,0 +1,111 @@
+.knowledge{
+    aside.left-sidebar{
+        background-color: $color-white;
+        .card{
+            border:none;
+            .card-header{
+                background: none;
+                h5{
+                    margin:0;
+                    a{
+                        display: block;
+                        color:$color-blue;
+                        font-size: 1rem;
+                        text-transform: capitalize;
+                        position: relative;
+                        &:after {
+                          content: "\f2c2"; /* fa-chevron-down */
+                          font-family: 'LineAwesome';
+                          position: absolute;
+                          right: 0;
+                        }
+                      }
+                      a[aria-expanded="true"]:after {
+                        content: "\f28e"; /* fa-chevron-up */
+                      }
+                }
+            }
+            .card-body{
+                ul{
+                    li{
+                        margin-bottom: 0.4rem;
+                        a{
+                            color:$color-blue;
+                            padding-left: 1.2rem;
+                            position: relative;
+                            text-transform: capitalize;
+                            &:after {
+                                content: "\f167"; /* fa-chevron-down */
+                                font-family: 'LineAwesome';
+                                position: absolute;
+                                left: 0;
+                                top:0;
+                              }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .knoledge-body{
+        .card{
+            border:none;
+            background-color: #f7f7f7;
+            .knoledge-list{
+                margin-bottom: 2rem;
+                figure{
+                    position: relative;
+                    figcaption{
+                        @include overlay;
+                        background-color: rgba($color-blue, 0.5);
+                        @include flexvr;
+                        a{
+                            color:$color-white;
+                            font-size:2rem;
+                            @include anim05;
+                            &:hover{
+                                color:$color-red;
+                            }
+                        }
+                    }
+                }
+                .knowldege-content{
+                    padding:1rem;
+                    background-color: $color-white;
+                    h4{
+                        font-size:1rem;
+                        &:hover{
+                            a{
+                                color:$color-blue;
+                            }
+                        }
+                    }
+                    time{
+                        font-size:0.875rem;
+                        color:rgba($color-primary,0.7);
+                    }
+                    .post-meta{
+                        @include flexjust;
+                        a{
+                            color:$color-blue;
+                            font-size:1rem;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+                &.doclist{
+                    background-color: $color-white;
+                    figure{
+                        text-align: center;
+                        max-width: 100px;
+                        margin: 0 auto;
+                        padding:2rem 1rem;
+                    }
+                    .knowldege-content{
+                        padding-top:0;
+                    }
+                }
+            }
+        }
+    }
+}

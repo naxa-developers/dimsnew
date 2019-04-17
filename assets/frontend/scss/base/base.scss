@@ -1,0 +1,115 @@
+main{
+    position: relative;
+    top:0;
+}
+.pdtb-60{
+    padding:4rem 0;
+}
+.pdtb-50{
+  padding:3rem 0;
+}
+.pdt-50{
+  padding-top:3rem;
+}
+.pdb-50{
+  padding-bottom:3rem;
+}
+.mrtb-50{
+  margin:3rem 0!important;
+}
+.mrt-50{
+  margin-top:3rem !important;
+}
+.mrb-50{
+  margin-bottom:3rem !important;
+}
+.mrtb-30{
+  margin:2rem 0;
+}
+.mrt-30{
+  margin-top:2rem;
+}
+.mrb-30{
+  margin-bottom:2rem;
+}
+.pdb-30{
+  margin-bottom:2rem;
+}
+.pdt-30{
+  margin-top:2rem;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1340px;
+  }
+}
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+.section-title{
+  text-align: center;
+  @include clear;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin:0 auto;
+  h3{
+    font-size:2.5rem;
+    text-transform: capitalize;
+    @include clear;
+  }
+  span{
+    margin-top:1.2rem;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:$ls-tab){
+  .section-title{
+    font-size: 1rem;
+    padding:0 1rem;
+    h3{
+      font-size:2rem;
+    }
+  }
+}
+@media screen and (max-width:$ls-tab){
+  .section-title{
+    h3{
+      font-size:1,7rem;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+footer.site-footer{
+    margin-top:1rem;
+    background-color:darken($color-blue, 0.8);
+    color:$color-white;
+    clear:both;
+    .scroll-up{
+        width:100px;
+        height: 80px;
+        @include flexvr;
+        color:$color-white;
+        margin:0 auto;
+        cursor: pointer;
+        @include radius50;
+        margin-top:-70px;
+        background-color:darken($color-blue, 0.8);
+        font-size: 2rem;
+        i{
+            -webkit-animation: scrollup 1.5s infinite;
+            animation: scrollup 1.5s infinite;
+        }
+    }
+    .footer-widget{
+        h4{
+            position: relative;
+            text-transform: capitalize;
+            font-size: 1.1rem;
+            a{
+              color:$color-white;
+              text-transform: uppercase;
+              
+            }
+            &::after{
+              content:'';
+              width:70px;
+              height: 2px;
+              background:rgba($color-white, 0.2);
+              display: block;
+              margin-top:0.5rem;
+            }
+          }
+        .ft-content{
+            margin-top:1rem;
+            p{}
+            .ft-links{
+                li{
+                    display: block;
+                    a{
+                        color:$color-white;
+                        display: block;
+                        padding:5px 0 0 20px;
+                        position: relative;
+                        @include anim05;
+                        &::after{
+                            content: "\f112";
+                            position:absolute;
+                            font-family: "LineAwesome";
+                            position: absolute;
+                            left: 0;
+                            top: 5px;
+                            font-size: 1rem;
+                            color:rgba($color-white, 0.2); 
+                            @include anim05;
+                        }
+                        &:hover{
+                            padding-left:25px;
+                            &::after{
+                                color:$color-white;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .social-links{
+                li{
+                    display: inline-block;
+                    a{
+                        width:34px;
+                        height: 34px;
+                        @include flexvr;
+                        color:$color-white;
+                        border:1px solid rgba($color-white, 0.2);
+                        @include radius5;
+                        margin-right: 0.5rem;
+                        @include anim05;
+                        &:hover{
+                            background-color: $color-white;
+                            color:$color-blue;
+                        }
+                    }
+                }
+            }
+            .contact-links{
+                li{
+                    a{
+                        display: block;
+                        color:$color-white;
+                        label{
+                            display: inline-block;
+                            margin-right: 0.5rem;
+                        }
+                        i{
+                            width:34px;
+                            height: 34px;
+                            line-height: 34px;
+                            text-align: center;
+                            color:$color-white;
+                            border:1px solid rgba($color-white, 0.2);
+                            @include radius5;
+                            margin-right: 0.5rem;
+                            @include anim05;
+                            &:hover{
+                                background-color: $color-white;
+                                color:$color-blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:$lg-tab){
+    footer.site-footer{
+        margin-top:1rem;
+        .footer-widget{
+            margin-top:1rem;
+        }
+    }
+}

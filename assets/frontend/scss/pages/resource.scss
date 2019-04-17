@@ -1,0 +1,110 @@
+.resource-section{
+    .resource-list{
+        padding:1rem;
+        background-color: $color-white;
+        @include flex;
+        margin-bottom: 2rem;
+        
+        figure{
+            // max-width: 150px;
+            // width:100%;
+            // display: inline-block;
+            flex:0 0 170px;
+        }
+        .resource-content{
+            // width:calc(100% - 170px);
+            // float: right;
+            .resource-top{
+                h3{
+                    font-size: 1rem;
+                    a{
+                        color:$color-blue;
+                        &:hover{
+                            color:$color-red;
+                        }
+                    }
+                }
+                .post-meta{
+                    font-size:0.775rem;
+                    color:rgba($color-primary,0.7);
+                    time{
+                        margin-right: 0.2rem;
+                    }
+                    
+                }
+                p{
+                    font-size: 0.875rem;
+                    margin:0.6rem 0;
+                }
+            }
+            
+            .resource-bottom{
+                @include flexjust;
+                align-items: center;
+                font-size:0.775rem;
+                .btm-left{
+                    span{
+                        color:rgba($color-primary,0.7);
+                        margin-right: 0.5rem;
+                    }
+                    a{
+                        color:$color-blue;
+                        i{
+                            margin-left: 0.2rem;
+                        }
+                        &:hover{
+                            color:$color-red;
+                        }
+                        &.iset-btn{
+                            color:$color-white;
+                            font-size:0.875rem;
+                        }
+                    }
+                    
+                }
+                .btm-right{
+                    a{
+                        color:$color-blue;
+                        font-size: 0.875rem;
+                        i{
+                            margin-right: 0.5rem;
+                        }
+                        &:hover{
+                            color:$color-red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.resource-details{
+        .resource-group{
+            background-color: $color-white;
+            min-height: 500px;
+        }
+        .sidebar{
+            h4{
+                font-size: 1.5rem;
+                text-transform: capitalize;
+            }
+            .resource-list{
+                margin-bottom: 0;
+                border-bottom:1px solid $color-bg;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$mb-xl){
+    .resource-section{
+        .resource-group{
+            .resource-list{
+                display: block;
+                figure{
+                    flex:0 0 100%;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

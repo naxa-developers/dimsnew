@@ -1,0 +1,26 @@
+#playlist, audio {
+    width: 100%;
+  }
+  .audio-list{
+    ul {
+        padding: 0 0 0 20px;
+        li {
+            list-style: decimal;
+            padding: 0 0 0 0px;
+            a {
+                padding: 5px;
+                display: block;
+                text-decoration: none;
+                font-size: 1rem;
+              }
+              &.active,
+              &:hover{
+                  a{
+                      color:$color-blue;
+                      text-decoration: underline;
+                  }
+              }
+          }
+      }
+  }
+  

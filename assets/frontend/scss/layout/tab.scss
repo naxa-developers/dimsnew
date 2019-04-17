@@ -1,0 +1,77 @@
+@import "../base/typography";
+@import "../partials/variable";
+.ripple-tab{
+    ul{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        list-style: none;
+        
+        li{
+            cursor: pointer;
+            position: relative;
+            transition: all 300ms ease;
+            outline: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            opacity: 0.5;
+            color: #8598a1;
+            padding:10px 15px;
+            border:1px solid #efefef;
+            border-radius: 5px;
+            &.active{
+                opacity: 1;
+                background: linear-gradient(90deg, #0088CC 0%, #00F7E1 100%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+    .tab-content{
+        margin-top:30px;
+        .tab-pane{
+            display: none;
+            padding: 50px 50px 80px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 0 2px rgba(81, 163, 204, 0.1);
+            &.active{
+                display: block;
+                -webkit-animation: fadeInAnimation 600ms forwards;
+                animation: fadeInAnimation 600ms forwards;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+      -webkit-transform: translate(0, 20px);
+              transform: translate(0, 20px);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+  }
+  
+  @keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+      -webkit-transform: translate(0, 20px);
+              transform: translate(0, 20px);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+  }
