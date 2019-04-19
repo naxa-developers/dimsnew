@@ -45,13 +45,14 @@ class Quiz extends Admin_Controller
             $questionid = $this->input->post('nqnid');
             $optionsid = $this->input->post('curn');
             $questions = $this->general->get_tbl_data_result('*','quiz_options', array('id'=>$optionsid,"category_id"=>$questionid));
+            $quiz = $this->general->get_tbl_data_result('*','quiz', array("id"=>$questionid));
             //print_r($questions[0]['right_answer']);die;
             if($questions[0]['right_answer'] == "on")
             {
-                $template = $questions[0]['name'];
+                $template = $quiz[0]['answer'];
                 $color = "alert-info";
             }else{
-                $template = "worng Description";
+                $template = $quiz[0]['right_answer'];
                 $color = "alert-danger";
             }
             print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong>Success Message !!!! </strong> '.$template.'  </div>','message'=>'Record Selected Successfully')));
