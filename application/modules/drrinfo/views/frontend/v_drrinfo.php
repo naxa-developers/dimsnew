@@ -23,9 +23,9 @@
                             <img src="<?php echo base_url('assets/frontend/images/hazard-1.jpg') ?>" alt="hazard">
                         </figure>
                         <figcaption>
-                            <h4><a href="#">Flood</a></h4>
+                            <h4><a href="<?php echo base_url('drrinfo/drrdetails/flood') ?>">Flood</a></h4>
                             <p>Flood is  common in the rainy season in Nepal, and has been most frequent, highly damaging and widespread natural hazards.</p>
-                            <button type="button" class="iset-btn">find more <i class="la la-long-arrow-right"></i></button>
+                          <a href="<?php echo base_url('drrinfo/drrdetails/flood') ?>"><button type="button" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></button></a>
                         </figcaption>
                         <div class="hazard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="71.806" height="63.456" viewBox="0 0 71.806 63.456">
@@ -54,9 +54,9 @@
                             <img src="<?php echo base_url('assets/frontend/images/hazard-2.jpg') ?>" alt="hazard">
                         </figure>
                         <figcaption>
-                            <h4><a href="#">Landslide</a></h4>
+                            <h4><a href="<?php echo base_url('drrinfo/drrdetails/landslide') ?>">Landslide</a></h4>
                             <p>Landslide is one of the very common natural hazards in the hilly region of Nepal which is triggered by both natural and anthropogenic factors</p>
-                            <button type="button" class="iset-btn">find more <i class="la la-long-arrow-right"></i></button>
+                            <a href="<?php echo base_url('drrinfo/drrdetails/landslide') ?>"><button type="button" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></button></a>
                         </figcaption>
                         <div class="hazard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="62.753" height="65.279" viewBox="0 0 62.753 65.279">
@@ -79,9 +79,9 @@
                             <img src="<?php echo base_url('assets/frontend/images/hazard-3.jpg') ?>" alt="hazard">
                         </figure>
                         <figcaption>
-                            <h4><a href="#">earthquake</a></h4>
+                            <h4><a href="<?php echo base_url('drrinfo/drrdetails/earthquake') ?>">earthquake</a></h4>
                             <p>Nepal lies in an active seismic zone and witnesses earthquake on a regular interval along the major active faults in east-west alignment</p>
-                            <button type="button" class="iset-btn">find more <i class="la la-long-arrow-right"></i></button>
+                            <a href="<?php echo base_url('drrinfo/drrdetails/earthquake') ?>"><button type="button" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></button></a>
                         </figcaption>
                         <div class="hazard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="61.229" height="61.226" viewBox="0 0 61.229 61.226">
@@ -99,9 +99,9 @@
                             <img src="<?php echo base_url('assets/frontend/images/hazard-4.jpg') ?>" alt="hazard">
                         </figure>
                         <figcaption>
-                            <h4><a href="#">fire</a></h4>
+                            <h4><a href="<?php echo base_url('drrinfo/drrdetails/fire') ?>">fire</a></h4>
                             <p>Nepal lies in an active seismic zone and witnesses earthquake on a regular interval along the major active faults in east-west alignment</p>
-                            <button type="button" class="iset-btn">find more <i class="la la-long-arrow-right"></i></button>
+                           <a href="<?php echo base_url('drrinfo/drrdetails/fire') ?>"><button type="button" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></button></a>
                         </figcaption>
                         <div class="hazard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="52.358" height="65.108" viewBox="0 0 52.358 65.108">
@@ -121,9 +121,9 @@
                             <img src="<?php echo base_url('assets/frontend/images/hazard-5.jpg') ?>" alt="hazard">
                         </figure>
                         <figcaption>
-                            <h4><a href="#">thunder</a></h4>
+                            <h4><a href="<?php echo base_url('drrinfo/drrdetails/thunder') ?>">thunder</a></h4>
                             <p>Nepal lies in an active seismic zone and witnesses earthquake on a regular interval along the major active faults in east-west alignment</p>
-                            <button type="button" class="iset-btn">find more <i class="la la-long-arrow-right"></i></button>
+                            <a href="<?php echo base_url('drrinfo/drrdetails/thunder') ?>"><button type="button" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></button></a>
                         </figcaption>
                         <div class="hazard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="73.753" height="65.368" viewBox="0 0 73.753 65.368">
@@ -144,9 +144,9 @@
                             <img src="<?php echo base_url('assets/frontend/images/hazard-6.jpg') ?>" alt="hazard">
                         </figure>
                         <figcaption>
-                            <h4><a href="#">head wave</a></h4>
+                            <h4><a href="<?php echo base_url('drrinfo/drrdetails/headwave') ?>">head wave</a></h4>
                             <p>Nepal lies in an active seismic zone and witnesses earthquake on a regular interval along the major active faults in east-west alignment</p>
-                            <button type="button" class="iset-btn">find more <i class="la la-long-arrow-right"></i></button>
+                            <a href="<?php echo base_url('drrinfo/drrdetails/headwave') ?>"><button type="button" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></button></a>
                         </figcaption>
                         <div class="hazard-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="41.442" height="64.56" viewBox="0 0 41.442 64.56">

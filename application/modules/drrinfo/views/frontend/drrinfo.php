@@ -74,13 +74,8 @@
             <?php if($drrsubcat):
                 foreach ($drrsubcat as $key => $dsbub): ?>
                     <a href="#before-section<?php echo $dsbub['slug']; ?>" class="iset-btn"><?php echo  ucfirst($dsbub['name']); ?> <i class="la la-long-arrow-right"></i></a>
-                    <!-- <a class="<?php if($key+1 == "1"){ echo "active"; } ?>" data-toggle="tab" href="#introduction_<?php echo $dsbub['slug']; ?>"><?php echo  ucfirst($dsbub['name']); ?></a> -->
             <?php endforeach;
              endif; ?>
-            <!-- <a href="#before-section" class="iset-btn">Before <i class="la la-long-arrow-right"></i></a>
-            <a href="#during-section" class="iset-btn ">During <i class="la la-long-arrow-right"></i></a>
-            <a href="#after-section" class="iset-btn">after <i class="la la-long-arrow-right"></i></a>
-            <a href="#infograph-section" class="iset-btn">infographics <i class="la la-long-arrow-right"></i></a> -->
         </div>
     </div>
      <?php
@@ -103,176 +98,10 @@
                     </div>
                     <div class="before-list bef-aft-list">
                          <?php echo $finaldetails['description']; ?>
-                        <!-- <ul>
-                            <li>
-                                <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                            </li>
-                            <li>
-                                <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                            </li>
-                            <li>
-                                <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                            </li>
-                            <li>
-                                <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                            </li>
-                            <li>
-                                <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                            </li>
-                            <li>
-                                <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                            </li>
-                            <li>
-                                <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                            </li>
-                            <li>
-                                <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                            </li>
-                        </ul> -->
                     </div>
                 </div>
             </section>
         <?php  } }
             endforeach;
             endif; ?>
-    <!-- <section class="during-section pdtb-50 bef-aft bg-white" id="during-section" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
-        <div class="container">
-            <div class="section-title mrb-50">
-                <h3>During</h3>
-                <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</span>
-            </div>
-            <div class="before-list bef-aft-list">
-                <ul>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section class="after-section pdtb-50 bef-aft" id="after-section" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
-        <div class="container">
-            <div class="section-title mrb-50">
-                <h3>After</h3>
-                <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</span>
-            </div>
-            <div class="before-list bef-aft-list">
-                <ul>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore </a>
-                    </li>
-                    <li>
-                        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section class="inphograph-section bg-white bef-aft pdtb-50 mrb-50" id="infograph-section" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
-        <div class="container">
-            <div class="section-title mrb-50">
-                <h3>Related Infographics</h3>
-                <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</span>
-            </div>
-            <div class="info-wrap">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="infograph-item">
-                            <a href="images/info-1.jpg" class="info-preview" >
-                                <img src="images/info-1.jpg" alt="infographic">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="infograph-item">
-                            <a href="images/info-2.jpg" class="info-preview" >
-                                <img src="images/info-2.jpg" alt="infographic">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="infograph-item">
-                            <a href="images/info-3.jpg" class="info-preview" >
-                                <img src="images/info-3.jpg" alt="infographic">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="infograph-item">
-                            <a href="images/info-4.jpg" class="info-preview" >
-                                <img src="images/info-4.jpg" alt="infographic">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="infograph-item">
-                            <a href="images/info-5.jpg" class="info-preview" >
-                                <img src="images/info-5.jpg" alt="infographic">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="infograph-item">
-                            <a href="images/info-6.jpg" class="info-preview" >
-                                <img src="images/info-7.jpg" alt="infographic">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="infograph-item">
-                            <a href="images/info-7.jpg" class="info-preview" >
-                                <img src="images/info-7.jpg" alt="infographic">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="infograph-item">
-                            <a href="images/info-8.jpg" class="info-preview" >
-                                <img src="images/info-8.jpg" alt="infographic">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- -->
+    
