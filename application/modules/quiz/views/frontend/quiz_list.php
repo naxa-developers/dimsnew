@@ -1,8 +1,10 @@
 <section class="hazard-section pdtb-50" id="hazard-section">
     <div class="container">
         <div class="section-title mrb-50">
-            <h3><?php echo !empty(MUNPROFILE)?MUNPROFILE:'' ?></h3>
-            <span><?php echo !empty(PROFILEDESC)?PROFILEDESC:'' ?></span>
+            <h3>हाजिरीजवाफ खेल्नुहोस्</h3>
+            <span>विभिन्न विपदको जानकारी सम्बन्धि हाजिरीजवाफ खेल खेल्नुहोस् र वास्तविक जानकारी लिनुहोस्</span>
+            
+
         </div>
         <div class="row">
         <?php if($category):
