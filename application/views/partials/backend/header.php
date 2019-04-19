@@ -288,6 +288,17 @@
                         <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/drrinfo/drrinformationlist"><?php echo $this->lang->line('drrinformationlist'); ?></a></li>
 
                     </ul>
+                </li>   
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-th"></i>
+                        <span>हाजिरीजवाफ  व्यवस्थापन</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/quiz">हाजिरीजवाफ प्रबन्ध गर्नुहोस्</a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/quiz/quiz_question">हाजिरीजवाफ थप्नु </a></li>
+
+                    </ul>
                 </li>
                 <!-- <li class="sub-menu">
                     <a href="javascript:;">

@@ -68,3 +68,6 @@ $route['riskprofile'] = 'home/riskprofile';
 $route['knowledge-portal'] = 'home/knowledge';
 $route['terminologies'] ='dictionary';
 $route['aboutus'] = 'home/aboutus';
+
+//$route['play-quiz'] = 'quiz/play_quiz/$1';
+

@@ -13,8 +13,8 @@ class DrrModel extends CI_Model {
         if($id)
         {
             if($this->db->update($table,$data,array('id'=>$id)))
-            {
-                return $id;
+            { 
+              return $id;
             }
         }else{
             $this->db->insert($table,$data);
@@ -64,8 +64,8 @@ class DrrModel extends CI_Model {
             $config['new_image'] = './uploads/drrinfo/'.'_thumb'.$name;
             //print_r($name);die;
             $this->load->library('image_lib');
-            $this->image_lib->initialize($config);
-            $resize = $this->image_lib->resize();
+           // $this->image_lib->initialize($config);
+            //$resize = $this->image_lib->resize();
         // changes for image resize
         if ( ! $this->upload->do_upload($field_name))
         {

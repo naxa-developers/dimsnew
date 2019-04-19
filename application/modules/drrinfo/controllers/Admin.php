@@ -41,7 +41,7 @@ class Admin extends Admin_Controller {
 	        if($lang['Language']=='en') {
 	            $emerg_lang='en';
 	        }else{
-	            $emerg_lang='nep'; 
+	           $emerg_lang='nep'; 
 	        }
 	    	 // echo "<pre>"; print_r($this->input->post()); die;
 	      	$file_name = $_FILES['project_pic']['name'];
@@ -53,9 +53,11 @@ class Admin extends Admin_Controller {
 	        	'language'=>$emerg_lang,
 	        	'slug'=>$page_slug_new,
 	      	);
+	      	
 	      	$insert=$this->DrrModel->add_drrinfo('drrcategory',$data);
 	      	//print_r($insert);die;
-	      	if($insert!=""){
+	      	if($insert){
+
 	      		$old_image=$this->input->post('old_image');
 	      		//print_r($old_image);die;
 	      		$img_upload=$this->DrrModel->do_upload($file_name,$insert);
@@ -78,6 +80,7 @@ class Admin extends Admin_Controller {
 				        //     $this->image_lib->resize();
 		           // echo $this->image_lib->display_errors(); die; this is for check error
 	          	// test for image resize
+	      		//echo "call"; die;
 	      	    if($img_upload['status']== 1) {
 	      	    	@unlink($old_image);	
       				$ext=$img_upload['upload_data']['file_ext'];
