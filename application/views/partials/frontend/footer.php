@@ -7,19 +7,20 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
-                        <h4>Important sites</h4>
+                        <h4>महत्वपूर्ण साइटहरु</h4>
                         <div class="ft-content">
                             <ul class="ft-links">
-                                <li><a href="#">Ministry of Home Affairs</a></li>
-                                <li><a href="#">National Emergency Center</a></li>
-                                <li><a href="#">National DIMS</a></li>
+                                <li><a target="_blank" href="http://www.moha.gov.np/">गृह मन्त्रालय</a></li>
+                                <li><a target="_blank" href="http://neoc.gov.np/en/">राष्ट्रीय आपातकालीन परिचालन केन्द्र</a></li>
+                                <li><a target="_blank" href="http://drrportal.gov.np/">डी. आर्. आर् पोर्टल 
+</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
-                        <h4>Our Social Network</h4>
+                        <h4>हाम्रो सामाजिक सञ्जाल</h4>
                         <div class="ft-content">
                             <p>Feel free to follow us on</p>
                             <ul class="social-links">
@@ -48,11 +49,11 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
-                        <h4>Contact</h4>
+                        <h4>सम्पर्क</h4>
                         <div class="ft-content">
                             <ul class="contact-links">
-                                <li><a href="#"><i class="la la-phone"></i><label>Phone :</label></a></li>
-                                <li><a href="#"><i class="la la-envelope"></i><label>Email :</label>info@iset.com</a></li>
+                                <li><a href="#"><i class="la la-phone"></i><label>फोन :</label></a></li>
+                                <li><a href="#"><i class="la la-envelope"></i><label>इमेल :</label>info@iset.com</a></li>
                             </ul>
                         </div>
                     </div>

@@ -1,16 +1,18 @@
 <section class="hazard-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/hazard-breadcrumb.jpg') ?>">
         <div class="overlay"></div>
         <div class="breadcrumb-content">
-            <h1>an insight into hazards</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo </p>
-            <form>
+           <h3><?php echo !empty(MUNPROFILE)?MUNPROFILE:'' ?></h3>
+                <span><?php echo !empty(PROFILEDESC)?PROFILEDESC:'' ?></span>
+                <br>
+                <br>
+            <!-- <form>
                 <div class="input-group">
                     <input type="text" class="form-control" aria-label="" placeholder="Search Hazard">
                     <div class="input-group-append">
                         <span class="input-group-text"><i class="la la-search"></i></span>
                     </div>
                 </div>
-            </form>
+            </form> -->
         </div>
     </section>
     <section class="page-hazard mrb-50">
