@@ -459,4 +459,13 @@ class Admin extends Admin_Controller {
             redirect(FOLDER_ADMIN.'/site_setting/sliderList');
         }
     }
+     public function deletebeready(){
+        $tbl="beready";
+        $id = base64_decode($this->input->get('id'));
+        $delete=$this->Site_model->deleteslider($id,$tbl);
+        if($delete){
+            $this->session->set_flashdata('msg','Successfully Deleted');
+            redirect(FOLDER_ADMIN.'/site_setting/sliderList');
+        }
+    }
 }

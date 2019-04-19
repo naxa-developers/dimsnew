@@ -11,7 +11,7 @@
                   <header class="panel-heading">
                      <b>DRR info</b>
                       <span class="tools pull-right">
-                        <a href="<?php echo base_url(FOLDER_ADMIN)?>/site_setting/beready_add"><button type="submit" name="upload_data" class="btn btn-danger" style="background-color: #1fb5ad;border-color: #1fb5ad;margin-top: -7px;"> <i class="fa fa-plus"></i>Add New Slider</button></a>
+                        <a href="<?php echo base_url(FOLDER_ADMIN)?>/site_setting/beready_add"><button type="submit" name="upload_data" class="btn btn-danger" style="background-color: #1fb5ad;border-color: #1fb5ad;margin-top: -7px;"> <i class="fa fa-plus"></i>Add Be Ready</button></a>
                        </span>
                   </header>
                   <div class="panel-body">
@@ -56,8 +56,8 @@
                               <td><?php echo $value;?></td>
                             <?php }  ?>
                               <td>
-                                <a href="<?php echo base_url(FOLDER_ADMIN)?>/site_setting/sliderHome?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('edit'); ?></a> /
-                                <a onclick="return confirm('Are you sure you want to delete?')" href="<?php echo base_url(FOLDER_ADMIN)?>/site_setting/deleteslider?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('delete'); ?></a></td>
+                                <a href="<?php echo base_url(FOLDER_ADMIN)?>/site_setting/beready_add?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('edit'); ?></a> /
+                                <a onclick="return confirm('Are you sure you want to delete?')" href="<?php echo base_url(FOLDER_ADMIN)?>/site_setting/deletebeready?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('delete'); ?></a></td>
                           </tr>
                         <?php  } ?>
                           </tbody>
