@@ -52,7 +52,7 @@ class Quiz extends Admin_Controller
                 $template = $quiz[0]['answer'];
                 $color = "alert-info";
             }else{
-                $template = $quiz[0]['right_answer'];
+                $template = $quiz[0]['wrong_answer'];
                 $color = "alert-danger";
             }
             print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong>Success Message !!!! </strong> '.$template.'  </div>','message'=>'Record Selected Successfully')));
