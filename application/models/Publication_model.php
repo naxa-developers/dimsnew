@@ -267,6 +267,22 @@ else
       } 
       return false;
   }
+  public function get_publication_data()
+  { 
+   
+    $this->db->select('*');
+    $this->db->from('publicationsubcat as p');
+    
+    $this->db->where_in('slug',array('brouchure','documents'));
+   
+    $query = $this->db->get();
+    //echo $this->db->last_query();die;
+    if ($query->num_rows() > 0)
+    {
+        return $data=$query->result_array();
+    } 
+    return false;
+  }
   public function get_publication_details()
   { 
     $id = base64_decode($this->input->get('id'));

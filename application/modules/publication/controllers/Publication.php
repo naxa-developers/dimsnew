@@ -16,7 +16,8 @@ class Publication extends Admin_Controller
 
 
 		    $this->data['pub'] = $this->general->get_tbl_data_result('id,name','publicationcat');
-	      	$this->data['pubcat'] = $this->general->get_tbl_data_result('id,name','publicationsubcat');
+		    $this->data['pubcat']=$this->Publication_model->get_publication_data();
+	      	//echo $this->db->last_query();die;
 	      	$this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
 	      	//echo "<pre>";print_r($this->data['pub']);die;
 		    //language
