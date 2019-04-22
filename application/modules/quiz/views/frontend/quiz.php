@@ -68,8 +68,8 @@
                     <div class="stepwizard-row setup-panel">
                         <?php if($category):
                          foreach ($category as $key => $catvalue) { ?>
-                        <div class="stepwizard-step">
-                            <a href="#step-<?php echo $key+1 ?>" type="button" class="btn btn-primary btn-circle"><?php echo $key+1 ?></a>
+                        <div class="stepwizard-step ">
+                            <a href="#step-<?php echo $key+1 ?>" type="button" class="<?php if($key+1 == "1") { echo "btn btn-circle btn-default btn-primary";}else{ echo "btn btn-default btn-circle";} ?> "<?php if($key+1 != "1") { echo "disabled=disabled";} ?>><?php echo $key+1 ?></a>
                             <p><!-- QN: <?php //echo $key+1 ?> --></p>
                         </div>
                         <?php } endif; ?>
@@ -79,73 +79,50 @@
                 <?php if($category): 
                  foreach ($category as $kp => $catevalue) {
                     $newoptions = $this->general->get_tbl_data_result('*','quiz_options',array('category_id'=>$catevalue['id'])); ?>
-                        <div class="stepwizard-step">
-                    <div class="row setup-content" id="step-<?php echo $kp+1 ?>">
-                        <div class="col-xs-12">
-                            <div class="col-md-12">
-                                <!-- <h3> Question <?php echo $kp+1 ?></h3> -->
-                               <?php if($newoptions):  ?>
-                               <div class="quiz-content">
-                                    <div class="quiz-qs">
-                                        <span><?php echo $kp+1 ?></span>
-                                        <h4><?php echo $catevalue['question'] ?></h4>
+                        <div class="stepwizard-step "style="<?php //if($kp+1 !="1"){ //echo"display: none";} ?>">
+                        <div class="row setup-content" id="step-<?php echo $kp+1 ?>" >
+                            <div class="col-xs-12">
+                                <div class="col-md-12">
+                                    <!-- <h3> Question <?php echo $kp+1 ?></h3> -->
+                                   <?php if($newoptions):  ?>
+                                   <div class="quiz-content">
+                                        <div class="quiz-qs">
+                                            <span><?php echo $kp+1 ?></span>
+                                            <h4><?php echo $catevalue['question'] ?></h4>
+                                        </div>
+                                        <ul>
+                                        <?php foreach ($newoptions as $key => $opvalue) { ?>
+                                            <li>
+                                                <style type="text/css">
+                                                    .flex-label {
+                                                      display: flex;
+                                                    }
+                                                    input[type=radio] {
+                                                      margin-right: 12px;
+                                                    }
+                                                </style>
+                                                <label class="flex-label form-control">
+                                                    <input type="radio" class="checkAnswerStatus" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
+                                                    <span><?php echo strip_tags($opvalue['name']); ?></span>
+                                                </label>
+                                            </li>
+                                            <?php } ?>
+                                        </ul>
                                     </div>
-                                    <ul>
-                                    <?php foreach ($newoptions as $key => $opvalue) { ?>
-                                        <li>
-                                            <style type="text/css">
-                                                .flex-label {
-                                                  display: flex;
-                                                }
-                                                input[type=radio] {
-                                                  margin-right: 12px;
-                                                }
-                                            </style>
-                                            <label class="flex-label form-control">
-                                                <input type="radio" class="checkAnswerStatus" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
-                                                <span><?php echo strip_tags($opvalue['name']); ?></span>
-                                            </label>
-                                        </li>
-                                        <?php } ?>
-                                    </ul>
+                                <?php endif; ?>
+                                    <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
+                                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                                 </div>
-                            <?php endif; ?>
-                                <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
-                                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                             </div>
                         </div>
-                    </div>
+                        </div>
                     <?php } endif; ?>
-                    <!-- <div class="row setup-content" id="step-2">
-                        <div class="col-xs-12">
-                            <div class="col-md-12">
-                                <h3> Step 2</h3>
-                                <div class="form-group">
-                                    <label class="control-label">Company Name</label>
-                                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Company Address</label>
-                                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address"  />
-                                </div>
-                                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row setup-content" id="step-3">
-                        <div class="col-xs-12">
-                            <div class="col-md-12">
-                                <h3> Step 3</h3>
-                                <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
-                            </div>
-                        </div>
-                    </div> -->
                 </form>
             </div>
         </div>
     </section>
 <script type="text/javascript">
-    $(document).off('click','.checkAnswerStatus');
+        $(document).off('click','.checkAnswerStatus');
         $(document).on('click','.checkAnswerStatus', function(){ 
             event.preventDefault();
             jQuery.noConflict();
@@ -173,11 +150,6 @@
             });
         });
     $(document).ready(function () {
-
-        
-
-
-
     var navListItems = $('div.setup-panel div a'),
             allWells = $('.setup-content'),
             allNextBtn = $('.nextBtn');
@@ -202,7 +174,7 @@
         var curStep = $(this).closest(".setup-content"),
             curStepBtn = curStep.attr("id"),
             nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='checkbox'],input[type='url']"),
+            curInputs = curStep.find("input[type='radio'],input[type='url']"),
             isValid = true;
 
         $(".form-group").removeClass("has-error");
