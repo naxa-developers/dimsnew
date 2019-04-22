@@ -43,10 +43,9 @@ class Drrinfo extends Admin_Controller
 	    }
 
 	    $this->data['drrsubcat'] = $this->general->get_tbl_data_result('slug,id,name','drrsubcategory',array('language'=>$language));
-	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name','drrcategory',array('slug'=>$cond,'language'=>$language));
+	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name,description','drrcategory',array('slug'=>$cond,'language'=>$language));
 	    $this->data['page_title'] ="Disaster Information System";
-	    // echo "<pre>"; 
-	    // print_r($this->data['drrdata']);die;
+	    //echo "<pre>"; print_r($this->data['drrdata']);die;
 		$this->template
 			->enable_parser(FALSE)
 			->title($this->data['page_title']) //this is for seo purpose 
