@@ -161,6 +161,16 @@ class Home extends Admin_Controller
 			->enable_parser(FALSE)
 			->build('frontend/about', $data);
 	}
+	public function nepal_info()
+	{
+		$data= array();
+		$data['about']=$this->general->get_tbl_data_result('*','about',array('id'=>'4'));
+		//echo "<pre>";print_r($data['about']);die; 	
+	 	$this->template->set_layout('frontend/default');
+	    $this->template
+			->enable_parser(FALSE)
+			->build('frontend/about', $data);
+	}
 	public function datacategory()
 	{
 		$this->data= array();

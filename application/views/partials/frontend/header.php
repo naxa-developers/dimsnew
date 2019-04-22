@@ -69,6 +69,9 @@
                                     <li>
                                         <a href="<?php echo base_url('aboutus') ?>">परियोजना बारे</a>
                                     </li>
+                                    <li>
+                                        <a href="<?php echo base_url('nepal_info') ?>">नेपाल  इन्फो </a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
