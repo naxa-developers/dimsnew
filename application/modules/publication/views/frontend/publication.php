@@ -248,27 +248,32 @@ $pub_cat_en='<option value=0>ANY</option>
         </div>
     </section>
     <div class="breadcrumb-form">
-        <form>
+        <form method="POST" action>
             <div class="row">
                 <div class="col-xl-5 col-md-4">
-                    <div class="input-group">
-                        <input type="text" class="form-control" aria-label="" placeholder="Search Hazard">
-                        <div class="input-group-append">
-                            <span class="input-group-text"><i class="la la-search"></i></span>
-                        </div>
+                     <div class="form-group">
+                        <select class="wide select" name="category">
+                        <option selected value="all">----- Select Hazard Type -----</option>
+                        <?php if($pub):
+                         foreach ($pub as $key => $pt) { ?>
+                            <option value="<?php echo $pt['id'] ?>" <?php if($this->input->post('category')){ echo "selected";} ?>><?php echo $pt['name'] ?></option>
+                          <?php } endif; ?>
+                        </select>
                     </div>
                 </div>
                 <div class="col-xl-5 col-md-4">
                     <div class="form-group">
-                        <select class="wide select">
-                            <option selected>Select Category</option>
-                            <option>select</option>
-                            <option>select</option>
+                        <select class="wide select" name="subcat">
+                        <option selected value="all">----- Select File Type -----</option>
+                        <?php if($pubcat):
+                         foreach ($pubcat as $key => $pcat) { ?>
+                            <option value="<?php echo $pcat['id'] ?>" <?php if($this->input->post('subcat')){ echo "selected";} ?>><?php echo $pcat['name'] ?></option>
+                          <?php } endif; ?>
                         </select>
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4">
-                    <button type="button" class="iset-btn"><?php echo !empty(SEARCH)?SEARCH:'' ?></button>
+                    <button type="submit" class="iset-btn"><?php echo !empty(SEARCH)?SEARCH:'' ?></button>
                 </div>     
             </div>
         </form>

@@ -28,46 +28,46 @@ else
 
 }
 
-public function update_path($id,$data){
+  public function update_path($id,$data){
 
-  $this->db->where('id',$id);
-  $this->db->update('publication',$data);
-
-}
-
-public function do_upload($filename,$name)
-{
-
-  $field_name                     ='proj_pic';
-  $config['upload_path']          = './uploads/publication/';
-  $config['allowed_types']        = 'gif|jpg|jpeg|png';
-  $config['max_size']             = 7000;
-  $config['overwrite']            = TRUE;
-  $config['file_name']           = $name;
-
-  $this->load->library('upload', $config);
-
-  if ( ! $this->upload->do_upload($field_name))
-  {
-    $error = array('error' => $this->upload->display_errors());
-    return $error;
-
+    $this->db->where('id',$id);
+    $this->db->update('publication',$data);
 
   }
-  else
+
+  public function do_upload($filename,$name)
   {
 
+    $field_name                     ='proj_pic';
+    $config['upload_path']          = './uploads/publication/';
+    $config['allowed_types']        = 'gif|jpg|jpeg|png';
+    $config['max_size']             = 7000;
+    $config['overwrite']            = TRUE;
+    $config['file_name']           = $name;
 
-    $data = array('upload_data' => $this->upload->data());
-      $data['status']=1;
+    $this->load->library('upload', $config);
 
-    return $data;
-
-  }
-}
-
-    public function file_do_uploa_audiod($filename,$name)
+    if ( ! $this->upload->do_upload($field_name))
     {
+      $error = array('error' => $this->upload->display_errors());
+      return $error;
+
+
+    }
+    else
+    {
+
+
+      $data = array('upload_data' => $this->upload->data());
+        $data['status']=1;
+
+      return $data;
+
+    }
+  }
+
+  public function file_do_uploa_audiod($filename,$name)
+  {
         $configVideo['upload_path']          = './uploads/publication/file/';
           $configVideo['max_size'] = '10240';
           $configVideo['allowed_types'] = 'avi|flv|wmv|mp3|mpeg|mpg|mp4|mpe|qt|mov';
@@ -114,66 +114,66 @@ public function do_upload($filename,$name)
            return $pathp;
 
     }
-}
-
-
-public function file_do_upload($filename,$name)
-{
-
-  $field_name                     ='uploadedfile';
-  $config['upload_path']          = './uploads/publication/file/';
-  $config['allowed_types']        = 'pdf|doc|docx';
-  $config['max_size']             = 7000;
-  $config['overwrite']            = TRUE;
-  $config['file_name']           = $name;
-
-  $this->load->library('upload', $config);
-  $this->upload->initialize($config);
-
-  if ( ! $this->upload->do_upload($field_name))
-  {
-    $error = array('error' => $this->upload->display_errors());
-    return $error;
-
-
   }
-  else
+
+
+  public function file_do_upload($filename,$name)
   {
 
+    $field_name                     ='uploadedfile';
+    $config['upload_path']          = './uploads/publication/file/';
+    $config['allowed_types']        = 'pdf|doc|docx';
+    $config['max_size']             = 7000;
+    $config['overwrite']            = TRUE;
+    $config['file_name']           = $name;
 
-    return 1;
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);
 
-  }
-}
-
-public function delete_data($id,$tablename){
-
-
-  $this->db->where('id',$id);
-  $this->db->delete($tablename);
-}
-
-public function get_edit_Data($id,$table){
-
-$this->db->select('*');
-$this->db->where('id',$id);
-$query=$this->db->get($table);
-return $query->row_array();
+    if ( ! $this->upload->do_upload($field_name))
+    {
+      $error = array('error' => $this->upload->display_errors());
+      return $error;
 
 
-}
+    }
+    else
+    {
 
-public function update_data($id,$data){
 
-  $this->db->where('id',$id);
-  $q=$this->db->update('publication',$data);
-  if($q){
-    return 1;
-  }else{
-    return 0;
+      return 1;
+
+    }
   }
 
-}
+  public function delete_data($id,$tablename){
+
+
+    $this->db->where('id',$id);
+    $this->db->delete($tablename);
+  }
+
+  public function get_edit_Data($id,$table){
+
+  $this->db->select('*');
+  $this->db->where('id',$id);
+  $query=$this->db->get($table);
+  return $query->row_array();
+
+
+  }
+
+  public function update_data($id,$data){
+
+    $this->db->where('id',$id);
+    $q=$this->db->update('publication',$data);
+    if($q){
+      return 1;
+    }else{
+      return 0;
+    }
+
+  }
   public function add_publiactioncat($table,$data){
         $id=$this->input->post('id');
         if($id)
@@ -195,55 +195,93 @@ public function update_data($id,$data){
             }
         }
     }
-    public function get_publication()
+    public function get_publication_filecat()
     {  
-        $keywords =  $this->input->post('keywords');
-        $category =  $this->input->post('category');
-        $type =  $this->input->post('type');
-        $subcat =  $this->input->post('subcat');
-        $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
-        $this->db->from('publication as p');
-        $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
-        if($keywords)
-        {
-          $sql = "p.title LIKE '%" . $keywords ."%' OR p.type LIKE '%" . $keywords ."%' OR p.summary LIKE '%". $keywords."%'";
-          $this->db->where($sql);
-        }
+      $this->db->select('p.id as id,pc.name as category,p.name as file');
+      $this->db->from('publicationfilecat as p');
+      $this->db->join('publicationsubcat as pc','pc.id = p.sub_cat_id','LEFT');
+      $query = $this->db->get();
+      //echo $this->db->last_query();die;
+      if ($query->num_rows() > 0)
+      {
+          return $data=$query->result_array();
+      } 
+      return false;
+  }
+  public function get_publication()
+  {  
+      $keywords =  $this->input->post('keywords');
+      $category =  $this->input->post('category');
+      $broucher =  $this->input->post('brouchure');
+      $audio =  $this->input->post('audio');
+      $video =  $this->input->post('video');
+      $document =  $this->input->post('document');
+      $type =  $this->input->post('type');
+      $subcat =  $this->input->post('subcat');
+      $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
+      $this->db->from('publication as p');
+      $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
+      if($keywords)
+      {
+        $sql = "p.title LIKE '%" . $keywords ."%' OR p.type LIKE '%" . $keywords ."%' OR p.summary LIKE '%". $keywords."%'";
+        $this->db->where($sql);
+      }
+      if($audio)
+      {
+          $this->db->where('p.filecat',$audio,);
+      }
+      if($video)
+      {
+          $this->db->where('p.filecat',$video);
+      }
+      if($document)
+      {
+          $this->db->where('p.filecat',$document);
+      }
+      if($broucher)
+      {
+          $this->db->where('p.filecat',$broucher);
+      }
+      
+      if($category !="all")
+      {
         if($category)
         {
-            $this->db->where('p.category',$category);
+          $this->db->where('p.category',$category);
         }
-        if($subcat)
-        {
-            $this->db->where('p.subcat',$subcat);
-        }
-        if($type)
-        {
-            $this->db->where('p.type',$type);
-        }
-        $query = $this->db->get();
-        //echo $this->db->last_query();die;
-        if ($query->num_rows() > 0)
-        {
-            return $data=$query->result_array();
-        } 
-        return false;
+        
+      }
+      if($subcat)
+      {
+          $this->db->where('p.subcat',$subcat);
+      }
+      if($type)
+      {
+          $this->db->where('p.type',$type);
+      }
+      $query = $this->db->get();
+      //echo $this->db->last_query();die;
+      if ($query->num_rows() > 0)
+      {
+          return $data=$query->result_array();
+      } 
+      return false;
+  }
+  public function get_publication_details()
+  { 
+    $id = base64_decode($this->input->get('id'));
+    $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
+    $this->db->from('publication as p');
+    $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
+    if($id) {
+        $this->db->where('p.id',$id);
     }
-    public function get_publication_details()
-    {  //test
-        $id = base64_decode($this->input->get('id'));
-        $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
-        $this->db->from('publication as p');
-        $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
-        if($id) {
-            $this->db->where('p.id',$id);
-        }
-        $query = $this->db->get();
-        // echo $this->db->last_query();die;
-        if ($query->num_rows() > 0)
-        {
-            return $data=$query->result_array();
-        } 
-        return false;
-    }
+    $query = $this->db->get();
+    // echo $this->db->last_query();die;
+    if ($query->num_rows() > 0)
+    {
+        return $data=$query->result_array();
+    } 
+    return false;
+  }
 }

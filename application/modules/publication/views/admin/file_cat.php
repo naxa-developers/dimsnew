@@ -6,17 +6,32 @@
           <header class="panel-heading">
            Publication File Type
             <form role="form"  method="POST" action="" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?php echo !empty($drrdataeditdata[0]['id'])?$drrdataeditdata[0]['id']:'' ?>">
-                <div class="form-group position-center">
-
-                  <label for="name">Publication File Type Name:</label>
-                  <input type="text" name="name" class="form-control" id="name" value="<?php echo !empty($drrdataeditdata[0]['name'])?$drrdataeditdata[0]['name']:'' ?>" placeholder="ENTER PUBLICATION CATEGORY NAME">
-                  <?php echo form_error('name'); ?>
-                </div>
+                <input type="hidden" name="id" value="<?php echo !empty($puddata[0]['id'])?$puddata[0]['id']:'' ?>">
+                 <div class="form-group">
+                  <div class="col-md-4">
+                    <label for="exampleInputFile"> Select File category</label>
+                  <select name="category" class="form-control">
+                    <option value="">----- Select File category ------</option>
+                    <?php // print_r($data['puddata']);die;
+                    if($pub){ 
+                        $dbcatid = !empty($puddata[0]['sub_cat_id'])?$puddata[0]['sub_cat_id']:'';
+                        
+                    foreach ($pub as $key => $value) {  ?>
+                      <option value="<?php echo $value['id']  ?>" <?php if($dbcatid == $value['id']){ echo "Selected=Selected";}?>><?php echo $value['name'] ?></option>
+                    <?php }  } ?>
+                  </select>
+                  <?php echo form_error('category'); ?>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="name">Publication File Type Name:</label>
+                    <input type="text" name="name" class="form-control" id="name" value="<?php echo !empty($puddata[0]['name'])?$puddata[0]['name']:'' ?>" placeholder="ENTER PUBLICATION CATEGORY NAME">
+                    <?php echo form_error('name'); ?>
+                  </div>
+                    </div>  
               <div class="panel-body">
                 <div class="position-center">
                 <div class="form-group">
-                    <button type="submit" name="submit" class="btn btn-info"><?php if($drrdataeditdata) { echo "Update";}else{echo "Submit";} ?></button>
+                    <button type="submit" name="submit" class="btn btn-info"><?php if($puddata) { echo "Update";}else{echo "Submit";} ?></button>
                   </div>
                   </div>
                 </div>
@@ -73,8 +88,8 @@
                       <td><?php echo $value;?></td>
                     <?php }  ?>
                       <td>
-                        <a href="<?php echo base_url(FOLDER_ADMIN)?>/publication/add_publication_sub_category?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('edit'); ?></a> /
-                        <a onclick="return confirm('Are you sure you want to delete?')" href="<?php echo base_url(FOLDER_ADMIN)?>/publication/delete_publication_sub_category?id=<?php echo  $v['id'];?>"><?php echo $this->lang->line('delete'); ?></a></td>
+                        <a href="<?php echo base_url(FOLDER_ADMIN)?>/publication/filecat?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('edit'); ?></a> /
+                        <a onclick="return confirm('Are you sure you want to delete?')" href="<?php echo base_url(FOLDER_ADMIN)?>/publication/delete_filecat?id=<?php echo  $v['id'];?>"><?php echo $this->lang->line('delete'); ?></a></td>
                   </tr>
                 <?php  }?>
                   </tbody>

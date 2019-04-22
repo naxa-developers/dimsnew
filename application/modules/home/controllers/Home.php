@@ -84,17 +84,13 @@ class Home extends Admin_Controller
 	{
 		$this->template->set_layout('frontend/default');
 		$data= array();
-		if(isset($_POST['submit'])){
-			$this->data['publication'] = '';//get_publication
-		}else{
-			$this->data['publication'] = $this->general->get_tbl_data_result('*','publication');
-		}
-	  	$this->data['pub'] = $this->general->get_tbl_data_result('id,name','publicationcat');
-      	$this->data['pubcat'] = $this->general->get_tbl_data_result('id,name','publicationsubcat');
-      	$this->data['publication'] = $this->general->get_tbl_data_result('*','publication');
-      	$this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
-		//echo "<pre>"; print_r($this->data['publication']); die;
 
+		//echo "<pre>"; print_r($this->input->post());die;	
+		$this->data['publication']=$this->Publication_model->get_publication();
+	  	$this->data['pub'] = $this->general->get_tbl_data_result('id,name','publicationcat');
+      	$this->data['pubcat'] = $this->general->get_tbl_data_result('id,name,slug','publicationsubcat');
+      	$this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
+      	//echo "<pre>"; print_r($this->data['pubcat']); die;
 	    $this->template
 			->enable_parser(FALSE)
 			->build('frontend/knownedgelist', $this->data);
@@ -155,96 +151,6 @@ class Home extends Admin_Controller
 	        exit;
 	    }
 	}
-	
-	// public function wardmap()
-	// {
-	//  	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/wardmap', $this->data);
-	// }
-	// public function wardstaff()
-	// {
-	//  	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/wardstaff', $this->data);
-	// }
-	// public function incidentmanagement()
-	// {
-	//  	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/incidentmanagement', $this->data);
-	// }
-	// public function whodoestable()
-	// {
-	//  	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/whodoestable', $this->data);
-	// }
-
-	// public function incidentreportmap()
-	// {
-	//  	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/incidentreportmap', $this->data);
-	// }
-	// public function municipalprofile()
-	// {
-	//  	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/municipalprofile', $this->data);
-	// }
-	// public function whodoes()
-	// {
-	// 	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/whodoes', $this->data);
-	// }
-	// public function tets()
-	// {
-	// 	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/test', $this->data);
-	// }
-	// public function whodoes_details()
-	// {
-	// 	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/whodoes_details', $this->data);
-	// }
-	// public function electedrepresentative()
-	// {
-	// 	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/electedrepresentative', $this->data);
-	// }
-	// public function riskprofile()
-	// {
-	// 	$this->template->set_layout('frontend/default');
-	//     $this->data= array();
-	//     $this->template
-	// 		->enable_parser(FALSE)
-	// 		->build('frontend/riskprofile', $this->data);
-	// }
 	public function aboutus()
 	{
 		$data= array();

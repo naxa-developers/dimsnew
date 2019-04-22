@@ -60,6 +60,19 @@
                   </select>
                   <?php echo form_error('subcat'); ?>
                   </div>
+                   <div class="col-md-4">
+                    <label for="exampleInputFile"> Select Sub file  category type</label>
+                    <select name="filecat" class="form-control">
+                     <?php $dbcatidfilecat = !empty($edit_data['filecat'])?$edit_data['filecat']:''; ?>
+                      <option value="">----- Select Sub file  category type ------</option>
+                      <?php 
+                      if($subfilecat){ 
+                      foreach ($subfilecat as $key => $st) {  ?>
+                        <option value="<?php echo $st['id']  ?>" <?php if($dbcatidfilecat == $st['id']){ echo "Selected=Selected";}?>><?php echo $st['name'] ?></option>
+                      <?php }  } ?>
+                    </select>
+                    <?php echo form_error('filecat'); ?>
+                  </div>
                   <?php if($edit_data['file']): ?>
                   <div class="col-md-4" id="FileUrl">
                     <label for="uploadedfile">Publication Attachment</label>

@@ -31,6 +31,58 @@ class Admin extends Admin_Controller {
                         ->build('admin/publication_tbl',$this->body);
 
   	}
+  	public function filecat()
+  	{
+  		$this->data=array();
+	 	$this->form_validation->set_rules('name', 'Publication File Category Name', 'trim|required');
+	 	$lang=$this->session->get_userdata('Language');
+        if($lang['Language']=='en') {
+            $emerg_lang='en';
+        }else{
+            $emerg_lang='nep'; 
+        }
+      	$data['pub'] = $this->general->get_tbl_data_result('id,name','publicationsubcat');
+      
+      	//echo "<pre>"; print_r($this->data['pub']);die;
+		if ($this->form_validation->run() == TRUE){
+	      	$page_slug_new = strtolower (preg_replace('/[[:space:]]+/', '-', $this->input->post('name')));
+	      	$data=array(
+	        	'name'=>$this->input->post('name'),
+	        	'sub_cat_id'=>$this->input->post('category'),
+	        	'slug'=>$page_slug_new,
+	      	);
+	      	$insert=$this->Publication_model->add_publiactioncat('publicationfilecat',$data);
+	      	if($insert!=""){
+		        $this->session->set_flashdata('msg','Publication successfully added');
+		        redirect(FOLDER_ADMIN.'/publication/filecat');
+	        }
+	    }else{
+	      //admin check
+	    	$id = base64_decode($this->input->get('id'));
+	    	if($id) {
+				$data['puddata'] = $this->general->get_tbl_data_result('sub_cat_id,id,name','publicationfilecat',array('id'=>$id));
+	    	}else{
+	    		$data['puddata'] = array();	
+	    	}
+	    	//print_r($data['puddata']);die;
+	    	$data['publicationdata'] =$this->Publication_model->get_publication_filecat();	
+	      	$admin_type=$this->session->userdata('user_type');
+	      	$data['admin']=$admin_type;
+	      	//admin check
+	      	$this->template
+	                        ->enable_parser(FALSE)
+	                        ->build('admin/file_cat',$data);
+	    }
+  		
+  	}
+  	public function delete_filecat(){
+	    $id = $this->input->get('id');
+	    $delete=$this->Publication_model->delete_data($id, 'publicationfilecat');
+
+	    $this->session->set_flashdata('msg','Id number '.$id.' row data was deleted successfully');
+	    // redirect('view_publication');
+	    redirect(FOLDER_ADMIN.'/publication/filecat');
+  	}
   	public function add_publication_sub_category(){
 	 	$this->data=array();
 	 	$this->form_validation->set_rules('name', 'Publication File Category Name', 'trim|required');
@@ -134,6 +186,7 @@ class Admin extends Admin_Controller {
 	        	'subcat'=>$this->input->post('subcat'),
 	        	'category'=>$this->input->post('category'),
 	        	'videolink'=>$this->input->post('videolink'),
+	        	'filecat'=>$this->input->post('filecat'),
 	        	'lang'=>$language,
 	      	);
 	      	$insert=$this->Publication_model->add_publication('publication',$data);
@@ -197,6 +250,7 @@ class Admin extends Admin_Controller {
 	     
 	      $this->data['pub'] = $this->general->get_tbl_data_result('id,name','publicationcat');
 	      $this->data['pubcat'] = $this->general->get_tbl_data_result('id,name','publicationsubcat');
+	      $this->data['subfilecat'] = $this->general->get_tbl_data_result('id,name','publicationfilecat');
 	      $this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
 	      // echo "<pre>"; print_r($this->data['pub']);die;
 	      $this->template
@@ -216,9 +270,9 @@ class Admin extends Admin_Controller {
 	    $this->data['pub'] = $this->general->get_tbl_data_result('id,name','publicationcat');
 	    $this->data['pubcat'] = $this->general->get_tbl_data_result('id,name','publicationsubcat');
 	    $this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
-
+	    $this->data['subfilecat'] = $this->general->get_tbl_data_result('id,name','publicationfilecat');
 	    if(isset($_POST['submit'])){
-	    	//echo "<pre>"; print_r();die;
+	    	//echo "<pre>"; print_r($this->input->post());die;
 	      	if(!empty($_FILES['proj_pic']['name']) || !empty($_FILES['uploadedfile']['name']) || !empty($_FILES['proj_pic']['name'])){
 	      		//echo "inside";die;
 		            $file_name = !empty($_FILES['proj_pic']['name'])?$_FILES['proj_pic']['name']:'';
@@ -238,6 +292,7 @@ class Admin extends Admin_Controller {
 			        	'subcat'=>$this->input->post('subcat'),
 			        	'category'=>$this->input->post('category'),
 			        	'videolink'=>$this->input->post('videolink'),
+			        	'filecat'=>$this->input->post('filecat'),
 			        	'lang'=>$language,
 			      	);
 		        	$insert=$this->Publication_model->update_data($id,$data);
@@ -311,6 +366,7 @@ class Admin extends Admin_Controller {
 		        	'subcat'=>$this->input->post('subcat'),
 		        	'category'=>$this->input->post('category'),
 		        	'videolink'=>$this->input->post('videolink'),
+		        	'filecat'=>$this->input->post('filecat'),
 		        	'lang'=>$language
 		      	);
 		        $update=$this->Publication_model->update_data($id,$data);
@@ -342,7 +398,7 @@ class Admin extends Admin_Controller {
 	    redirect(FOLDER_ADMIN.'/publication/view_publication');
   	}
   	
-  	 public function delete_publication_sub_category(){
+  	public function delete_publication_sub_category(){
 	    $id = $this->input->get('id');
 	    $delete=$this->Publication_model->delete_data($id,'publicationsubcat');
 	    $this->session->set_flashdata('msg','Id number '.$id.' row data was deleted successfully');

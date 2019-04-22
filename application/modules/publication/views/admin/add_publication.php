@@ -45,7 +45,7 @@
                   </select>
                   <?php echo form_error('type'); ?>
                   </div>
-                  <div class="col-md-4" style="display: none;" id="subFilesType">
+                  <div class="col-md-4" id="subFilesType">
                     <label for="exampleInputFile"> Select file  category type</label>
                     <select name="subcat" class="form-control">
                       <option value="">----- Select file  category type ------</option>
@@ -56,6 +56,18 @@
                       <?php }  } ?>
                     </select>
                     <?php echo form_error('subcat'); ?>
+                  </div>
+                   <div class="col-md-4">
+                    <label for="exampleInputFile"> Select Sub file  category type</label>
+                    <select name="filecat" class="form-control">
+                      <option value="">----- Select Sub file  category type ------</option>
+                      <?php 
+                      if($subfilecat){ 
+                      foreach ($subfilecat as $key => $st) {  ?>
+                        <option value="<?php echo $st['id']  ?>"><?php echo $st['name'] ?></option>
+                      <?php }  } ?>
+                    </select>
+                    <?php echo form_error('filecat'); ?>
                   </div>
                   <div class="col-md-4">
                     <label for="exampleInputEmail1">Title</label>
@@ -118,7 +130,7 @@
         subFilesType
       }else{
         $('#FileUrl').hide();
-        $('#subFilesType').hide();
+        //$('#subFilesType').hide();
       }
       if(selvalue === 'images') {
         $('#ImageDiveSelector').show();
