@@ -22,9 +22,9 @@ class Publication extends Admin_Controller
 	      	//echo "<pre>";print_r($this->data['pub']);die;
 		    //language
 		    if(isset($_POST['submit'])){
-		    	$this->data['publicationdata']=$this->Publication_model->get_publication();
+		    	$this->data['publicationdata']=$this->Publication_model->publication_search();
 		    }else{
-		    	$this->data['publicationdata']=$this->Publication_model->get_publication();
+		    	$this->data['publicationdata']=$this->Publication_model->publication_search();
 		    }
 
 

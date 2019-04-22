@@ -251,6 +251,65 @@ else
         }
         
       }
+      if($subcat)
+      {
+          $this->db->where('p.subcat',$subcat);
+      }
+      if($type)
+      {
+          $this->db->where('p.type',$type);
+      }
+      $query = $this->db->get();
+      //echo $this->db->last_query();die;
+      if ($query->num_rows() > 0)
+      {
+          return $data=$query->result_array();
+      } 
+      return false;
+  }
+  public function publication_search()
+  {  
+      $keywords =  $this->input->post('keywords');
+      $category =  $this->input->post('category');
+      $broucher =  $this->input->post('brouchure');
+      $audio =  $this->input->post('audio');
+      $video =  $this->input->post('video');
+      $document =  $this->input->post('document');
+      $type =  $this->input->post('type');
+      $subcat =  $this->input->post('subcat');
+      $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
+      $this->db->from('publication as p');
+      $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
+      if($keywords)
+      {
+        $sql = "p.title LIKE '%" . $keywords ."%' OR p.type LIKE '%" . $keywords ."%' OR p.summary LIKE '%". $keywords."%'";
+        $this->db->where($sql);
+      }
+      if($audio)
+      {
+          $this->db->where('p.filecat',$audio);
+      }
+      if($video)
+      {
+          $this->db->where('p.filecat',$video);
+      }
+      if($document)
+      {
+          $this->db->where('p.filecat',$document);
+      }
+      if($broucher)
+      {
+          $this->db->where('p.filecat',$broucher);
+      }
+      
+      if($category !="all")
+      {
+        if($category)
+        {
+          $this->db->where('p.category',$category);
+        }
+        
+      }
       if($subcat !="all")
       {
           $this->db->where('p.subcat',$subcat);

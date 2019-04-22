@@ -227,7 +227,7 @@
                   <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>
-                        <span><?php echo $this->lang->line('publication_management'); ?></span>
+                        <span>जानकारी पोर्टल<!-- <?php// echo $this->lang->line('publication_management'); ?> --></span>
                     </a>
                     <ul class="sub">
                         <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/view_publication"><?php echo $this->lang->line('publication'); ?></a></li>
