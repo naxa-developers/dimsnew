@@ -228,7 +228,7 @@ else
       }
       if($audio)
       {
-          $this->db->where('p.filecat',$audio,);
+          $this->db->where('p.filecat',$audio);
       }
       if($video)
       {
