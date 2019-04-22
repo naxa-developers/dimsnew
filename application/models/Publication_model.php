@@ -251,7 +251,7 @@ else
         }
         
       }
-      if($subcat)
+      if($subcat !="all")
       {
           $this->db->where('p.subcat',$subcat);
       }
