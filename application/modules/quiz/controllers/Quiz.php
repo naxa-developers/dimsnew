@@ -47,7 +47,7 @@ class Quiz extends Admin_Controller
             $questions = $this->general->get_tbl_data_result('*','quiz_options', array('id'=>$optionsid,"category_id"=>$questionid));
             $quiz = $this->general->get_tbl_data_result('*','quiz', array("id"=>$questionid));
             //print_r($questions[0]['right_answer']);die;
-            if($questions[0]['right_answer'] == "on")
+            if($questions[0]['right_answer'] == "1")
             {
                 $template = $quiz[0]['answer'];
                 $color = "alert-info";
