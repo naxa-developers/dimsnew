@@ -57,19 +57,19 @@
                             </div>
                             <div class="menu-primary-container">
                                 <ul id="primary-menu" class="menu nav-menu">
-                                    <li class="menu-item-has-current">
+                                    <li class="<?php if($this->uri->segment(1)){ echo "menu-item"; }else{ echo "menu-item-has-current"; } ?>">
                                         <a href="<?php echo base_url() ?>">गृह पृष्ठ</a>
                                     </li>
-                                    <li class="menu-item">
+                                    <li class="<?php if($this->uri->segment(1)==="knowledge-portal"){ echo "menu-item-has-current"; }else{ echo "menu-item"; } ?>">
                                         <a href="<?php echo base_url('knowledge-portal') ?>">जानकारी पोर्टल</a>
                                     </li>
-                                    <li class="menu-item">
+                                    <li class="<?php if($this->uri->segment(1)==="publication"){ echo "menu-item-has-current"; }else{ echo "menu-item"; } ?>">
                                         <a href="<?php echo base_url('publication') ?>">प्रकाशन </a>
                                     </li>
-                                    <li>
+                                    <li class="<?php if($this->uri->segment(1)==="aboutus"){ echo "menu-item-has-current"; }else{ echo "menu-item"; } ?>">
                                         <a href="<?php echo base_url('aboutus') ?>">परियोजना बारे</a>
                                     </li>
-                                    <li>
+                                    <li class="<?php if($this->uri->segment(1)==="nepal_info"){ echo "menu-item-has-current"; }else{ echo "menu-item"; } ?>">
                                         <a href="<?php echo base_url('nepal_info') ?>">नेपाल  इन्फो </a>
                                     </li>
                                 </ul>
