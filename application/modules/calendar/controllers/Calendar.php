@@ -29,7 +29,7 @@ class Calendar extends Admin_Controller
         $this->data['chtira'] = $this->calendar_mdl->datacount("2076-12-01","2076-12-33");
 
         $this->data['catgegory'] = $this->general->get_tbl_data_result('id,name,slug,description','calendar',array('language'=>$emerg_lang));
-        //echo "<pre>"; print_r($this->data['catgegory']);die;
+        //echo "<pre>"; print_r($this->data['baisak']);die;
 		$this->template
 			->enable_parser(FALSE)
 			->build('frontend/calendar', $this->data);

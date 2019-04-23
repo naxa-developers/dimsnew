@@ -15,7 +15,7 @@
             <form role="form"  method="POST" action="" enctype="multipart/form-data">
               <input type="hidden" name="id" value="<?php echo !empty($drrdataeditdata[0]['id'])?$drrdataeditdata[0]['id']:'' ?>">
                 <div class="form-group position-center">
-                  <label for="name">Calendar Name:</label>
+                  <label for="name">Event Name:</label>
                   <input type="text" name="name" class="form-control" id="name" value="<?php echo !empty($drrdataeditdata[0]['name'])?$drrdataeditdata[0]['name']:'' ?>" placeholder="Please Enter Calendar Name">
                 <?=form_error('name')?>
                 </div>
@@ -25,7 +25,7 @@
                 <?=form_error('description')?>
                 </div>
                 <div class="form-group position-center">
-                      <label for="name">Description:</label>
+                      <label for="name">Date:</label>
                       <input type='text' name="created_at" class="form-control" value="<?php echo !empty($drrdataeditdata[0]['created_at'])?$drrdataeditdata[0]['created_at']:'' ?>" id='nepaliDate'/>
                 </div>
                 <div class="panel-body">
