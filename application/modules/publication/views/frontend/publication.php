@@ -286,7 +286,7 @@ $pub_cat_en='<option value=0>ANY</option>
                 <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
                     <div class="resource-list">
                         <figure>
-                            <img src="<?php echo base_url()?>assets/frontend/img/doc.png" alt="<?php echo $d['title']?>">
+                            <img src="<?php echo base_url()?>assets/frontend/images/resource-1.jpg" alt="<?php echo $d['title']?>">
                         </figure>
                         <div class="resource-content">
                             <div class="resource-top">
