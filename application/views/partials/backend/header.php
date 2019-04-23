@@ -230,11 +230,11 @@
                         <span>जानकारी पोर्टल<!-- <?php// echo $this->lang->line('publication_management'); ?> --></span>
                     </a>
                     <ul class="sub">
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/view_publication"><?php echo $this->lang->line('publication'); ?></a></li>
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/add_publication_category">Publication Category <!-- <?php// echo $this->lang->line('publication'); ?> --></a></li>
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/add_publication">Add Publication<?php //echo $this->lang->line('publication'); ?></a></li>
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/add_publication_sub_category">Publication Sub category<?php //echo $this->lang->line('publication'); ?></a></li>
-                         <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/filecat">Publication file Sub category<?php //echo $this->lang->line('publication'); ?></a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/view_publication">जानकारी थप गर्नुहोस् <?php //echo $this->lang->line('publication'); ?></a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/add_publication_category">प्रकोप क्याटोगोरी <!-- <?php// echo $this->lang->line('publication'); ?> --></a></li>
+                        <!-- <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/add_publication">Add Publication<?php //echo $this->lang->line('publication'); ?></a></li> -->
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/add_publication_sub_category">जानकारी  क्याटोगोरी<?php //echo $this->lang->line('publication'); ?></a></li>
+                         <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/publication/filecat">जानकारी सब क्याटोगोरी<?php //echo $this->lang->line('publication'); ?></a></li>
                         
 
                     </ul>
@@ -247,7 +247,7 @@
                     <ul class="sub">
                         <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/site_setting/sliderList"><?php echo $this->lang->line('sliderhome'); ?></a></li>
                         <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/site_setting/homepagesetup"><?php echo $this->lang->line('homepagelabel'); ?></a></li>
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/site_setting/beready">Be Ready Section</a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/site_setting/beready">तयारी हुनुहोस्   </a></li>
                     </ul>
                 </li>
                 <!-- <li class="sub-menu">
@@ -274,20 +274,20 @@
                     </a>
                     <ul class="sub">
 
-                         <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/about/view_about"><?php echo $this->lang->line('about_management'); ?></a></li>
-                      <!--  <li><a href="<?php echo base_url();?>view_cat_tables">View Categories Data Tables</a></li> -->
-
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/about/about/edit_about?id=NQ==">परियोजना बारे<?php //echo $this->lang->line('about_management'); ?></a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/about/view_about">नेपाल  इन्फो </a></li>
+                      
                     </ul>
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>
-                        <span>DRR TERMINOLOGIES <?php //echo $this->lang->line('about_us'); ?></span>
+                        <span>प्रकोप व्यबस्थान <?php //echo $this->lang->line('about_us'); ?></span>
                     </a>
                     <ul class="sub">
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/drrinfo"><?php echo $this->lang->line('about_management'); ?></a></li>
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/drrinfo/drrinformation"><?php echo $this->lang->line('addrrinformation'); ?></a></li>
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/drrinfo/drrinformationlist"><?php echo $this->lang->line('drrinformationlist'); ?></a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/drrinfo">प्रकोप सूची </a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/drrinfo/drrinformation">प्रकोप जानकारी थप्नु  <!-- <?php ///echo $this->lang->line('addrrinformation'); ?> --></a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/drrinfo/drrinformationlist">प्रकोप जानकारी सूची<!-- <?php //echo $this->lang->line('drrinformationlist'); ?> --></a></li>
 
                     </ul>
                 </li>   

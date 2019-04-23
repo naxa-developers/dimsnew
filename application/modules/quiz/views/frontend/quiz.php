@@ -1,6 +1,6 @@
 <style type="text/css">
-    body{ 
-        margin-top:40px; 
+    body{
+        margin-top:40px;
     }
 
     .stepwizard-step p {
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <form role="form">
-                <?php if($category): 
+                <?php if($category):
                  foreach ($category as $kp => $catevalue) {
                     $newoptions = $this->general->get_tbl_data_result('*','quiz_options',array('category_id'=>$catevalue['id'])); ?>
                         <div class="stepwizard-step "style="<?php //if($kp+1 !="1"){ //echo"display: none";} ?>">
@@ -123,10 +123,10 @@
     </section>
 <script type="text/javascript">
         $(document).off('click','.checkAnswerStatus');
-        $(document).on('click','.checkAnswerStatus', function(){ 
+        $(document).on('click','.checkAnswerStatus', function(){
             event.preventDefault();
             jQuery.noConflict();
-            var base_url='<?php echo base_url(); ?>';   
+            var base_url='<?php echo base_url(); ?>';
             var urlpost = base_url+'/quiz/check_status';
             var curn = $(this).data('id');
             var nqnid = $(this).data('qnid');
@@ -140,8 +140,8 @@
                 },
                 success:function(jsons){
                     console.log(jsons);
-                    data = jQuery.parseJSON(jsons);  
-                    console.log(data.result); 
+                    data = jQuery.parseJSON(jsons);
+                    console.log(data.result);
                     if(data.status=='success')
                     {
                         $('#FinalAnswerShow'+nqnid).html(data.result);

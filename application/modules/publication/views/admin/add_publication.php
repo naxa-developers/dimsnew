@@ -24,9 +24,9 @@
               <form role="form"  method="POST" action="" enctype="multipart/form-data">
                 <div class="form-group">
                   <div class="col-md-4">
-                    <label for="exampleInputFile"> Select Hazard category</label>
+                    <label for="exampleInputFile"> प्रकोप छानुहोस </label>
                   <select name="category" class="form-control">
-                    <option value="">----- Select Hazard category ------</option>
+                    <option value="">----- प्रकोप छानुहोस------</option>
                     <?php 
                     if($pub){ 
                     foreach ($pub as $key => $value) {  ?>
@@ -36,9 +36,9 @@
                   <?php echo form_error('category'); ?>
                   </div>
                    <div class="col-md-4">
-                    <label for="exampleInputFile"> Select File Type: </label>
+                    <label for="exampleInputFile">जानकारी  क्याटोगोरी छानुहोस : </label>
                   <select name="type" class="form-control FileTypes" id="FileTypes">
-                    <option value="">----- Select File Type ------</option>
+                    <option value="">----- जानकारी  क्याटोगोरी छानुहोस------</option>
                     <?php foreach ($pubcatfiletype as $key => $pt) {  ?>
                     <option value="<?php echo $pt; ?>"><?php echo ucfirst($pt); ?></option>
                     <?php } ?>
@@ -46,9 +46,9 @@
                   <?php echo form_error('type'); ?>
                   </div>
                   <div class="col-md-4" id="subFilesType">
-                    <label for="exampleInputFile"> Select file  category type</label>
+                    <label for="exampleInputFile"> जानकारी  क्याटोगोरी छानुहोस  </label>
                     <select name="subcat" class="form-control">
-                      <option value="">----- Select file  category type ------</option>
+                      <option value="">-----जानकारी  क्याटोगोरी छानुहोस  ------</option>
                       <?php 
                       if($pubcat){ 
                       foreach ($pubcat as $key => $value) {  ?>
@@ -58,9 +58,9 @@
                     <?php echo form_error('subcat'); ?>
                   </div>
                    <div class="col-md-4">
-                    <label for="exampleInputFile"> Select Sub file  category type</label>
+                    <label for="exampleInputFile">जानकारी सब क्याटोगोरी</label>
                     <select name="filecat" class="form-control">
-                      <option value="">----- Select Sub file  category type ------</option>
+                      <option value="">----- जानकारी सब क्याटोगोरी ------</option>
                       <?php 
                       if($subfilecat){ 
                       foreach ($subfilecat as $key => $st) {  ?>
@@ -70,7 +70,7 @@
                     <?php echo form_error('filecat'); ?>
                   </div>
                   <div class="col-md-4">
-                    <label for="exampleInputEmail1">Title</label>
+                    <label for="exampleInputEmail1">सिर्षक  </label>
                     <input type="text" name="title" class="form-control" id="exampleInputEmail1"  placeholder="Enter Title">
                   </div>
                   <div class="col-md-8" id="videoUrlData" style="display: none;">
