@@ -342,7 +342,7 @@ else
     } 
     return false;
   }
-  public function get_publication_details()
+  public function get_publication_details($id=false)
   { 
     $id = base64_decode($this->input->get('id'));
     $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
@@ -351,6 +351,20 @@ else
     if($id) {
         $this->db->where('p.id',$id);
     }
+    $query = $this->db->get();
+    // echo $this->db->last_query();die;
+    if ($query->num_rows() > 0)
+    {
+        return $data=$query->result_array();
+    } 
+    return false;
+  }
+   public function get_publication_search()
+  {
+    $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
+    $this->db->from('publication as p');
+    $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
+    
     $query = $this->db->get();
     // echo $this->db->last_query();die;
     if ($query->num_rows() > 0)

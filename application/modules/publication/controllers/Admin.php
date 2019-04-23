@@ -179,7 +179,9 @@ class Admin extends Admin_Controller {
 	    	$ext = pathinfo($file_name, PATHINFO_EXTENSION);
 	      	$ext_file = pathinfo($attachment, PATHINFO_EXTENSION);
 	      	$ext_file_audio = pathinfo($audio, PATHINFO_EXTENSION);
+	      	$page_slug_new = strtolower (preg_replace('/[[:space:]]+/', '-', $this->input->post('title')));
 	      	$data=array(
+	      		//'slug'=>$page_slug_new,
 	        	'title'=>$this->input->post('title'),
 	        	'summary'=>$this->input->post('summary'),
 	        	'type'=>$this->input->post('type'),
@@ -279,6 +281,8 @@ class Admin extends Admin_Controller {
 			      	$attachment=	!empty($_FILES['uploadedfile']['name'])?$_FILES['uploadedfile']['name']:'';
 			      	$audio=!empty($_FILES['audio']['name'])?$_FILES['audio']['name']:'';
 			      	//echo "<pre>"; print_r($audio);die;
+			      	$page_slug_new = strtolower (preg_replace('/[[:space:]]+/', '-', $this->input->post('title')));
+
 			    	$ext = pathinfo($file_name, PATHINFO_EXTENSION);
 			      	$ext_file = pathinfo($attachment, PATHINFO_EXTENSION);
 			      	$ext_file_audio = pathinfo($audio, PATHINFO_EXTENSION);
@@ -286,6 +290,7 @@ class Admin extends Admin_Controller {
 			      	$old_audio  = $this->input->post('old_audio');
 			      	$old_image  = $this->input->post('old_image');
 			        $data=array(
+			        	//'slug'=>$page_slug_new,
 			        	'title'=>$this->input->post('title'),
 			        	'summary'=>$this->input->post('summary'),
 			        	'type'=>$this->input->post('type'),

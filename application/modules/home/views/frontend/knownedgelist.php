@@ -112,98 +112,13 @@
                                             <?php endif; ?>
                                                 <div class="knowldege-content">
                                                     <h4>
-                                                        <a href="#"><?php echo $pub['title'] ?></a>
+                                                        <a href="<?php echo base_url()?>/publication/details/?id=<?php echo base64_encode($pub['id']);?>"><?php echo $pub['title'] ?></a>
                                                     </h4>
-                                                    <!-- <time><i class="la la-calendar"></i> 12 dec 2019</time> -->
                                                 </div>
                                             </div>
                                         </div>
                                     <?php }  endif; ?>
-                                   <!--  <div class="col-xl-4 col-md-6">
-                                        <div class="knoledge-list">
-                                            <figure>
-                                                <img src="images/video-2.jpg" alt="video">
-                                                <figcaption>
-                                                    <a href="https://www.youtube.com/watch?v=FZQPhrdKjow?autoplay=1&rel=0" class="video-preview"><i class="la la-play-circle"></i></a>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="knowldege-content">
-                                                <h4>
-                                                    <a href="#">Fire that occurred due to increase of the 
-                                                        temperature</a>
-                                                </h4>
-                                                <time><i class="la la-calendar"></i> 12 dec 2019</time>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <div class="knoledge-list">
-                                            <figure>
-                                                <img src="images/video-3.jpg" alt="video">
-                                                <figcaption>
-                                                    <a href="https://www.youtube.com/watch?v=FZQPhrdKjow" class="video-preview"><i class="la la-play-circle"></i></a>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="knowldege-content">
-                                                <h4>
-                                                    <a href="#">Fire that occurred due to increase of the 
-                                                        temperature</a>
-                                                </h4>
-                                                <time><i class="la la-calendar"></i> 12 dec 2019</time>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <div class="knoledge-list">
-                                            <figure>
-                                                <img src="images/video-4.jpg" alt="video">
-                                                <figcaption>
-                                                    <a href="https://www.youtube.com/watch?v=FZQPhrdKjow" class="video-preview"><i class="la la-play-circle"></i></a>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="knowldege-content">
-                                                <h4>
-                                                    <a href="#">Fire that occurred due to increase of the 
-                                                        temperature</a>
-                                                </h4>
-                                                <time><i class="la la-calendar"></i> 12 dec 2019</time>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <div class="knoledge-list">
-                                            <figure>
-                                                <img src="images/video-5.jpg" alt="video">
-                                                <figcaption>
-                                                    <a href="https://www.youtube.com/watch?v=FZQPhrdKjow" class="video-preview"><i class="la la-play-circle"></i></a>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="knowldege-content">
-                                                <h4>
-                                                    <a href="#">Fire that occurred due to increase of the 
-                                                        temperature</a>
-                                                </h4>
-                                                <time><i class="la la-calendar"></i> 12 dec 2019</time>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <div class="knoledge-list">
-                                            <figure>
-                                                <img src="images/video-6.jpg" alt="video">
-                                                <figcaption>
-                                                    <a href="https://www.youtube.com/watch?v=FZQPhrdKjow" class="video-preview"><i class="la la-play-circle"></i></a>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="knowldege-content">
-                                                <h4>
-                                                    <a href="#">Fire that occurred due to increase of the 
-                                                        temperature</a>
-                                                </h4>
-                                                <time><i class="la la-calendar"></i> 12 dec 2019</time>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                 
                                 </div>
                             </div>
                         </div>

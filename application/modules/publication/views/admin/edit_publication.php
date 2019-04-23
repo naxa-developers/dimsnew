@@ -24,9 +24,9 @@
               <form role="form"  method="POST" action="" enctype="multipart/form-data">
                 <div class="form-group">
                   <div class="col-md-4">
-                    <label for="exampleInputFile"> Select Hazard category</label>
+                    <label for="exampleInputFile"> प्रकोप छानुहोस</label>
                   <select name="category" class="form-control">
-                    <option value="">----- Select Hazard category ------</option>
+                    <option value="">----- प्रकोप छानुहोस ------</option>
                     <?php 
                     if($pub){ 
                         $dbcatid = !empty($edit_data['category'])?$edit_data['category']:'';
@@ -37,9 +37,9 @@
                   <?php echo form_error('category'); ?>
                   </div>
                   <div class="col-md-4">
-                    <label for="exampleInputFile"> Select File Type: </label>
+                    <label for="exampleInputFile"> फाईल को प्रकार: </label>
                   <select name="type" class="form-control FileTypes" id="FileTypes">
-                    <option value="">----- Select File Type ------</option>
+                    <option value="">----- फाईल को प्रकार ------</option>
                     <?php $dbcatidtype = !empty($edit_data['type'])?$edit_data['type']:'';
                      foreach ($pubcatfiletype as $key => $pt) {  ?>
                     <option value="<?php echo $pt; ?>" <?php if($dbcatidtype == $pt){ echo "Selected=Selected";}?>><?php echo ucfirst($pt); ?></option>
@@ -48,9 +48,9 @@
                   <?php echo form_error('type'); ?>
                   </div>
                   <div class="col-md-4">
-                    <label for="exampleInputFile"> Select file  category type</label>
+                    <label for="exampleInputFile">जानकारी  क्याटोगोरी छानुहोस</label>
                   <select name="subcat" class="form-control">
-                    <option value="">----- Select file  category type ------</option>
+                    <option value="">----- जानकारी  क्याटोगोरी छानुहोस ------</option>
                     <?php 
                     if($pubcat){ 
                      $dbcatidsubcat = !empty($edit_data['subcat'])?$edit_data['subcat']:'';
@@ -61,10 +61,10 @@
                   <?php echo form_error('subcat'); ?>
                   </div>
                    <div class="col-md-4">
-                    <label for="exampleInputFile"> Select Sub file  category type</label>
+                    <label for="exampleInputFile">जानकारी सब क्याटोगोरी</label>
                     <select name="filecat" class="form-control">
                      <?php $dbcatidfilecat = !empty($edit_data['filecat'])?$edit_data['filecat']:''; ?>
-                      <option value="">----- Select Sub file  category type ------</option>
+                      <option value="">-----जानकारी सब क्याटोगोरी------</option>
                       <?php 
                       if($subfilecat){ 
                       foreach ($subfilecat as $key => $st) {  ?>

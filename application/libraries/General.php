@@ -185,10 +185,13 @@ class General {
 		return $data;
 	}
 	// return result
-	public function get_tbl_data_result($select, $table = false, $where = false, $order = false, $order_by = 'ASC') {
+	public function get_tbl_data_result($select, $table = false, $where = false, $order = false, $order_by = 'ASC',$limit=false) {
 		$this->ci->db->select($select);
 		if ($where) {
 			$this->ci->db->where($where, false);
+		}
+		if($limit) {
+			$this->ci->db->limit($limit, false);
 		}
 		if ($order) {
 			$this->ci->db->order_by($order, $order_by);

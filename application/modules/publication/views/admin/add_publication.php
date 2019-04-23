@@ -36,9 +36,9 @@
                   <?php echo form_error('category'); ?>
                   </div>
                    <div class="col-md-4">
-                    <label for="exampleInputFile">जानकारी  क्याटोगोरी छानुहोस : </label>
+                    <label for="exampleInputFile">फाईल को प्रकार  : </label>
                   <select name="type" class="form-control FileTypes" id="FileTypes">
-                    <option value="">----- जानकारी  क्याटोगोरी छानुहोस------</option>
+                    <option value="">----- फाईल को प्रकार ------</option>
                     <?php foreach ($pubcatfiletype as $key => $pt) {  ?>
                     <option value="<?php echo $pt; ?>"><?php echo ucfirst($pt); ?></option>
                     <?php } ?>

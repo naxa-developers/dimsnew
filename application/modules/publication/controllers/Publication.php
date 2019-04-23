@@ -11,7 +11,7 @@ class Publication extends Admin_Controller
         $this->template->set_layout('frontend/default');
 	}
 
-		public function index(){
+	public function index(){
 			$this->body=array();
 
 
@@ -60,7 +60,8 @@ class Publication extends Admin_Controller
 	      $language='nep';
 	    }
 		$this->data['publicationdata'] = $this->Publication_model->get_publication_details();
-		//echo "<pre>"; print_r($this->data['publicationdata']);die;
+		$this->data['pubd']=$this->Publication_model->get_publication_search();
+		//echo "<pre>"; print_r($this->data['pubd']);die;
 		$this->template
 				->enable_parser(FALSE)
 				->build('frontend/publicationdetails', $this->data);
