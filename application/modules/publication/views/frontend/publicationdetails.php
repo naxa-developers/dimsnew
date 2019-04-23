@@ -66,12 +66,16 @@
                               <?php endif; ?>
                               <?php if($pub['type'] == 'images'): ?>
                                   <figure>
+                                  <?php if($pub['photo']){ ?>
                                       <img src="<?php echo $pub['photo'] ?>" alt="video">
+                                      <?php }else{ ?>
+                                      <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="pdf Files">
+                                      <?php } ?>
                                   </figure>
                               <?php endif; ?>
                               <?php if($pub['type'] == 'files'): ?>
                                   <figure>
-                                      <!-- <img src="<?php echo base_url('assets/frontend/img/doc.png') ?>" alt="pdf Files"> -->
+                                      <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="pdf Files">
                                   </figure>
                               <?php endif; ?>
                               <div class="resource-content">
