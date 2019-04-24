@@ -57,10 +57,7 @@ class Home extends Admin_Controller
 	    $this->data['exposure_data']=$this->general->get_tbl_data_result('id,category_name,category_photo,category_table,category_type,public_view,language',$tbl,array('category_type'=>'Exposure_Data','language'=>$language),'id');
 	    $this->data['baseline_data']=$this->general->get_tbl_data_result('id,category_name,category_photo,category_table,category_type,public_view,language',$tbl,array('category_type'=>'Baseline_Data','language'=>$language),'id');
 	    $cat_tbl_list=$this->general->get_tbl_data_result('id,category_name,category_photo,category_table,category_type,public_view,language',$tbl,array('language'=>$language),'id');
-	    //$this->data['drrdata'] = $this->general->get_tbl_data_result('slug,description,image,name','drrcategory',array('language'=>$language));
-	    // echo "<pre>";
-	    // print_r($this->data['beready']);
-	    // die;	
+	    //echo "<pre>";print_r($this->data['drrdata']);die;	
 	   
 	    $this->data['urll']=$this->uri->segment(1);
 
@@ -87,7 +84,7 @@ class Home extends Admin_Controller
 
 		//echo "<pre>"; print_r($this->input->post());die;	
 		$this->data['publication']=$this->Publication_model->get_publication();
-	  	$this->data['pub'] = $this->general->get_tbl_data_result('id,name','publicationcat');
+	  	$this->data['pub'] = $this->general->get_tbl_data_result('id,name','drrcategory');
       	$this->data['pubcat'] = $this->general->get_tbl_data_result('id,name,slug','publicationsubcat');
       	$this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
       	//echo "<pre>"; print_r($this->data['pubcat']); die;

@@ -1,4 +1,4 @@
-<section class="hazard-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/hazard-breadcrumb.jpg') ?>">
+    <section class="hazard-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/hazard-breadcrumb.jpg') ?>">
         <div class="overlay"></div>
         <div class="breadcrumb-content">
            <h3><?php echo !empty(MUNPROFILE)?MUNPROFILE:'' ?></h3>

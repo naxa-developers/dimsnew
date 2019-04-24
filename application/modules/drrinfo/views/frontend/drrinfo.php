@@ -104,4 +104,33 @@
         <?php  } }
             endforeach;
             endif; ?>
-    
+            <section class="before-sectionintroduction bg-white bef-aft pdtb-50 mrb-50 aos-init aos-animate active" id="before-sectioninfographics" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
+                <div class="container">
+                    <div class="section-title mrb-50">
+                        <h3>Related Infographics</h3>
+                        <span><?php echo $drrdata[0]['description'] ?></span>
+                    </div>
+                    <div class="info-wrap">
+                        <div class="row">
+                        <?php if($pubd):  
+                         $similardata = $this->general->get_tbl_data_result('photo,file,lang,videolink,category,type','publication',array('category'=>$drrdata[0]['id']));
+                         if($similardata):
+                        foreach ($similardata as $key => $reltd) { ?>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="infograph-item">
+                                    <?php if($reltd['photo']){ ?>
+                                        <a href="<?php echo $reltd['photo'] ?>" class="info-preview">
+                                            <img src="<?php echo $reltd['photo'] ?>" alt="<?php echo $reltd['title'] ?>">
+                                        </a>
+                                    <?php }else{ ?>
+                                        <a href="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" class="info-preview">
+                                            <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="<?php echo $reltd['title'] ?>">
+                                        </a>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        <?php } endif; endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>

@@ -250,7 +250,7 @@ class Admin extends Admin_Controller {
 	      $this->data['admin']=$admin_type;
 	      //admin check
 	     
-	      $this->data['pub'] = $this->general->get_tbl_data_result('id,name','publicationcat');
+	      $this->data['pub'] = $this->general->get_tbl_data_result('id,name','drrcategory');
 	      $this->data['pubcat'] = $this->general->get_tbl_data_result('id,name','publicationsubcat');
 	      $this->data['subfilecat'] = $this->general->get_tbl_data_result('id,name','publicationfilecat');
 	      $this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
@@ -269,7 +269,7 @@ class Admin extends Admin_Controller {
 	        $language='nep';
 	    }
 	    $id=base64_decode($this->input->get('id'));
-	    $this->data['pub'] = $this->general->get_tbl_data_result('id,name','publicationcat');
+	    $this->data['pub'] = $this->general->get_tbl_data_result('id,name','drrcategory');
 	    $this->data['pubcat'] = $this->general->get_tbl_data_result('id,name','publicationsubcat');
 	    $this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
 	    $this->data['subfilecat'] = $this->general->get_tbl_data_result('id,name','publicationfilecat');

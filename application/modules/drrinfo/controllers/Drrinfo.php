@@ -5,6 +5,7 @@ class Drrinfo extends Admin_Controller
 	{	
         $this->load->model('Main_model');
         $this->template->set_layout('frontend/default');
+        $this->load->model('Publication_model');
 	}
 	public function index()
 	{	$this->body=array();
@@ -41,11 +42,11 @@ class Drrinfo extends Admin_Controller
 	    }else{
 	      $language='nep'; 
 	    }
-
 	    $this->data['drrsubcat'] = $this->general->get_tbl_data_result('slug,id,name','drrsubcategory',array('language'=>$language));
 	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name,description','drrcategory',array('id'=>$cond,'language'=>$language));
+	    $this->data['pubd']=$this->Publication_model->get_publication_search();
 	    $this->data['page_title'] ="Disaster Information System";
-	    //echo "<pre>"; print_r($this->data['drrdata']);die;
+	    //echo "<pre>"; print_r($this->data['pubd']);die;
 		$this->template
 			->enable_parser(FALSE)
 			->title($this->data['page_title']) //this is for seo purpose 
