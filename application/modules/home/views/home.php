@@ -90,7 +90,7 @@
                         <div class="drr-content">
                             <h4>मौसमी  तयारी पात्रो</h4>
                             <p>हाम्रो मौसमी  तयारी गाइडबुकको अध्ययनबाट मौसमी  विपदबाट सुरक्षित हुनुहोस्</p>
-                            <a href="<?php echo base_url('calendar') ?>"  class="iset-btn">थप  जानकारी<i class="la la-long-arrow-right"></i></a>
+                            <a href="<?php echo base_url('calendar') ?>"  class="iset-btn">मौसमी पात्रो हेर्नुहोस् <i class="la la-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                         <div class="drr-content">
                             <h4>विपद शब्दावली </h4>
                             <p>विपद शब्दावलीको अर्थ र टिप्पणीको अध्ययन गर्नुहोस्</p>
-                            <a href="<?php echo base_url('terminologies') ?>" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></a>
+                            <a href="<?php echo base_url('terminologies') ?>" class="iset-btn">विपद शब्दावली हेर्नुहोस्<i class="la la-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

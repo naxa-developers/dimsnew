@@ -143,18 +143,11 @@
                                       <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="pdf Files">
                                   </figure>
                               <?php endif; ?>
-                                <?php if($reltd['audio']){ ?>
+                                <?php if($reltd['type'] == 'audio'){ ?>
                                     <audio id="audio" preload="auto" tabindex="0" controls="">
                                         <source src="<?php echo $reltd['audio'] ?>">
-                                        Your Fallback goes here
+                                        <?php echo $reltd['title'] ?>
                                     </audio>
-                                    <ul id="playlist">
-                                        <li class="active">
-                                              <a href="<?php echo $reltd['audio'] ?>">
-                                                  Ravel Bolero
-                                              </a>
-                                        </li>
-                                    </ul>
                                 <?php } ?>
                                 </div>
                             </div>
@@ -163,54 +156,3 @@
                     </div>
                 </div>
             </section>
-
-            <!-- <div class="col-lg-9">
-                    <div class="knoledge-body">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="knoledge-list audio-list">
-                                            <audio id="audio" preload="auto" tabindex="0" controls="">
-                                                <source src="https://www.archive.org/download/bolero_69/Bolero.mp3">
-                                                Your Fallback goes here
-                                            </audio>
-                                              
-                                            <ul id="playlist">
-                                                <li class="active">
-                                                      <a href="https://www.archive.org/download/bolero_69/Bolero.mp3">
-                                                          Ravel Bolero
-                                                      </a>
-                                                </li>
-                                                  
-                                                <li>
-                                                      <a href="https://www.archive.org/download/MoonlightSonata_755/Beethoven-MoonlightSonata.mp3">
-                                                          Moonlight Sonata - Beethoven
-                                                      </a>
-                                                </li>
-                                                  
-                                                <li>
-                                                      <a href="https://www.archive.org/download/CanonInD_261/CanoninD.mp3">
-                                                          Canon in D Pachabel
-                                                      </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://www.archive.org/download/MoonlightSonata_755/Beethoven-MoonlightSonata.mp3">
-                                                            Moonlight Sonata - Beethoven
-                                                    </a>
-                                                </li>
-                                                    
-                                                <li>
-                                                    <a href="https://www.archive.org/download/CanonInD_261/CanoninD.mp3">
-                                                        Canon in D Pachabel
-                                                    </a>
-                                                </li>
-                                                  
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->

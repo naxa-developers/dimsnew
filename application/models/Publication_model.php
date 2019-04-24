@@ -363,7 +363,7 @@ else
   }
    public function get_publication_search()
   {
-    $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
+    $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,p.audio,pc.name');
     $this->db->from('publication as p');
     $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
     
