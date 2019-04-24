@@ -64,134 +64,112 @@
     <section class="quiz-section pdtb-30 aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
         <div class="quiz-container">
             <div class="container">
-                <div class="stepwizard">
-                    <div class="stepwizard-row setup-panel">
-                        <?php if($category):
-                         foreach ($category as $key => $catvalue) { ?>
-                        <div class="stepwizard-step ">
-                            <a href="#step-<?php echo $key+1 ?>" type="button" class="<?php if($key+1 == "1") { echo "btn btn-circle btn-default btn-primary";}else{ echo "btn btn-default btn-circle";} ?> "<?php if($key+1 != "1") { echo "disabled=disabled";} ?>><?php echo $key+1 ?></a>
-                            <p><!-- QN: <?php //echo $key+1 ?> --></p>
-                        </div>
-                        <?php } endif; ?>
-                    </div>
-                </div>
-                <form role="form">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <?php if($category):
-                 foreach ($category as $kp => $catevalue) {
-                    $newoptions = $this->general->get_tbl_data_result('*','quiz_options',array('category_id'=>$catevalue['id'])); ?>
-                        <div class="stepwizard-step "style="<?php //if($kp+1 !="1"){ //echo"display: none";} ?>">
-                        <div class="row setup-content" id="step-<?php echo $kp+1 ?>" >
-                            <div class="col-xs-12">
-                                <div class="col-md-12">
-                                    <!-- <h3> Question <?php echo $kp+1 ?></h3> -->
-                                   <?php if($newoptions):  ?>
-                                   <div class="quiz-content">
-                                        <div class="quiz-qs">
-                                            <span><?php echo $kp+1 ?></span>
-                                            <h4><?php echo $catevalue['question'] ?></h4>
-                                        </div>
-                                        <ul>
-                                        <?php foreach ($newoptions as $key => $opvalue) { ?>
-                                            <li>
-                                                <style type="text/css">
-                                                    .flex-label {
-                                                      display: flex;
-                                                    }
-                                                    input[type=radio] {
-                                                      margin-right: 12px;
-                                                    }
-                                                </style>
-                                                <label class="flex-label ">
-                                                    <button  class="checkAnswerStatus" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
-                                                    <span><?php echo strip_tags($opvalue['name']); ?></span>
-                                                </label>
-                                            </li>
-                                            <?php } ?>
-                                        </ul>
-                                    </div>
-                                <?php endif; ?>
-                                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                 foreach ($category as $key => $catvalue) { ?>
+                    <li class="nav-item">
+                      <a class="nav-link btn-circle <?php if($key+1 == "1") { echo "active";} ?>" id="home-tab<?php echo $key+1 ?>" data-toggle="tab" href="#home<?php echo $key+1 ?>" role="tab" aria-controls="home" aria-selected="<?php if($key+1 == "1") { echo "true";}else{echo "false"; } ?>"><?php echo $key+1 ?></a>
+                    </li>
+                <?php } endif; ?>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <?php if($category):
+                         foreach ($category as $kp => $catevalue) {
+                            $newoptions = $this->general->get_tbl_data_result('*','quiz_options',array('category_id'=>$catevalue['id'])); ?>
+                        <div class="tab-pane fade show <?php if($kp+1 == "1") { echo "active";} ?>" id="home<?php echo $kp+1 ?>" role="tabpanel" aria-labelledby="home-tab<?php echo $kp+1 ?>">
+                            <div class="quiz-content">
+                                <div class="quiz-qs">
+                                    <span><?php echo $kp+1 ?></span>
+                                    <h4><?php echo $catevalue['question'] ?></h4>
                                 </div>
+                                <ul>
+                                 <?php foreach ($newoptions as $key => $opvalue) { ?>
+                                    <li>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio"  id="<?php echo $opvalue['id'] ?>" class="checkAnswerStatus btn btn-secondary custom-control-input" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
+                                            <label class="custom-control-label" for="<?php echo $opvalue['id'] ?>"><?php echo strip_tags($opvalue['name']); ?></label>
+                                        </div>
+                                    </li>
+                                    <?php } ?>
+                                    <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
+                                </ul>
                             </div>
                         </div>
-                        </div>
-                        <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
                     <?php } endif; ?>
-                </form>
-            </div>
-        </div>
+                </div>
+                <button class="prevtab btn btn-primary">Prev</button>
+                <button class="nexttab btn btn-danger">Next</button>
+            </div> 
+        </div> 
     </section>
 <script type="text/javascript">
-        $(document).off('click','.checkAnswerStatus');
-        $(document).on('click','.checkAnswerStatus', function(){
-            event.preventDefault();
-            jQuery.noConflict();
-            var base_url='<?php echo base_url(); ?>';
-            var urlpost = base_url+'/quiz/check_status';
-            var curn = $(this).data('id');
-            var nqnid = $(this).data('qnid');
-            $.ajax({
-               type:'POST',
-               url:urlpost,
-               dataType: 'html',
-               data:{"curn":curn,"nqnid":nqnid},
-                beforeSend: function(){
+    $(document).off('click','.checkAnswerStatus');
+    $(document).on('click','.checkAnswerStatus', function(){
+        event.preventDefault();
+        jQuery.noConflict();
+        var base_url='<?php echo base_url(); ?>';
+        var urlpost = base_url+'/quiz/check_status';
+        var curn = $(this).data('id');
+        var nqnid = $(this).data('qnid');
+        $.ajax({
+           type:'POST',
+           url:urlpost,
+           dataType: 'html',
+           data:{"curn":curn,"nqnid":nqnid},
+            beforeSend: function(){
 
-                },
-                success:function(jsons){
-                    console.log(jsons);
-                    data = jQuery.parseJSON(jsons);
-                    console.log(data.result);
-                    if(data.status=='success')
-                    {
-                        $('#FinalAnswerShow'+nqnid).html(data.result);
-                        setTimeout(function(){
-                            $('#FinalAnswerShow'+nqnid).html("");
-                          }, 3000);
-                    }
+            },
+            success:function(jsons){
+               // console.log(jsons);
+                data = jQuery.parseJSON(jsons);
+                //console.log(data.result);
+                if(data.status=='success')
+                {
+                    $('#FinalAnswerShow'+nqnid).html(data.result);
+                    setTimeout(function(){
+                        $('#FinalAnswerShow'+nqnid).html("");
+                      }, 3000);
                 }
-            });
-        });
-    $(document).ready(function () {
-    var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
-
-    allWells.hide();
-
-    navListItems.click(function (e) {
-        e.preventDefault();
-        var $target = $($(this).attr('href')),
-                $item = $(this);
-
-        if (!$item.hasClass('disabled')) {
-            navListItems.removeClass('btn-primary').addClass('btn-default');
-            $item.addClass('btn-primary');
-            allWells.hide();
-            $target.show();
-            $target.find('input:eq(0)').focus();
-        }
-    });
-
-    allNextBtn.click(function(){
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='radio'],input[type='url']"),
-            isValid = true;
-
-        $(".form-group").removeClass("has-error");
-        for(var i=0; i<curInputs.length; i++){
-            if (!curInputs[i].validity.valid){
-                isValid = false;
-                $(curInputs[i]).closest(".form-group").addClass("has-error");
             }
-        }
-
-        if (isValid)
-            nextStepWizard.removeAttr('disabled').trigger('click');
+        });
     });
+</script>
+<script type="text/javascript">
+     function bootstrapTabControl(){
+        var i, items = $('.nav-link'), pane = $('.tab-pane');
+        // next
+        $('.nexttab').on('click', function(){
+            for(i = 0; i < items.length; i++){
+                if($(items[i]).hasClass('active') == true){
+                    break;
+                }
+            }
+            if(i < items.length - 1){
+                // for tab
+                $(items[i]).removeClass('active');
+                $(items[i+1]).addClass('active');
+                // for pane
+                $(pane[i]).removeClass('show active');
+                $(pane[i+1]).addClass('show active');
+            }
 
-    $('div.setup-panel div a.btn-primary').trigger('click');
-});
+        });
+        // Prev
+        $('.prevtab').on('click', function(){
+            for(i = 0; i < items.length; i++){
+                if($(items[i]).hasClass('active') == true){
+                    break;
+                }
+            }
+            if(i != 0){
+                // for tab
+                $(items[i]).removeClass('active');
+                $(items[i-1]).addClass('active');
+                // for pane
+                $(pane[i]).removeClass('show active');
+                $(pane[i-1]).addClass('show active');
+            }
+        });
+    }
+    bootstrapTabControl();
 </script>

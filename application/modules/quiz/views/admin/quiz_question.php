@@ -49,10 +49,9 @@
                                 <div class="col-sm-3">
                                     <label>Question Type</label>
                                     <select class="form-control optionType" id="optionType" name="question_type" >
-                                      <option selected="selected" value="">---Select Question Type---</option>
                                       <?php $qtid = !empty($drrdataeditdata[0]['question_type'])?$drrdataeditdata[0]['question_type']:'' ?>
-                                        <option value="checkbox" <?php if($qtid == 'checkbox') { echo "selected";} ?>>Checkbox</option>
-                                        <option value="radio" <?php if($qtid == 'radio' ){ echo "selected";} ?>>Radio</option>
+                                        <option selected="selected"  value="checkbox" <?php if($qtid == 'checkbox') { echo "selected";} ?>>Checkbox</option>
+                                        <!-- <option value="radio" <?php// if($qtid == 'radio' ){ echo "selected";} ?>>Radio</option> -->
                                     </select>
                                      <?=form_error('question_type')?>
                                 </div>
