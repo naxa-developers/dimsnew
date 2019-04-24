@@ -113,18 +113,18 @@
                     <div class="info-wrap">
                         <div class="row">
                         <?php if($pubd):  
-                         $similardata = $this->general->get_tbl_data_result('photo,file,lang,videolink,category,type','publication',array('category'=>$drrdata[0]['id']));
+                         $similardata = $this->general->get_tbl_data_result('title,photo,file,lang,videolink,category,type','publication',array('category'=>$drrdata[0]['id']));
                          if($similardata):
                         foreach ($similardata as $key => $reltd) { ?>
                             <div class="col-lg-3 col-md-6">
                                 <div class="infograph-item">
                                     <?php if($reltd['photo']){ ?>
                                         <a href="<?php echo $reltd['photo'] ?>" class="info-preview">
-                                            <img src="<?php echo $reltd['photo'] ?>" alt="<?php echo $reltd['name'] ?>">
+                                            <img src="<?php echo $reltd['photo'] ?>" alt="<?php echo $reltd['title'] ?>">
                                         </a>
                                     <?php }else{ ?>
                                         <a href="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" class="info-preview">
-                                            <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="<?php echo $reltd['name'] ?>">
+                                            <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="<?php echo $reltd['title'] ?>">
                                         </a>
                                     <?php } ?>
                                 </div>
