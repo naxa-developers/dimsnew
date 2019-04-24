@@ -90,18 +90,18 @@
                             <input type="hidden" name="old_image3" value="<?php echo $bnr_img_dbimage3; ?>">
                         <?php endif;?>
                     </div> -->
-				<!-- 	<div class="col-lg-3">
+					<div class="col-lg-3">
 						<div class="form-group">
-							<label>DISASTER INFORMATION</label>
+							<label>जानकारी पोर्टल</label>
 							<input type="text" name="disastertitle" class="form-control" value="<?php echo !empty($homepage[0]['disastertitle'])?$homepage[0]['disastertitle']:'' ?>">
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-9">
 						<div class="form-group">
-							<label>DESCRIPTION</label>
-							<textarea name="disastertitledesc" id="" cols="30" rows="3" class="form-control"><?php echo !empty($homepage[0]['disastertitledesc'])?$homepage[0]['disastertitledesc']:'' ?></textarea>
+							<label>जानकारी पोर्टल</label>
+							<textarea name="disastertitledesc" id="" cols="30" rows="3"  class="form-control"><?php echo !empty($homepage[0]['disastertitledesc'])?$homepage[0]['disastertitledesc']:'' ?></textarea>
 						</div>
-					</div> -->
+					</div>
 					<!-- <div class="col-sm-3">
                         <label class="control-label" for="image4">Image </label>
                         <input type="file" name="image4">
@@ -114,19 +114,20 @@
                             <img class="img-polaroid" src="<?php echo base_url("/uploads/project/".$bnr_img_dbimage4); ?>" style="width: 300px;height: 107px;">
                             <input type="hidden" name="old_image4" value="<?php echo $bnr_img_dbimage4; ?>">
                         <?php endif;?>
-                    </div>
+                    </div>-->
 					<div class="col-lg-3">
 						<div class="form-group">
-							<label>TERMINOLOGIES</label>
+							<label>प्रकाशन </label>
 							<input type="text" name="terminology" class="form-control" value="<?php echo !empty($homepage[0]['terminology'])?$homepage[0]['terminology']:'' ?>">
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-9">
 						<div class="form-group">
-							<label>DESCRIPTION</label>
+							<label>प्रकाशन </label>
 							<textarea name="terminologydesc" id="" cols="30" rows="3" class="form-control"><?php echo !empty($homepage[0]['terminologydesc'])?$homepage[0]['terminologydesc']:'' ?></textarea>
 						</div>
 					</div>
+					<!--  
 					<div class="col-lg-3">
 						<div class="form-group">
 							<label>PUBLICATIONS AND MULTIMEDIA</label>

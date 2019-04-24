@@ -66,7 +66,7 @@
                         <div class="drr-content">
                             <h4>हाजिरीजवाफ खेल्नुहोस्</h4>
                             <p>विभिन्न विपदको जानकारी सम्बन्धि हाजिरीजवाफ खेल खेल्नुहोस् र वास्तविक जानकारी लिनुहोस्</p>
-                            <a href="<?php echo base_url('quiz') ?>" class="iset-btn">Play quiz <i class="la la-long-arrow-right"></i></a>
+                            <a href="<?php echo base_url('quiz') ?>" class="iset-btn">हाजिरीजवाफ खेल्नुहोस् <i class="la la-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

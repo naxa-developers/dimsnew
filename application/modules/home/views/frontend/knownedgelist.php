@@ -8,18 +8,21 @@
     <div class="breadcrumb-form">
         <form action="" method="POST">
             <div class="row">
-                <div class="col-xl-5 col-md-4">
-                    <div class="input-group">
-                        <input type="text" name="keywords" class="form-control" value="<?php echo !empty($this->input->post('keywords'))?$this->input->post('keywords'):''; ?>" aria-label="" placeholder="Search Hazard">
-                        <div class="input-group-append">
+               <div class="col-xl-3 col-md-4">
+                   
+                 <!--     <div class="input-group"> -->
+                        <input type="hidden" name="keywords" class="form-control" value="<?php echo !empty($this->input->post('keywords'))?$this->input->post('keywords'):''; ?>" aria-label="" placeholder="Search Hazard">
+                       <!--  <div class="input-group-append">
                             <span class="input-group-text"><i class="la la-search"></i></span>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-md-4">
+                    </div>-->
+                </div> 
+                <div class="col-xl-7 col-md-4">
                     <div class="form-group">
+                    
                         <select class="wide select" name="category">
-                            <option selected value="all">All</option>
+                            <option selected value="all">-----  प्रकोप छान्नुहोस् ----- </option>
+                            <option value="all">सबै</option>
                             <?php if($pub): 
                              foreach ($pub as $key => $p) {  ?>
                                 <option value="<?php echo $p['id'] ?>" <?php if($this->input->post('category') === $p['id']) { echo "Selected"; } ?>><?php echo $p['name'] ?></option>
@@ -28,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-xl-2 col-md-4">
-                    <button type="submit" class="iset-btn">Search</button>
+                    <button type="submit" class="iset-btn">खोजी गर्नुहोस् </button>
                 </div>     
             </div>
     </div>
@@ -71,10 +74,12 @@
                         <?php } endif; ?>
 
                           
-                            <div class="col-xl-2 col-md-4">
-                                <label>&nbsp;</label>
-                                <button type="submit" class="iset-btn">Advance Search</button>
-                                 <label>&nbsp;</label>
+                            <div class="col-xl-2 col-md-4 ">
+                                <div class="col text-center">
+                                    <label>&nbsp;</label>
+                                    <button type="submit" class="iset-btn center-block ">बिस्तृतमा  खोजी गर्नुहोस् </button>
+                                     <label>&nbsp;</label>
+                                     </div>
                             </div>
                         </div>
                     </aside>
