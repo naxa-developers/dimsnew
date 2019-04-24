@@ -17,7 +17,15 @@
                                     <!--   <img src="<?php echo base_url()?>/assets/frontend/img/doc.png" alt="<?php echo $d['title']?>"> -->
                                   </a>
                                 <?php  endif; ?>
+                                <?php if($d['type'] === 'audio'){ ?>
+                                    <audio id="audio" preload="auto" tabindex="0" controls="">
+                                        <source src="<?php echo $d['audio'] ?>">
+                                        <?php echo $d['title'] ?>
+                                    </audio>
+                                <?php } ?>
+
                             </figure>
+                            <?php if($d['type'] != "audio"){ ?>
                             <div class="resource-content">
                                 <div class="resource-top">
                                     <h3>
@@ -43,6 +51,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

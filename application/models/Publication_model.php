@@ -218,7 +218,7 @@ else
       $document =  $this->input->post('document');
       $type =  $this->input->post('type');
       $subcat =  $this->input->post('subcat');
-      $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
+      $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,p.audio,pc.name');
       $this->db->from('publication as p');
       $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
       if($keywords)
@@ -347,7 +347,7 @@ else
   public function get_publication_details($id=false)
   { 
     $id = base64_decode($this->input->get('id'));
-    $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
+    $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,p.audio,pc.name');
     $this->db->from('publication as p');
     $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
     if($id) {

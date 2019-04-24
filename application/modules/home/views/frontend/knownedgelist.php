@@ -116,6 +116,12 @@
                                                     <img src="<?php echo base_url('assets/frontend/img/doc.png') ?>" alt="pdf Files">
                                                 </figure>
                                             <?php endif; ?>
+                                            <?php if($pub['type'] == 'audio'){ ?>
+                                                <audio id="audio" preload="auto" tabindex="0" controls="">
+                                                    <source src="<?php echo $pub['audio'] ?>">
+                                                    <?php echo $pub['title'] ?>
+                                                </audio>
+                                            <?php } ?>
                                                 <div class="knowldege-content">
                                                     <h4>
                                                         <a href="<?php echo base_url()?>/publication/details/?id=<?php echo base64_encode($pub['id']);?>"><?php echo $pub['title'] ?></a>
