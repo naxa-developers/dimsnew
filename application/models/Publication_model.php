@@ -228,19 +228,19 @@ else
       }
       if($audio)
       {
-          $this->db->where('p.filecat',$audio);
+          $this->db->where_in('p.filecat',$audio);
       }
       if($video)
       {
-          $this->db->where('p.filecat',$video);
+          $this->db->where_in('p.filecat',$video);
       }
       if($document)
       {
-          $this->db->where('p.filecat',$document);
+          $this->db->where_in('p.filecat',$document);
       }
       if($broucher)
       {
-          $this->db->where('p.filecat',$broucher);
+          $this->db->where_in('p.filecat',$broucher);
       }
       
       if($category !="all")
@@ -312,7 +312,9 @@ else
       }
       if($subcat !="all")
       {
+        if($subcat){
           $this->db->where('p.subcat',$subcat);
+        }
       }
       if($type)
       {

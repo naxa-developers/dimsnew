@@ -59,7 +59,7 @@
                                         foreach ($npubtype as $key => $b) { ?>
                                             <li>
                                                 <div class="form-check">
-                                                    <input type="checkbox" name="<?php echo $pt['slug']; ?>" class="form-check-input" value="<?php echo $b['id'] ?>" id="exampleCheck1">
+                                                    <input type="checkbox" name="<?php echo $pt['slug']; ?>[]" class="form-check-input" value="<?php echo $b['id'] ?>" id="exampleCheck1">
                                                     <label class="form-check-label" for="exampleCheck1"><?php echo $b['name'] ?></label>
                                                 </div>
                                             </li>

@@ -36,11 +36,11 @@ class Admin extends Base_Controller {
                    // redirect('dashboard');
                 }else{
                     $this->session->set_flashdata('Login', 'Incorrect Password, Try Again');
-                    redirect('admin_control');
+                    redirect(ADMIN_LOGIN_PATH, 'refresh');exit;
                 }
             }else{
                 $this->session->set_flashdata('Login', 'Incorrect username, Try Again');
-                redirect('admin_control');
+                redirect(ADMIN_LOGIN_PATH, 'refresh');exit;
             }
         }
         $this->template->title("Login | " . SITE_NAME_EN);//ORGA_NAME
