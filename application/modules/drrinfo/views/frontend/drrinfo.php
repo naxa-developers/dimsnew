@@ -118,6 +118,31 @@
                         foreach ($similardata as $key => $reltd) { ?>
                             <div class="col-lg-3 col-md-6">
                                 <div class="infograph-item">
+                                    <?php if($reltd['type'] == 'video'): ?>
+                                  <?php $nurl=$reltd['videolink'];
+                                      $nu = substr($nurl, strrpos($nurl, '/' )+1);
+                                     $thimg =str_replace('watch?v=','',$nu, $a); ?>
+                                  <figure>
+                                      <img src="https://i.ytimg.com/vi/<?php echo $thimg ?>/mqdefault.jpg" alt="video">
+                                      <figcaption>
+                                          <a href="<?php echo $reltd['videolink'] ?>?autoplay=1&rel=0 " class="video-preview"><i class="la la-play-circle"></i></a>
+                                      </figcaption>
+                                  </figure>
+                              <?php endif; ?>
+                              <?php if($reltd['type'] == 'images'): ?>
+                                  <figure>
+                                  <?php if($reltd['photo']){ ?>
+                                      <img src="<?php echo $reltd['photo'] ?>" alt="video">
+                                      <?php }else{ ?>
+                                      <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="pdf Files">
+                                      <?php } ?>
+                                  </figure>
+                              <?php endif; ?>
+                              <?php if($reltd['type'] == 'files'): ?>
+                                  <figure>
+                                      <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="pdf Files">
+                                  </figure>
+                              <!-- <?php endif; ?>
                                     <?php if($reltd['photo']){ ?>
                                         <a href="<?php echo $reltd['photo'] ?>" class="info-preview">
                                             <img src="<?php echo $reltd['photo'] ?>" alt="<?php echo $reltd['title'] ?>">
@@ -126,7 +151,7 @@
                                         <a href="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" class="info-preview">
                                             <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="<?php echo $reltd['title'] ?>">
                                         </a>
-                                    <?php } ?>
+                                    <?php } ?> -->
                                 </div>
                             </div>
                         <?php } endif; endif; ?>
