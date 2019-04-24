@@ -56,7 +56,7 @@ class Admin extends Admin_Controller {
 	      	);
 	      	
 	      	$insert=$this->DrrModel->add_drrinfo('drrcategory',$data);
-	      	//print_r($insert);die;
+	      	
 	      	if($insert){
 
 	      		$old_image=$this->input->post('old_image');
@@ -109,10 +109,11 @@ class Admin extends Admin_Controller {
 	    	$id = base64_decode($this->input->get('id'));
 	    	//print_r($id);die;
 	    	if($id) {
-				$this->data['drrdataeditdata'] = $this->general->get_tbl_data_result('id,image,name,svgimage','drrcategory',array('id'=>$id));
+				$this->data['drrdataeditdata'] = $this->general->get_tbl_data_result('id,image,name,svgimage,description','drrcategory',array('id'=>$id));
 	    	}else{
 	    		$this->data['drrdataeditdata'] = array();	
 	    	}
+	    	//print_r($this->data['drrdataeditdata']);die;
 	      	$admin_type=$this->session->userdata('user_type');
 	      	$this->data['admin']=$admin_type;
 	      	//admin check
