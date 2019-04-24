@@ -77,6 +77,7 @@
                          foreach ($category as $kp => $catevalue) {
                             $newoptions = $this->general->get_tbl_data_result('*','quiz_options',array('category_id'=>$catevalue['id'])); ?>
                         <div class="tab-pane fade show <?php if($kp+1 == "1") { echo "active";} ?>" id="home<?php echo $kp+1 ?>" role="tabpanel" aria-labelledby="home-tab<?php echo $kp+1 ?>">
+                        <?php if($newoptions): ?>
                             <div class="quiz-content">
                                 <div class="quiz-qs">
                                     <span><?php echo $kp+1 ?></span>
@@ -86,7 +87,7 @@
                                  <?php foreach ($newoptions as $key => $opvalue) { ?>
                                     <li>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio"  id="<?php echo $opvalue['id'] ?>" class="checkAnswerStatus btn btn-secondary custom-control-input" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
+                                            <input type="radio"  id="<?php echo $opvalue['id'] ?>" class="abc btn btn-secondary custom-control-input" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
                                             <label class="custom-control-label" for="<?php echo $opvalue['id'] ?>"><?php echo strip_tags($opvalue['name']); ?></label>
                                         </div>
                                     </li>
@@ -94,6 +95,7 @@
                                     <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
                                 </ul>
                             </div>
+                        <?php endif; ?>
                         </div>
                     <?php } endif; ?>
                 </div>
@@ -103,9 +105,8 @@
         </div> 
     </section>
 <script type="text/javascript">
-    $(document).off('click','.checkAnswerStatus');
-    $(document).on('click','.checkAnswerStatus', function(){
-        event.preventDefault();
+    $(document).off('click','.abc');
+    $(document).on('click','.abc', function(){
         jQuery.noConflict();
         var base_url='<?php echo base_url(); ?>';
         var urlpost = base_url+'/quiz/check_status';
