@@ -100,7 +100,7 @@
                     <?php } endif; ?>
                 </div>
                 <button class="prevtab btn btn-primary">Prev</button>
-                <button class="nexttab btn btn-danger">Next</button>
+                <button class="nexttab btn btn-success">Next</button>
             </div> 
         </div> 
     </section>

@@ -58,14 +58,14 @@
                         </div>
                     </div>
                 </div>
-                <section class="copyright">
-                    <div class="container ">
-                        <p> &copy; <?php echo date('Y'); ?> <a href="#" title=""></a><?php echo !empty(COPY_TEXT)?COPY_TEXT:'' ?></p>
-                    </div>
-                </section>
+               
             </div>
         </div>
-    </footer>
+    </footer> <section class="copyright">
+                    ©
+                    <?php echo date('Y'); ?>,
+                    <span>Developed by <a href="https://naxa.com.np/" target="_blank">Naxa</a> <?php echo !empty(COPY_TEXT)?COPY_TEXT:'' ?></span>
+                </section>
     <!-- jquery library start -->   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="<?php echo base_url();?>assets/frontend/newdimsjs/bootstrap.min.js"></script>
