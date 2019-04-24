@@ -22,7 +22,6 @@
                     <div class="footer-widget">
                         <h4>हाम्रो सामाजिक सञ्जाल</h4>
                         <div class="ft-content">
-                            <p>Feel free to follow us on</p>
                             <ul class="social-links">
                                 <?php if(FACEBOOK): ?>
                                 <li>

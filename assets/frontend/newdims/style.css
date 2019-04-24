@@ -1584,10 +1584,6 @@ footer.site-footer .footer-widget .ft-content .contact-links li a i:hover {
   font-size: 1rem;
   line-height: 50px;
 }
-.breadcrumb-form .nice-select .option:hover, .breadcrumb-form .nice-select .option.focus, .breadcrumb-form .nice-select .option.selected.focus {
-  background-color: #673bb7;
-  color: #ffffff;
-}
 .breadcrumb-form .nice-select:after {
   border-bottom: 2px solid #673bb7;
   border-right: 2px solid #673bb7;
