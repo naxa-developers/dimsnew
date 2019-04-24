@@ -48,7 +48,7 @@ class Home extends Admin_Controller
         $this->data['site_info'] = "";
         $this->data['feature']=$this->Main_model->get_feature();
         $this->data['feat_lang']='en';
-        $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,description,image,name,svgimage','drrcategory',array('language'=>$language),false,false,'5');
+        $this->data['drrdata'] = $this->general->get_tbl_data_result('id,slug,description,image,name,svgimage','drrcategory',array('language'=>$language),false,false,'5');
         $this->data['sliderhome'] = $this->general->get_tbl_data_result('image,name,description','homepageslider');
         $this->data['beready'] = $this->general->get_tbl_data_result('id,slug,name,description','beready');
          

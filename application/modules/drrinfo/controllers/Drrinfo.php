@@ -20,7 +20,7 @@ class Drrinfo extends Admin_Controller
 	    }
 
 	    $this->data['page_title'] ="Disaster Information System";
-	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,description,image,name,svgimage','drrcategory',array('language'=>$language));
+	    $this->data['drrdata'] = $this->general->get_tbl_data_result('id,slug,description,image,name,svgimage','drrcategory',array('language'=>$language));
 	    //echo "<pre>"; print_r($this->data['drrdata']);die;
 	    //echo $this->db->last_query();die;echo"<pre>"; print_r($this->data['drrdata']);die;
 		$this->template
@@ -43,7 +43,7 @@ class Drrinfo extends Admin_Controller
 	    }
 
 	    $this->data['drrsubcat'] = $this->general->get_tbl_data_result('slug,id,name','drrsubcategory',array('language'=>$language));
-	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name,description','drrcategory',array('slug'=>$cond,'language'=>$language));
+	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name,description','drrcategory',array('id'=>$cond,'language'=>$language));
 	    $this->data['page_title'] ="Disaster Information System";
 	    //echo "<pre>"; print_r($this->data['drrdata']);die;
 		$this->template
