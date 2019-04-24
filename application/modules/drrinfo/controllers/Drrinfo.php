@@ -20,8 +20,8 @@ class Drrinfo extends Admin_Controller
 	    }
 
 	    $this->data['page_title'] ="Disaster Information System";
-	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,description,image,name','drrcategory',array('language'=>$language));
-	    //	echo "<pre>"; print_r($this->data['drrdata']);die;
+	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,description,image,name,svgimage','drrcategory',array('language'=>$language));
+	    //echo "<pre>"; print_r($this->data['drrdata']);die;
 	    //echo $this->db->last_query();die;echo"<pre>"; print_r($this->data['drrdata']);die;
 		$this->template
 			->enable_parser(FALSE)

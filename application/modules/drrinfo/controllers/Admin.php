@@ -50,6 +50,7 @@ class Admin extends Admin_Controller {
 	        	'name'=>$this->input->post('name'),
 	        	'status'=>'1',
 	        	'description'=>$this->input->post('description'),
+	        	'svgimage'=>$this->input->post('svgimage'),
 	        	'language'=>$emerg_lang,
 	        	'slug'=>$page_slug_new,
 	      	);
@@ -108,7 +109,7 @@ class Admin extends Admin_Controller {
 	    	$id = base64_decode($this->input->get('id'));
 	    	//print_r($id);die;
 	    	if($id) {
-				$this->data['drrdataeditdata'] = $this->general->get_tbl_data_result('id,image,name','drrcategory',array('id'=>$id));
+				$this->data['drrdataeditdata'] = $this->general->get_tbl_data_result('id,image,name,svgimage','drrcategory',array('id'=>$id));
 	    	}else{
 	    		$this->data['drrdataeditdata'] = array();	
 	    	}

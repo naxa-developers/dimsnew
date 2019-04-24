@@ -5,32 +5,27 @@
                 <span><?php echo !empty(PROFILEDESC)?PROFILEDESC:'' ?></span>
                 <br>
                 <br>
-            <!-- <form>
-                <div class="input-group">
-                    <input type="text" class="form-control" aria-label="" placeholder="Search Hazard">
-                    <div class="input-group-append">
-                        <span class="input-group-text"><i class="la la-search"></i></span>
-                    </div>
-                </div>
-            </form> -->
         </div>
     </section>
     <section class="page-hazard mrb-50">
         <div class="container">
             <div class="row">
+                <?php if($drrdata):
+                foreach ($drrdata as $key => $dta) { ?>
                 <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
                     <div class="hazard-list">
                         <div class="overlay"></div>
                         <figure>
-                            <img src="<?php echo base_url('assets/frontend/images/hazard-1.jpg') ?>" alt="hazard">
+                            <img src="<?php echo $dta['image'] ?>" alt="<?php echo $dta['name'] ?>">
                         </figure>
                         <figcaption>
-                            <h4><a href="<?php echo base_url('drrinfo/drrdetails/flood') ?>">Flood</a></h4>
-                            <p>Flood is  common in the rainy season in Nepal, and has been most frequent, highly damaging and widespread natural hazards.</p>
+                            <h4><a href="<?php echo base_url('drrinfo/drrdetails/flood') ?>"><?php echo $dta['name'] ?></a></h4>
+                            <p> <?php echo $dta['description'] ?></p>
                           <a href="<?php echo base_url('drrinfo/drrdetails/flood') ?>"><button type="button" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></button></a>
                         </figcaption>
                         <div class="hazard-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="71.806" height="63.456" viewBox="0 0 71.806 63.456">
+                        <?php echo $dta['svgimage'] ?>
+                           <!--  <svg xmlns="http://www.w3.org/2000/svg" width="71.806" height="63.456" viewBox="0 0 71.806 63.456">
                                 <g id="Group_14" data-name="Group 14" transform="translate(0 0)">
                                     <path id="Path_1" data-name="Path 1" d="M29.931,36.917a6.887,6.887,0,0,0-8.347-5.482A7.194,7.194,0,0,0,16.17,38.6v9.711c.711-.113,1.41-.248,2.12-.405a32.56,32.56,0,0,1,11.752-.631V46.234c0-2.595.012-5.2,0-7.8A9.919,9.919,0,0,0,29.931,36.917Z" transform="translate(1.29 -0.397)" fill=""/>
                                     <path id="Path_2" data-name="Path 2" d="M29.931,36.917a6.887,6.887,0,0,0-8.347-5.482A7.194,7.194,0,0,0,16.17,38.6v9.711c.711-.113,1.41-.248,2.12-.405a32.56,32.56,0,0,1,11.752-.631V46.234c0-2.595.012-5.2,0-7.8A9.919,9.919,0,0,0,29.931,36.917Z" transform="translate(1.29 -0.397)" fill=""/>
@@ -45,11 +40,12 @@
                                     <path id="Path_11" data-name="Path 11" d="M62.354,47.2a23.018,23.018,0,0,0-11.733-.118,33.017,33.017,0,0,1-13.516.161,1.129,1.129,0,0,0-.663.059c.2.144.388.305.6.432a21.156,21.156,0,0,0,12.345,3.26,41.58,41.58,0,0,0,5.444-.979,38.478,38.478,0,0,1,10.008-.733c.683.049,1.362.141,2.042.213A11.992,11.992,0,0,0,62.354,47.2Z" transform="translate(4.636 2.102)" fill=""/>
                                     <path id="Path_12" data-name="Path 12" d="M27.1,56.065a23.018,23.018,0,0,0-11.733-.118,33.017,33.017,0,0,1-13.516.161,1.129,1.129,0,0,0-.663.059c.2.144.388.305.6.432a21.156,21.156,0,0,0,12.345,3.26,41.581,41.581,0,0,0,5.444-.979,38.478,38.478,0,0,1,10.008-.733c.683.049,1.362.141,2.042.213A11.975,11.975,0,0,0,27.1,56.065Z" transform="translate(-1.184 3.566)" fill=""/>
                                 </g>
-                            </svg>                                      
+                            </svg>    -->                                   
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
+            <?php } endif; ?>
+                <!-- <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
                     <div class="hazard-list">
                         <div class="overlay"></div>
                         <figure>
@@ -158,7 +154,7 @@
                             </svg>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

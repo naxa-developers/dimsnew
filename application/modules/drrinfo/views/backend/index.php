@@ -9,17 +9,20 @@
 
             <form role="form"  method="POST" action="" enctype="multipart/form-data">
               <input type="hidden" name="id" value="<?php echo !empty($drrdataeditdata[0]['id'])?$drrdataeditdata[0]['id']:'' ?>">
-          <div class="form-group position-center">
-
-                  <label for="name">DRR category name:</label>
-                  <input type="text" name="name" class="form-control" id="name" value="<?php echo !empty($drrdataeditdata[0]['name'])?$drrdataeditdata[0]['name']:'' ?>">
-                </div>
           <div class="panel-body">
             <div class="position-center">
                   <div class="form-group">
                     <div class="col-md-12">
+                       <label for="name">DRR category name:</label>
+                      <input type="text" name="name" class="form-control" id="name" value="<?php echo !empty($drrdataeditdata[0]['name'])?$drrdataeditdata[0]['name']:'' ?>">
+                    </div>
+                    <div class="col-md-12">
                         <label for="short_desc">Short Description : </label>
                         <textarea class="form-control"  id="short_desc" name="description"><?php echo !empty($drrdataeditdata[0]['description'])?$drrdataeditdata[0]['description']:'' ?></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="short_desc">Svg Image : </label>
+                        <textarea class="form-control"  id="svgimage" name="svgimage" rows="6" placeholder="Please Paste Svg Image Code"><?php echo !empty($drrdataeditdata[0]['svgimage'])?$drrdataeditdata[0]['svgimage']:'' ?></textarea>
                     </div>
                 </div>
                 <div class="form-group">
