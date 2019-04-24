@@ -222,8 +222,9 @@ class Admin extends Admin_Controller {
 		          	}else{
 		          		$file_pathd='';
 		          	}
-		          	if($file_upload_audio) {
-		          		$file_path_audiofinal=base_url().$file_upload_audio;
+		          	if($file_upload_audio == 1) {
+		          		//$file_path_audiofinal=base_url().$file_upload_audio;
+		          		$file_path_audiofinal=base_url() . 'uploads/publication/file/'.$insert.'.'.$ext_file_audio;//base_url().$file_upload_audio;
 		          	}else{
 		          		$file_path_audiofinal='';
 		          	}
