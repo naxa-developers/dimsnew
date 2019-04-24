@@ -33,7 +33,7 @@
                 foreach ($drrdata as $key => $value) {  ?>
                 <div class="col-xl-3 iset-3" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
                     <div class="hazard-item" >
-                    <?php 
+                    <?php  $imagenew="";
                     switch ($value['slug']) {
                         case "flood":
                             $imagenew = '<figure>
