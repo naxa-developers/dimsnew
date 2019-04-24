@@ -120,11 +120,11 @@
                                 <div class="infograph-item">
                                     <?php if($reltd['photo']){ ?>
                                         <a href="<?php echo $reltd['photo'] ?>" class="info-preview">
-                                            <img src="<?php echo $reltd['photo'] ?>" alt="<?php echo $reltd['title'] ?>">
+                                            <img src="<?php echo $reltd['photo'] ?>" alt="<?php echo $reltd['name'] ?>">
                                         </a>
                                     <?php }else{ ?>
                                         <a href="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" class="info-preview">
-                                            <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="<?php echo $reltd['title'] ?>">
+                                            <img src="<?php echo base_url('assets/frontend/images/resource-1.jpg') ?>" alt="<?php echo $reltd['name'] ?>">
                                         </a>
                                     <?php } ?>
                                 </div>
