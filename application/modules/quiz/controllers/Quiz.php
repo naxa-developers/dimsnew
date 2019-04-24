@@ -51,12 +51,15 @@ class Quiz extends Admin_Controller
             {
                 $template = $quiz[0]['answer'];
                 $color = "alert-info";
+                print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong><i class="la la-check-circle la-2x"> </i> </strong> '.$template.'  </div>','message'=>'Record Selected Successfully')));
+            exit;
             }else{
                 $template = $quiz[0]['wrong_answer'];
                 $color = "alert-danger";
-            }
-            print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong>Success Message !!!! </strong> '.$template.'  </div>','message'=>'Record Selected Successfully')));
+                print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> '.$template.'  </div>','message'=>'Record Selected Successfully')));
             exit;
+            }
+            
         }else{
             print_r(json_encode(array('status'=>'error','message'=>'Cannot Perform this Operation')));
             exit;

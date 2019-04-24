@@ -101,8 +101,8 @@
                                                       margin-right: 12px;
                                                     }
                                                 </style>
-                                                <label class="flex-label form-control">
-                                                    <input type="radio" class="checkAnswerStatus" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
+                                                <label class="flex-label ">
+                                                    <button  class="checkAnswerStatus" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
                                                     <span><?php echo strip_tags($opvalue['name']); ?></span>
                                                 </label>
                                             </li>
@@ -110,12 +110,12 @@
                                         </ul>
                                     </div>
                                 <?php endif; ?>
-                                    <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
                                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                                 </div>
                             </div>
                         </div>
                         </div>
+                        <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
                     <?php } endif; ?>
                 </form>
             </div>
@@ -145,6 +145,9 @@
                     if(data.status=='success')
                     {
                         $('#FinalAnswerShow'+nqnid).html(data.result);
+                        setTimeout(function(){
+                            $('#FinalAnswerShow'+nqnid).html("");
+                          }, 3000);
                     }
                 }
             });
