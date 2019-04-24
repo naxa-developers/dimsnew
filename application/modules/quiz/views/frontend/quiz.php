@@ -129,7 +129,7 @@
                     $('#FinalAnswerShow'+nqnid).html(data.result);
                     setTimeout(function(){
                         $('#FinalAnswerShow'+nqnid).html("");
-                      }, 3000);
+                      }, 13000);
                 }
             }
         });

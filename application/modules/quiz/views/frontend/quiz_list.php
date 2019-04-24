@@ -53,7 +53,7 @@
                         <h4><a href="<?php echo base_url('/drrinfo/drrdetails/'.$value['slug']) ?>"><?php echo $value['name']; ?></a></h4>
                         <p><?php echo $value['description']; ?></p>
                     </div>
-                    <a href="<?php echo base_url('quiz/play_quiz/'. $value['slug']) ?>" class="iset-btn">Play quiz <i class="la la-long-arrow-right"></i></a>
+                    <a href="<?php echo base_url('quiz/play_quiz/'. $value['slug']) ?>" class="iset-btn">हाजिरीजवाफ खेल्नुहोस्<i class="la la-long-arrow-right"></i></a>
                 </div>
             </div>
         <?php } endif; ?>
