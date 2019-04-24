@@ -3,8 +3,8 @@
     <section class="resource-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>">
         <div class="overlay"></div>
         <div class="breadcrumb-content">
-            <h1>Resource</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At veroLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero</p>
+             <h1><?php echo !empty(TERMINOLOGY)?TERMINOLOGY:'' ?></h1>
+            <p><?php echo !empty(TERMINOLOGYDESC)?TERMINOLOGYDESC:'' ?></p>
         </div>
     </section>
     <div class="breadcrumb-form">
@@ -13,7 +13,7 @@
                 <div class="col-xl-5 col-md-4">
                      <div class="form-group">
                         <select class="wide select" name="category">
-                        <option selected value="all">----- Select Hazard Type -----</option>
+                        <option selected value="all">----- प्रकोप छान्नुहोस् -----</option>
                         <?php if($pub):
                          foreach ($pub as $key => $pt) { ?>
                             <option value="<?php echo $pt['id'] ?>" <?php if($this->input->post('category')){ echo "selected";} ?>><?php echo $pt['name'] ?></option>
@@ -24,7 +24,7 @@
                 <div class="col-xl-5 col-md-4">
                     <div class="form-group">
                         <select class="wide select" name="subcat">
-                        <option selected value="all">----- Select File Type -----</option>
+                        <option selected value="all">----- फाईल को प्रकार  छान्नुहोस् -----</option>
                         <?php if($pubcat):
                          foreach ($pubcat as $key => $pcat) { ?>
                             <option value="<?php echo $pcat['id'] ?>" <?php if($this->input->post('subcat')){ echo "selected";} ?>><?php echo $pcat['name'] ?></option>
