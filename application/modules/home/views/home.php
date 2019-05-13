@@ -11,7 +11,7 @@
                             Be <span>Ready</span> Nepal
                             </h1>
                             <p><?php echo $slid['description']  ?></p>
-                            <a href="<?php echo base_url('drrinfo') ?>"><button type="button" class="iset-btn btn-white">Learn more <i class="la la-long-arrow-right"></i></button></a>
+                            <a href="<?php echo base_url('drrinfo') ?>"><button type="button" class="iset-btn btn-white">थप  जानकारी  <i class="la la-long-arrow-right"></i></button></a>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
             <?php } endif; ?>
                 <div class="col-xl-3 iset-3" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
                     <div class="hazard-item hazard-button">
-                        <a href="<?php echo base_url() ?>/drrinfo" class="iset-btn">Learn more <i class="la la-long-arrow-right"></i></a>
+                        <a href="<?php echo base_url() ?>/drrinfo" class="iset-btn">थप  जानकारी  <i class="la la-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
