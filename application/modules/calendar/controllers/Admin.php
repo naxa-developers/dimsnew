@@ -35,7 +35,7 @@ class Admin extends Admin_Controller {
 	{
 		$this->data=array();
 		$this->form_validation->set_rules('name', 'SEASONAL PREPAREDNESS CALENDAR Name', 'trim|required');
-		$this->data['categories'] = $this->general->get_tbl_data_result('id,slug,name','drrcategory',false,'sort_order',false,);
+		$this->data['categories'] = $this->general->get_tbl_data_result('id,slug,name','drrcategory',false,'sort_order',false);
 		if ($this->form_validation->run() == TRUE){
 	    	$lang=$this->session->get_userdata('Language');
 	        if($lang['Language']=='en') {
