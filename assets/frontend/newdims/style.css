@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
- * Ripplethemes (https://ripplethemes.com/)
- * Copyright 2018- 2019 The ripplethemes Authors
+ * naxa (https://naxa.com.np/)
+ * Copyright 2018- 2019 The naxa Authors
  */
 @import url("https://fonts.googleapis.com/css?family=sanse:400,500,500i,600,600i,700,800,900|Mukta:400,500,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=sanse:400,500,500i,600,600i,700,800,900|Mukta:400,500,600,700,800");
@@ -34,7 +34,7 @@ section {
 body {
   margin: 0;
   font-family: "Mukta", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #060606;
@@ -480,7 +480,7 @@ figure {
 
 code {
   font-size: 87.5%;
-  color: #592c87;
+  color: #366CAD;
   word-break: break-word;
 }
 
@@ -612,7 +612,7 @@ main {
 }
 .section-title {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -691,7 +691,7 @@ main {
   transform: perspective(1px) translateZ(0px);
   vertical-align: middle;
   padding: 5px 20px;
-  background: #673bb7;
+  background: #366CAD;
   color: #ffffff;
   overflow: hidden;
   -webkit-border-radius: 2rem;
@@ -701,7 +701,7 @@ main {
   box-shadow: none;
   border: none;
   text-transform: capitalize;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   position: relative;
 }
@@ -722,7 +722,7 @@ main {
 }
 .iset-btn.btn-white {
   background-color: #ffffff;
-  color: #673bb7;
+  color: #366CAD;
 }
 .iset-btn::after {
   background: #DE3535;
@@ -796,7 +796,7 @@ main {
   -o-transform: translate(0px, -100%) scale(0, 0);
   -webkit-transform: translate(0px, -100%) scale(0, 0);
   transform: translate(0px, -100%) scale(0, 0);
-  background-color: rgba(103, 59, 183, 0.8);
+  background-color: rgba(54, 108, 173, 0.8);
   position: fixed;
   top: 0px;
   left: 0px;
@@ -980,7 +980,7 @@ main {
   height: 4px;
   border-radius: 4px;
   width: 100%;
-  background-color: #673bb7;
+  background-color: #366CAD;
   top: 0;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   z-index: 999;
@@ -1024,7 +1024,7 @@ main {
 .site-header .headerWrap .headRight .main-navigation .menu-primary-container ul li a {
   display: block;
   padding: 1.2rem 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   position: relative;
   font-weight: 600;
@@ -1034,7 +1034,7 @@ main {
   transition: all 0.5s;
 }
 .site-header .headerWrap .headRight .main-navigation .menu-primary-container ul li a:hover {
-  color: #673bb7;
+  color: #366CAD;
 }
 .site-header .headerWrap .headRight .main-navigation .menu-primary-container ul li.menu-item-has-children {
   position: relative;
@@ -1162,7 +1162,7 @@ main {
   text-align: right;
 }
 .site-header .headerWrap .headRight .main-navigation .menu-primary-container ul li.menu-item-has-current a {
-  color: #673bb7;
+  color: #366CAD;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1179,7 +1179,7 @@ main {
     max-width: 400px;
     padding: 15px;
     width: 100%;
-    background-color: rgba(103, 59, 183, 0.9);
+    background-color: rgba(54, 108, 173, 0.9);
     z-index: 999;
     top: 0;
     right: -100%;
@@ -1308,7 +1308,7 @@ main {
 
 footer.site-footer {
   margin-top: 1rem;
-  background-color: #653ab4;
+  background-color: #356aaa;
   color: #ffffff;
   clear: both;
 }
@@ -1333,7 +1333,7 @@ footer.site-footer .scroll-up {
   -ms-border-radius: 50%;
   border-radius: 50%;
   margin-top: -70px;
-  background-color: #653ab4;
+  background-color: #356aaa;
   font-size: 2rem;
 }
 footer.site-footer .scroll-up i {
@@ -1423,7 +1423,7 @@ footer.site-footer .footer-widget .ft-content .social-links li a {
 }
 footer.site-footer .footer-widget .ft-content .social-links li a:hover {
   background-color: #ffffff;
-  color: #673bb7;
+  color: #366CAD;
 }
 footer.site-footer .footer-widget .ft-content .contact-links li a {
   display: block;
@@ -1452,11 +1452,11 @@ footer.site-footer .footer-widget .ft-content .contact-links li a i {
 }
 footer.site-footer .footer-widget .ft-content .contact-links li a i:hover {
   background-color: #ffffff;
-  color: #673bb7;
+  color: #366CAD;
 }
 
 .copyright {
-  background-color: #673bb7;
+  background-color: #366CAD;
   color: #ffffff;
   text-align: center;
   font-size: 0.775rem;
@@ -1521,7 +1521,7 @@ footer.site-footer .footer-widget .ft-content .contact-links li a i:hover {
   width: 100%;
   height: 160px;
   margin: 0 auto;
-  background-color: #673bb7;
+  background-color: #366CAD;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1541,7 +1541,7 @@ footer.site-footer .footer-widget .ft-content .contact-links li a i:hover {
   padding-bottom: 120px;
 }
 .inner-banner.hazard-breadcrumb .overlay {
-  background-color: rgba(103, 59, 183, 0.7);
+  background-color: rgba(54, 108, 173, 0.7);
 }
 .inner-banner.hazard-breadcrumb .breadcrumb-content {
   color: #ffffff;
@@ -1585,8 +1585,8 @@ footer.site-footer .footer-widget .ft-content .contact-links li a i:hover {
   line-height: 50px;
 }
 .breadcrumb-form .nice-select:after {
-  border-bottom: 2px solid #673bb7;
-  border-right: 2px solid #673bb7;
+  border-bottom: 2px solid #366CAD;
+  border-right: 2px solid #366CAD;
   height: 10px;
   width: 10px;
 }
@@ -1602,7 +1602,7 @@ footer.site-footer .footer-widget .ft-content .contact-links li a i:hover {
   border-radius: 0;
   border: 0;
   font-size: 1.5rem;
-  color: #673bb7;
+  color: #366CAD;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1646,8 +1646,8 @@ footer.site-footer .footer-widget .ft-content .contact-links li a i:hover {
   }
 }
 /*!
- * Ripplethemes (https://ripplethemes.com/)
- * Copyright 2018- 2019 The ripplethemes Authors
+ * naxa (https://naxa.com.np/)
+ * Copyright 2018- 2019 The naxa Authors
  */
 *,
 ::after,
@@ -1678,7 +1678,7 @@ section {
 body {
   margin: 0;
   font-family: "Mukta", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #060606;
@@ -2124,7 +2124,7 @@ figure {
 
 code {
   font-size: 87.5%;
-  color: #592c87;
+  color: #366CAD;
   word-break: break-word;
 }
 
@@ -2286,7 +2286,7 @@ pre code {
 .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper {
   max-width: 700px;
   padding: 3rem;
-  background-color: rgba(103, 59, 183, 0.85);
+  background-color: rgba(54, 108, 173, 0.85);
 }
 .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper h1 {
   font-size: 3rem;
@@ -2403,18 +2403,18 @@ pre code {
   min-height: 310px;
 }
 .hazard-section .hazard-item figure svg {
-  fill: #673bb7;
+  fill: #366CAD;
 }
 .hazard-section .hazard-item .hazard-content h4 {
-  color: #673bb7;
+  color: #366CAD;
   text-transform: capitalize;
   margin: 1rem 0;
 }
 .hazard-section .hazard-item .hazard-content h4 a {
-  color: #673bb7;
+  color: #366CAD;
 }
 .hazard-section .hazard-item::after {
-  background: #673bb7;
+  background: #366CAD;
   bottom: 0;
   content: "";
   left: 0;
@@ -2513,7 +2513,7 @@ pre code {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
-  background-color: #673bb7;
+  background-color: #366CAD;
   position: relative;
 }
 .drr-section .drr-item figure svg {
@@ -2526,9 +2526,9 @@ pre code {
   border-radius: 50%;
 }
 .drr-section .drr-item .drr-content h4 {
-  color: #673bb7;
+  color: #366CAD;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 1.5rem 0 1.2rem 0;
   font-weight: 600;
 }
@@ -2581,7 +2581,7 @@ pre code {
   flex-direction: column;
   align-items: center;
   color: #ffffff;
-  background-color: #673bb7;
+  background-color: #366CAD;
 }
 .beready-row .beready-item .overlay figure svg {
   fill: #ffffff;
@@ -2711,8 +2711,8 @@ pre code {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(103, 59, 183, 0.3);
-  border: 4px solid #673bb7;
+  background-color: rgba(54, 108, 173, 0.3);
+  border: 4px solid #366CAD;
   z-index: 1;
 }
 .page-hazard .hazard-list figure {
@@ -2833,7 +2833,7 @@ pre code {
   position: absolute;
   left: 0;
   top: 0;
-  color: #673bb7;
+  color: #366CAD;
 }
 .before-list.bef-aft-list {
   padding-right: 100px;
@@ -2906,7 +2906,7 @@ pre code {
   font-size: 1rem;
 }
 .resource-section .resource-list .resource-content .resource-top h3 a {
-  color: #673bb7;
+  color: #366CAD;
 }
 .resource-section .resource-list .resource-content .resource-top h3 a:hover {
   color: #DE3535;
@@ -2938,7 +2938,7 @@ pre code {
   margin-right: 0.5rem;
 }
 .resource-section .resource-list .resource-content .resource-bottom .btm-left a {
-  color: #673bb7;
+  color: #366CAD;
 }
 .resource-section .resource-list .resource-content .resource-bottom .btm-left a i {
   margin-left: 0.2rem;
@@ -2951,7 +2951,7 @@ pre code {
   font-size: 0.875rem;
 }
 .resource-section .resource-list .resource-content .resource-bottom .btm-right a {
-  color: #673bb7;
+  color: #366CAD;
   font-size: 0.875rem;
 }
 .resource-section .resource-list .resource-content .resource-bottom .btm-right a i {
@@ -2996,7 +2996,7 @@ pre code {
 }
 .knowledge aside.left-sidebar .card .card-header h5 a {
   display: block;
-  color: #673bb7;
+  color: #366CAD;
   font-size: 1rem;
   text-transform: capitalize;
   position: relative;
@@ -3016,7 +3016,7 @@ pre code {
   margin-bottom: 0.4rem;
 }
 .knowledge aside.left-sidebar .card .card-body ul li a {
-  color: #673bb7;
+  color: #366CAD;
   padding-left: 1.2rem;
   position: relative;
   text-transform: capitalize;
@@ -3047,7 +3047,7 @@ pre code {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(103, 59, 183, 0.5);
+  background-color: rgba(54, 108, 173, 0.5);
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -3078,7 +3078,7 @@ pre code {
   font-size: 1rem;
 }
 .knowledge .knoledge-body .card .knoledge-list .knowldege-content h4:hover a {
-  color: #673bb7;
+  color: #366CAD;
 }
 .knowledge .knoledge-body .card .knoledge-list .knowldege-content time {
   font-size: 0.875rem;
@@ -3094,7 +3094,7 @@ pre code {
   flex-wrap: wrap;
 }
 .knowledge .knoledge-body .card .knoledge-list .knowldege-content .post-meta a {
-  color: #673bb7;
+  color: #366CAD;
   font-size: 1rem;
   text-transform: capitalize;
 }
@@ -3122,7 +3122,7 @@ pre code {
   margin-bottom: 1rem;
 }
 .calendar aside.left-sidebar .card .card-body ul li a {
-  color: #673bb7;
+  color: #366CAD;
   padding-left: 1.2rem;
   position: relative;
   font-family: "Mukta", sans-serif;
@@ -3173,8 +3173,8 @@ pre code {
   text-transform: capitalize;
   font-weight: 600;
   font-family: "Mukta", sans-serif;
-  color: #673bb7;
-  border: 1px solid #673bb7;
+  color: #366CAD;
+  border: 1px solid #366CAD;
   -webkit-border-radius: 2rem;
   -moz-border-radius: 2rem;
   -ms-border-radius: 2rem;
@@ -3212,7 +3212,7 @@ pre code {
   font-weight: 600;
 }
 .calendar .calendar-body .card .timeline .timeline-list ul li .event-list a {
-  color: #673bb7;
+  color: #366CAD;
   font-size: 1rem;
 }
 .calendar .calendar-body .card .timeline .timeline-list ul li .event-list.green::after {
@@ -3226,7 +3226,7 @@ pre code {
   box-shadow: 0 0 0 5px rgba(247, 147, 30, 0.5);
 }
 .calendar .calendar-body .card .timeline .timeline-list ul li .event-list.purple::after {
-  background-color: #592c87;
+  background-color: #366CAD;
   -moz-box-shadow: 0 0 0 5px rgba(89, 44, 135, 0.5);
   box-shadow: 0 0 0 5px rgba(89, 44, 135, 0.5);
 }
@@ -3259,7 +3259,7 @@ pre code {
   font-size: 1rem;
 }
 .audio-list ul li.active a, .audio-list ul li:hover a {
-  color: #673bb7;
+  color: #366CAD;
   text-decoration: underline;
 }
 
@@ -3314,7 +3314,7 @@ pre code {
   align-items: center;
   flex-direction: column;
   align-items: center;
-  background-color: #673bb7;
+  background-color: #366CAD;
   color: #ffffff;
   margin-right: 0.875rem;
 }

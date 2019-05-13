@@ -141,7 +141,7 @@
                     <?php } ?>
                         <div class="col-md-3 detailDictionary">
                             <div class="dictonaryItem">
-                                <a href="javascript:void(0);"  data-html="true" id="popover" data-trigger="hover" class="dictionaryPopup" data-toggle="popover" title="Meaning Of <?php echo $tag['word']; ?>" data-content="<div><?php echo $tag['meaning'] ?></div><div class='mtb-15'><img src='<?php echo $tag['image'] ?>' width='200'/></div><div><h5>Comment</h5><?php  echo $tag['comment']; ?></div>"><?php echo ucfirst($tag['word']); ?></a>  
+                                <a href="javascript:void(0);"  data-html="true" id="popover" data-trigger="hover" class="dictionaryPopup" data-toggle="popover" title="Meaning Of <?php echo $tag['word']; ?>" data-content="<div><?php echo $tag['meaning'] ?></div><div class='mtb-15'><img src='<?php echo $tag['image'] ?>' width='200'/></div><div><h5>Comment</h5><?php  echo $tag['comment']; ?></div>"><?php echo $tag['word']; ?></a>  
                             </div>
                         </div>
                     <?php if($key == count($dictionary)-1) { 
