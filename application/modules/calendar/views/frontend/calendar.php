@@ -17,10 +17,10 @@
                                 <li><a href="#baishakh">बैसाख</a></li>
                             <?php endif;
                             if($jestha): ?>
-                                <li><a href="#jesth">जेठ</a></li>
+                                <li><a href="#jesth">जेष्ठ</a></li>
                                 <?php endif;
                             if($asad): ?>
-                                <li><a href="#ashad">आषाढ़</a></li>
+                                <li><a href="#ashad">असार</a></li>
                                 <?php endif;
                             if($sawn): ?>
                                 <li><a href="#shrawan">श्रावण</a></li>
@@ -35,10 +35,10 @@
                                 <li><a href="#kartik">कार्तिक</a></li>
                                 <?php endif;
                             if($mangsir): ?>
-                                <li><a href="#mangsir">मंसिर</a></li>
+                                <li><a href="#mangsir">मङसिर</a></li>
                                 <?php endif;
                             if($poush): ?>
-                                <li><a href="#paush">पौस</a></li>
+                                <li><a href="#paush">पौष</a></li>
                                 <?php endif;
                             if($magh): ?>
                                 <li><a href="#magh">माघ</a></li>
@@ -77,7 +77,7 @@
                                 </div>
                                 <?php endif; if($jestha):   ?>
                                 <div class="timeline-list" id="jesth">
-                                        <time>जेठ </time>
+                                        <time>जेष्ठ </time>
                                     <ul>
                                        <?php if($jestha): 
                                     foreach ($jestha as $key => $b) {  ?>
@@ -93,7 +93,7 @@
                                 </div>
                                 <?php endif; if($asad):   ?>
                                 <div class="timeline-list" id="ashad">
-                                    <time>आषाढ़ </time>
+                                    <time>असार </time>
                                     <ul>
                                         <?php if($asad): 
                                     foreach ($asad as $key => $b) {  ?>
@@ -173,7 +173,7 @@
                                 </div>
                                 <?php endif; if($mangsir):   ?>
                                 <div class="timeline-list" id="mangsir">
-                                    <time>मंसिर </time>
+                                    <time>मङसिर </time>
                                     <ul>
                                         <?php if($mangsir): 
                                     foreach ($mangsir as $key => $b) {  ?>
@@ -189,7 +189,7 @@
                                 </div>
                                 <?php endif; if($poush):   ?>
                                 <div class="timeline-list" id="paush">
-                                    <time>पौस </time>
+                                    <time>पौष </time>
                                     <ul>
                                         <?php if($poush): 
                                     foreach ($poush as $key => $b) {  ?>

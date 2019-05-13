@@ -93,7 +93,7 @@
             <section class="before-section<?php echo $d['slug']; ?> pdtb-50 bef-aft" id="before-section<?php echo $d['slug']; ?>" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
                 <div class="container">
                     <div class="section-title mrb-50">
-                        <h3><?php echo $d['name']; ?></h3>
+                       <!--  <h3><?php //echo $d['name']; ?></h3> -->
                         <span><?php echo $finaldetails['short_desc']; ?></span>
                     </div>
                     <div class="before-list bef-aft-list">
@@ -104,7 +104,7 @@
         <?php  } }
             endforeach;
             endif; ?>
-            <section class="before-sectionintroduction bg-white bef-aft pdtb-50 mrb-50 aos-init aos-animate active" id="before-sectioninfographics" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
+           <!--  <section class="before-sectionintroduction bg-white bef-aft pdtb-50 mrb-50 aos-init aos-animate active" id="before-sectioninfographics" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
                 <div class="container">
                     <div class="section-title mrb-50">
                         <h3>Related Infographics</h3>
@@ -155,4 +155,4 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
