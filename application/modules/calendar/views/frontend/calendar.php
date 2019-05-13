@@ -68,7 +68,7 @@
                                         <li>
                                             <div class="event-list green">
                                                 <h5><?php echo $b['name'] ?></h5>
-                                                <a href="#"><?php echo $b['description']?></a>
+                                                <a href="<?php echo base_url('drrinfo/drrdetails/'.$b['type'])  ?>"><?php echo $b['description']?></a>
                                             </div>
                                         </li>
 

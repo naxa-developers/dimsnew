@@ -3,7 +3,7 @@ class Calendar_mdl extends CI_Model {
 	public function add_inventory($table,$data){
         $id=$this->input->post('id');
         if(!empty($id))
-        {
+        { //echo "hi";die;
             if($this->db->update($table,$data,array('id'=>$id)))
             {
                 return $id;
@@ -62,8 +62,9 @@ class Calendar_mdl extends CI_Model {
     public function add_inventory_cat($table, $data)
     {
         $id=$this->input->post('id');
+        //print_r($id);die;
         if($id)
-        {
+        {// echo "hi";die;
             if($this->db->update($table,$data,array('id'=>$id)))
             {
                 return $id;

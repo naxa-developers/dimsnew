@@ -28,6 +28,19 @@
                       <label for="name">Date:</label>
                       <input type='text' name="created_at" class="form-control" value="<?php echo !empty($drrdataeditdata[0]['created_at'])?$drrdataeditdata[0]['created_at']:'' ?>" id='nepaliDate'/>
                 </div>
+                <div class="form-group position-center">
+                      <?php if($categories): ?>
+                            <?php $dbcatid = !empty($drrdataeditdata[0]['type'])?$drrdataeditdata[0]['type']:'' ?>
+                            <label for="type">प्रकोप छानुहोस : </label>
+                            <select class="form-control" id="type" name="type" required>
+                                <option value="0">----  प्रकोप छानुहोस  ----- </option>
+                                <?php foreach ($categories as $key => $value) { ?>
+                                <option value="<?php echo $value['id'] ?>" <?php if($dbcatid == $value['id']){ echo "Selected=Selected";}?>><?php echo  $value['name']; ?></option>
+                                <?php } ?>
+                            <?=form_error('type')?>
+                            </select>
+                        <?php endif; ?>
+                </div>
                 <div class="panel-body">
                     <div class="position-center">
                       <div class="form-group">
