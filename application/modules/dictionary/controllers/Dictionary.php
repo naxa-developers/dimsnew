@@ -21,7 +21,7 @@ class Dictionary extends Admin_Controller
 	    }
 		
 		//echo $this->db->last_query();die;
-		echo"<pre>"; print_r($this->data['dictionary']);die;
+		//echo"<pre>"; print_r($this->data['dictionary']);die;
 		$this->template->set_layout('frontend/default');
 		$this->template
 			->enable_parser(FALSE)
