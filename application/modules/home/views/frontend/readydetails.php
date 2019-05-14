@@ -4,7 +4,7 @@
         <figure>
            <img src="<?php echo base_url('uploads/project/'.$beready[0]['image']) ?>" alt="<?php echo $beready[0]['name'] ?>">
         </figure>
-        <h1>घरमा तयारी </h1>
+        <h1><?php echo $beready[0]['name'] ?> </h1>
         <p>तपाईंको वरिपरीको जानकारी लिनुहोस् र विपद जोखिम न्यूनीकरणको लागि तयार हुनुहोस् आफ्नो परिवार, साथीभाई, सहयोगी , समुदायमा छलफल गर्नुहोस् र सुरक्षित हुनुहोस्</p>
     </div>
 </section>
