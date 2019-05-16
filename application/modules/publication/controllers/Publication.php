@@ -76,4 +76,11 @@ class Publication extends Admin_Controller
 		force_download($name,$data);
 
 	}
+	function downloadimage()
+	{
+	    $this->load->helper('download');
+	    $img=$this->input->get('file');
+	    //print_r($img);die;
+	    force_download($img, $img);
+	}
 }

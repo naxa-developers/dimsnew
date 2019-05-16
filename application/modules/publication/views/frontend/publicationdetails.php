@@ -56,7 +56,7 @@
                                                 $size=filesize($path);
                                                 $size_kb=$size/1024;
                                                echo round($size_kb).' kB';
-                                               $link= base_url().'/publication/download?file='.$d['photo'].'&& title='.$d['title'];
+                                               $link= base_url().'/publication/downloadimage?file='.$d['photo'].'&& title='.$d['title'];
 
                                              }else{
                                                echo '0 KB';
@@ -66,7 +66,7 @@
                                          }
                                              ?>
                                          </span>
-                                        <a href="<?php  echo $link ?>" class="iset-btn small-btn">Download <i class="la la-download"></i></a>
+                                        <a href="<?php  echo base_url().'/publication/downloadimage?file='.$d['photo'].'&& title='.$d['title'] ?>" class="iset-btn small-btn">Download <i class="la la-download"></i></a>
                                     </div>
                                 </div>
                             </div>
