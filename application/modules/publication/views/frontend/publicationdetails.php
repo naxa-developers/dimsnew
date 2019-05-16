@@ -36,16 +36,35 @@
                                 <div class="resource-bottom">
                                     <div class="btm-left">
                                         <span class="file-size">
-                                            <?php $path=str_replace('http://kmc.naxa.com.np/','', $d['file']);
-                                            if(file_exists($path)){
-                                              $size=filesize($path);
-                                              $size_kb=$size/1024;
-                                             echo round($size_kb).' kB';
-                                             $link= base_url().'/publication/download?file='.$d['file'].'&& title='.$d['title'];
+                                            <?php
+                                            if($d['type'] == "files") {
+                                               $path=str_replace('http://kmc.naxa.com.np/','', $d['file']);
+                                              if(file_exists($path)){
+                                                $size=filesize($path);
+                                                $size_kb=$size/1024;
+                                               echo round($size_kb).' kB';
+                                               $link= base_url().'/publication/download?file='.$d['file'].'&& title='.$d['title'];
+
+                                             }else{
+                                               echo '0 KB';
+                                               $link='#';
+                                             } 
                                            }else{
-                                             echo '0 KB';
-                                             $link='#';
-                                           } ?>
+                                            if($d['type'] == "images") {
+                                               $path=str_replace('http://kmc.naxa.com.np/','', $d['photo']);
+                                              if(file_exists($path)){
+                                                $size=filesize($path);
+                                                $size_kb=$size/1024;
+                                               echo round($size_kb).' kB';
+                                               $link= base_url().'/publication/download?file='.$d['photo'].'&& title='.$d['title'];
+
+                                             }else{
+                                               echo '0 KB';
+                                               $link='#';
+                                             } 
+                                           }
+                                         }
+                                             ?>
                                          </span>
                                         <a href="<?php  echo $link ?>" class="iset-btn small-btn">Download <i class="la la-download"></i></a>
                                     </div>
