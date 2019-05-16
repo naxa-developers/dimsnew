@@ -180,13 +180,18 @@ class Admin extends Admin_Controller {
 	      	$ext_file = pathinfo($attachment, PATHINFO_EXTENSION);
 	      	$ext_file_audio = pathinfo($audio, PATHINFO_EXTENSION);
 	      	$page_slug_new = strtolower (preg_replace('/[[:space:]]+/', '-', $this->input->post('title')));
+	      	if($this->input->post('category') == "other"){
+	      		$cat = "1000";
+	      	}else{
+	      		$cat =$this->input->post('category');
+	      	}
 	      	$data=array(
 	      		//'slug'=>$page_slug_new,
 	        	'title'=>$this->input->post('title'),
 	        	'summary'=>$this->input->post('summary'),
 	        	'type'=>$this->input->post('type'),
 	        	'subcat'=>$this->input->post('subcat'),
-	        	'category'=>$this->input->post('category'),
+	        	'category'=>$cat,
 	        	'videolink'=>$this->input->post('videolink'),
 	        	'filecat'=>$this->input->post('filecat'),
 	        	'lang'=>$language,

@@ -80,7 +80,8 @@ class Publication extends Admin_Controller
 	{
 	    $this->load->helper('download');
 	    $img=$this->input->get('file');
+	    $name=$this->input->get('title').'.jpg';
 	    //print_r($img);die;
-	    force_download($img, $img);
+	    force_download($img, NULL);
 	}
 }
