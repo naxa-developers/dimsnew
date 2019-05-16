@@ -9,7 +9,7 @@
                             <figure>
                                 <?php if($d['type'] == "images"){ ?>
                                   <div class="docImg">
-                                      <img src="<?php echo base_url()?>/assets/frontend/img/doc.png" alt="<?php echo $d['title']?>">
+                                      <img src="<?php echo $d['photo'] ?>" alt="<?php echo $d['title']?>">
                                   </div>
                                 <?php } if($d['type'] == "files"): ?>
                                   <a href="<?php echo $d['file'] ?>">
@@ -99,8 +99,19 @@
                                 </div>
                                 <div class="resource-bottom">
                                     <div class="btm-left">
-                                        <span class="file-size">200 mb</span>
-                                        <a href="#">Download <i class="la la-download"></i></a>
+                                    <span class="file-size">
+                                    <?php $path=str_replace('http://kmc.naxa.com.np/','', $pub['file']);
+                                            if(file_exists($path)){
+                                              $size=filesize($path);
+                                              $size_kb=$size/1024;
+                                             echo round($size_kb).' kB';
+                                             $link= base_url().'/publication/download?file='.$pub['file'].'&& title='.$pub['title'];
+                                           }else{
+                                             echo '0 KB';
+                                             $link='#';
+                                           } ?>
+                                        </span>
+                                        <a href="<?php  echo $link ?>">Download <i class="la la-download"></i></a>
                                     </div>
                                     <div class="btm-right">
                                         <a class="read-more" href="<?php echo base_url()?>/publication/details/?id=<?php echo base64_encode($pub['id']);?>">Read more <i class="la la-long-arrow-right"></i></a>
