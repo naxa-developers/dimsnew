@@ -295,13 +295,18 @@ class Admin extends Admin_Controller {
 			      	$old_uploadedfile  = $this->input->post('old_uploadedfile');
 			      	$old_audio  = $this->input->post('old_audio');
 			      	$old_image  = $this->input->post('old_image');
+			      		if($this->input->post('category') == "other"){
+				      		$cat = "1000";
+				      	}else{
+				      		$cat =$this->input->post('category');
+				      	}
 			        $data=array(
 			        	//'slug'=>$page_slug_new,
 			        	'title'=>$this->input->post('title'),
 			        	'summary'=>$this->input->post('summary'),
 			        	'type'=>$this->input->post('type'),
 			        	'subcat'=>$this->input->post('subcat'),
-			        	'category'=>$this->input->post('category'),
+			        	'category'=>$cat,
 			        	'videolink'=>$this->input->post('videolink'),
 			        	'filecat'=>$this->input->post('filecat'),
 			        	'lang'=>$language,
@@ -370,12 +375,17 @@ class Admin extends Admin_Controller {
 			          //db error
 			        }
 	        }else{
+	        	if($this->input->post('category') == "other"){
+		      		$cat = "1000";
+		      	}else{
+		      		$cat =$this->input->post('category');
+		      	}
 				$data=array(
 		        	'title'=>$this->input->post('title'),
 		        	'summary'=>$this->input->post('summary'),
 		        	'type'=>$this->input->post('type'),
 		        	'subcat'=>$this->input->post('subcat'),
-		        	'category'=>$this->input->post('category'),
+		        	'category'=>$cat,
 		        	'videolink'=>$this->input->post('videolink'),
 		        	'filecat'=>$this->input->post('filecat'),
 		        	'lang'=>$language

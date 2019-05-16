@@ -33,6 +33,7 @@
                     foreach ($pub as $key => $value) {  ?>
                       <option value="<?php echo $value['id']  ?>" <?php if($dbcatid == $value['id']){ echo "Selected=Selected";}?>><?php echo $value['name'] ?></option>
                     <?php }  } ?>
+                    <option value="other" <?php if($dbcatid == "1000"){ echo "Selected=Selected";} ?>>विपद्</option>
                   </select>
                   <?php echo form_error('category'); ?>
                   </div>
