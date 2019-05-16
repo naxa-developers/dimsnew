@@ -24,7 +24,8 @@ class Publication extends Admin_Controller
 		    if(isset($_POST['submit'])){
 		    	$this->data['publicationdata']=$this->Publication_model->publication_search();
 		    }else{
-		    	$this->data['publicationdata']=$this->Publication_model->publication_search();
+		    	$this->data['publicationdata']=$this->Publication_model->publication_search('files');
+		    	//echo $this->db->last_query();die;
 		    }
 
 

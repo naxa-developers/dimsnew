@@ -199,6 +199,8 @@ else
       $broucher =  $this->input->post('brouchure');
       $audio =  $this->input->post('audio');
       $video =  $this->input->post('video');
+      $other =  $this->input->post('other');
+
       $document =  $this->input->post('document');
       $type =  $this->input->post('type');
       $subcat =  $this->input->post('subcat');
@@ -209,6 +211,10 @@ else
       {
         $sql = "p.title LIKE '%" . $keywords ."%' OR p.type LIKE '%" . $keywords ."%' OR p.summary LIKE '%". $keywords."%'";
         $this->db->where($sql);
+      }
+      if($other)
+      {
+         $this->db->where_in('p.filecat',$other);
       }
       if($audio)
       {
@@ -251,7 +257,7 @@ else
       } 
       return false;
   }
-  public function publication_search()
+  public function publication_search($cond = false)
   {  
       $keywords =  $this->input->post('keywords');
       $category =  $this->input->post('category');
@@ -285,7 +291,10 @@ else
       {
           $this->db->where('p.filecat',$broucher);
       }
-      
+      if($cond)
+      {
+          $this->db->where('p.type',$cond);
+      }
       if($category !="all")
       {
         if($category)
