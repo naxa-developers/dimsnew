@@ -173,7 +173,7 @@
             $(this).closest('.form-group').remove();
         });
         var count = $('.addCheckOptionRow .btnminus').length+1;
-        $('.addCheckOptionRow').append('<div class="form-group"> <div class="col-md-3"> <label></label> <div class="mt-checkbox-list"> <label class="mt-checkbox mt-checkbox-outline"> </label> <span>Check The right Answer <input type="checkbox" name="right_answer_radio[]" $(this).attr(\'value\', this.checked ? 1 : 0)"></input></span></div></div><div class="col-md-6"> <label class="control-label">Please Enter Otption <span class="required" aria-required="true"> * </span> </label> <input id="check'+count+'" type="text" name="checkboxoption[]" class="form-control" placeholder="Enter Please Enter Otption "> </div><div class="col-md-3"> <br><button class="btn btn-danger btnminus " type="button">x</button> <label class="control-label"></label></div></div>');
+        $('.addCheckOptionRow').append('<div class="form-group"> <div class="col-md-3"> <label></label> <div class="mt-checkbox-list"> <label class="mt-checkbox mt-checkbox-outline"> </label> <span>Check The right Answer <input type="checkbox" name="right_answer_radio[]" onclick="$(this).attr(\'value\', this.checked ? 1 : 0)"></input></span></div></div><div class="col-md-6"> <label class="control-label">Please Enter Otption <span class="required" aria-required="true"> * </span> </label> <input id="check'+count+'" type="text" name="checkboxoption[]" class="form-control" placeholder="Enter Please Enter Otption "> </div><div class="col-md-3"> <br><button class="btn btn-danger btnminus " type="button">x</button> <label class="control-label"></label></div></div>');
 
     });
     $(document).off('click','#addDropdownOption');

@@ -43,23 +43,61 @@ class Quiz extends Admin_Controller
         if($this->input->server('REQUEST_METHOD')=='POST')
         {
             $questionid = $this->input->post('nqnid');
-            $optionsid = $this->input->post('curn');
+            $catid = $this->input->post('catid');
+            $optionsid = $this->input->post('optionid');
             $questions = $this->general->get_tbl_data_result('*','quiz_options', array('id'=>$optionsid,"category_id"=>$questionid));
+            $maxid = $this->general->get_tbl_data_result('max(id) as id','quiz', array('cat_id'=>$catid));
             $quiz = $this->general->get_tbl_data_result('*','quiz', array("id"=>$questionid));
             //print_r($questions[0]['right_answer']);die;
-            if($questions[0]['right_answer'] == "1" || $questions[0]['right_answer'] == "on")
-            {
-                $template = $quiz[0]['answer'];
-                $color = "alert-info";
-                print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong><i class="la la-check-circle la-2x"> </i> </strong> '.$template.'  </div>','message'=>'Record Selected Successfully')));
-            exit;
+            //print_r($_SERVER['SERVER_ADDR']);print_r( $questionid); print_r($this->input->post());
+            $d = explode('Physical Address. . . . . . . . .',shell_exec ("ipconfig/all"));  
+            $d1 = explode(':',$d[1]);  
+            $d2 = explode(' ',$d1[1]);  
+            $data_array= array(
+                "question_id"=>$questionid,
+                "option_id"=>$optionsid,
+                "cat_id"=>$catid,
+                "mac"=>$d2[1],
+                "ip"=>$_SERVER['SERVER_ADDR'],
+                );
+            $table="quiz_response";
+
+            $questionsright = $this->general->get_tbl_data_result('*','quiz_response', array('question_id'=>$questionid,'mac'=>$d2[1]));
+            if(empty($questionsright))
+            {   
+                $response = $this->quiz_model->insert_data($table,$data_array);
+
+                if($questions[0]['right_answer'] == "1" || $questions[0]['right_answer'] == "on")
+                {   
+                    $rightanswer = $this->quiz_model->update_data_right_answer($response,array('answer'=>"1"));
+                    $count = $this->general->get_tbl_data_result('count(id) as total','quiz_response', array("answer"=>"1"));
+                    $wcount = $this->general->get_tbl_data_result('count(id) as total','quiz_response', array("answer"=>"2"));
+                    if($maxid[0]['id'] === $questionid)
+                    {
+                        $trans = $this->quiz_model->wipedata($catid);
+                    }
+                            // print_r($count[0]['total']);die;
+                    $template = $quiz[0]['answer'];
+                    $color = "alert-info";
+                    print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong><i class="la la-check-circle la-2x"> </i> </strong> '.$template.'  </div>Total Right<span class="badge badge-secondary">'.$count[0]['total'].' </span> Total Wrong<span class="badge badge-secondary">'.$wcount[0]['total'].' </span>','message'=>'Record Selected Successfully')));
+                    exit;
+                }else{
+                    $rightanswer = $this->quiz_model->update_data_right_answer($response,array('answer'=>"2"));
+                    $rcount = $this->general->get_tbl_data_result('count(id) as total','quiz_response', array("answer"=>"1"));
+                    $count = $this->general->get_tbl_data_result('count(id) as total','quiz_response', array("answer"=>"2"));
+                    if($maxid[0]['id'] === $questionid)
+                    {
+                        $trans = $this->quiz_model->wipedata($catid);
+                    }
+                    $template = $quiz[0]['wrong_answer'];
+                    $color = "alert-danger";
+                    print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> '.$template.'  </div>Total Wrong<span class="badge badge-secondary">'.$count[0]['total'].' </span>  Total Right<span class="badge badge-secondary">'.$rcount[0]['total'].' </span>','message'=>'Record Selected Successfully')));
+                    exit;
+                }
             }else{
-                $template = $quiz[0]['wrong_answer'];
-                $color = "alert-danger";
-                print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> '.$template.'  </div>','message'=>'Record Selected Successfully')));
-            exit;
+                print_r(json_encode(array('status'=>'success','result'=>'<div class="alert alert-danger alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> You can not chnage your choice for this question   !!!!!  </div>','message'=>'Successfully')));
+                exit;
             }
-            
         }else{
             print_r(json_encode(array('status'=>'error','message'=>'Cannot Perform this Operation')));
             exit;

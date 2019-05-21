@@ -136,6 +136,31 @@ class DrrModel extends CI_Model {
       }
 
     }
+    public function only_information()
+    {
+        $this->db->select('subcat_id');
+        $this->db->from('drrinformation');
+        $this->db->group_by('subcat_id');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0)
+        {
+            return $data=$query->result_array();
+        } 
+        return false;
+    }
+    public function only_information_id($cond)
+    {
+        $this->db->select('name,id,slug');
+        $this->db->from('drrsubcategory');
+        $this->db->where_in("id",$cond);
+        $query = $this->db->get();
+        //echo $this->db->last_query();die;
+        if ($query->num_rows() > 0)
+        {
+            return $data=$query->result_array();
+        } 
+        return false;
+    }
     public function get_drrlist($cond =false)
     {
         $this->db->select('d.id as id,d.short_desc,c.name as categoryname,cs.name as subcatname');

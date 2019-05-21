@@ -44,6 +44,9 @@
                                 <?php endif; ?>
                             </ul>
                         </div>
+                        <!-- Start of CuterCounter Code -->
+                    <a href="javascript:voiv(0);" target="_blank"><img src="http://www.cutercounter.com/hits.php?id=gmepoxad&nd=9&style=80" border="0" alt="free counter"></a>
+                    <!-- End of CuterCounter Code -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -57,7 +60,6 @@
                         </div>
                     </div>
                 </div>
-               
             </div>
         </div>
     </footer> <section class="copyright">

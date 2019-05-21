@@ -6,6 +6,7 @@ class Drrinfo extends Admin_Controller
         $this->load->model('Main_model');
         $this->template->set_layout('frontend/default');
         $this->load->model('Publication_model');
+        $this->load->model('DrrModel');
 	}
 	public function index()
 	{	$this->body=array();
@@ -42,11 +43,18 @@ class Drrinfo extends Admin_Controller
 	    }else{
 	      $language='nep'; 
 	    }
-	    $this->data['drrsubcat'] = $this->general->get_tbl_data_result('slug,id,name','drrsubcategory',array('language'=>$language));
+	    $this->data['subcat'] = $this->DrrModel->only_information();
+	    foreach ($this->data['subcat'] as $key => $value) {
+	    	$list[]=$value['subcat_id'];
+	    }
+	    //print_r($list);
+	    $this->data['drrsubcat'] = $this->DrrModel->only_information_id($list);
+	    //$this->data['drrsubcat'] = $this->general->get_tbl_data_result('slug,id,name','drrsubcategory',array('language'=>$language));
+
 	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name,description','drrcategory',array('id'=>$cond,'language'=>$language));
 	    $this->data['pubd']=$this->Publication_model->get_publication_search();
 	    $this->data['page_title'] ="Disaster Information System";
-	    //echo "<pre>"; print_r($this->data['pubd']);die;
+	    //echo "<pre>"; print_r($this->data['drrsubcat']);die;
 		$this->template
 			->enable_parser(FALSE)
 			->title($this->data['page_title']) //this is for seo purpose 

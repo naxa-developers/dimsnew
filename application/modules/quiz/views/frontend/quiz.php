@@ -87,7 +87,7 @@
                                  <?php foreach ($newoptions as $key => $opvalue) { ?>
                                     <li>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio"  id="<?php echo $opvalue['id'] ?>" class="abc btn btn-secondary custom-control-input" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>">
+                                            <input type="radio"  id="<?php echo $opvalue['id'] ?>" class="abc btn btn-secondary custom-control-input" name="kp" data-id="<?php echo $opvalue['id'] ?>" data-qnid ="<?php echo $catevalue['id'] ?>" data-catid="<?php echo $catevalue['cat_id'] ?>">
                                             <label class="custom-control-label" for="<?php echo $opvalue['id'] ?>"><?php echo strip_tags($opvalue['name']); ?></label>
                                         </div>
                                     </li>
@@ -110,13 +110,14 @@
         jQuery.noConflict();
         var base_url='<?php echo base_url(); ?>';
         var urlpost = base_url+'/quiz/check_status';
-        var curn = $(this).data('id');
+        var optionid = $(this).data('id');
+        var catid = $(this).data('catid');
         var nqnid = $(this).data('qnid');
         $.ajax({
            type:'POST',
            url:urlpost,
            dataType: 'html',
-           data:{"curn":curn,"nqnid":nqnid},
+           data:{"optionid":optionid,"nqnid":nqnid,'catid':catid},
             beforeSend: function(){
 
             },

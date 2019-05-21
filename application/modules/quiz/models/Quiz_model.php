@@ -21,6 +21,19 @@ class Quiz_model extends CI_Model {
             }
         }
     }
+    public function insert_data($table,$data)
+    {  // print_r($data);die;
+        $this->db->insert($table,$data);
+        if ($this->db->affected_rows() > 0)
+        {
+        return $this->db->insert_id();
+        }
+        else
+        {
+            $error = $this->db->error();
+            return $error;
+        }
+    }
     public function delete($id,$tbl){
         $this->db->where('id',$id);
         return $this->db->delete($tbl);
@@ -107,6 +120,18 @@ class Quiz_model extends CI_Model {
             return $error;
         }
     }
+    public function update_data_right_answer($response,$data)
+    {
+        if($this->db->update("quiz_response",$data,array('id'=>$response),$data))
+        {
+            return TRUE;
+        }
+    }
+    public function wipedata($id)
+    {
+        $this->db->where('cat_id',$id);
+        return $this->db->delete("quiz_response");
+    }
     public function add_inventory_cat($table, $data)
     {
         $id=$this->input->post('id');
@@ -120,7 +145,7 @@ class Quiz_model extends CI_Model {
             $this->db->insert($table,$data);
             if ($this->db->affected_rows() > 0)
             {
-            return $this->db->insert_id();
+                return $this->db->insert_id();
             }
             else
             {
