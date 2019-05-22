@@ -55,17 +55,14 @@ class Quiz extends Admin_Controller
             // $d2 = explode(' ',$d1[1]);
 
         ob_start(); // Turn on output buffering
-        system('ifconfig /all'); //Execute external program to display output
+        system('ifconfig'); //Execute external program to display output
         $mycom=ob_get_contents(); // Capture the output into a variable
         ob_clean(); // Clean the output buffer
          
         $find_word = "Physical";
         $pmac = strpos($mycom, $find_word); // Find the position of Physical text in array
         $mac=substr($mycom,($pmac+36),17); // Get Physical Address 
-            $ipAddress=$_SERVER['REMOTE_ADDR'];
-            $arp=`arp -a $ipAddress`;
-            $output = shell_exec($arp);
-            print_r($output);die;          
+            print_r($mac);die;          
             $data_array= array(
                 "question_id"=>$questionid,
                 "option_id"=>$optionsid,
