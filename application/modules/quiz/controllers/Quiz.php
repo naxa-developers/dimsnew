@@ -55,7 +55,7 @@ class Quiz extends Admin_Controller
             // $d2 = explode(' ',$d1[1]);
 
         ob_start(); // Turn on output buffering
-        system('ifconfig'); //Execute external program to display output
+        system('ifconfig | grep HWaddr'); //Execute external program to display output
         $mycom=ob_get_contents(); // Capture the output into a variable
         ob_clean(); // Clean the output buffer
          
