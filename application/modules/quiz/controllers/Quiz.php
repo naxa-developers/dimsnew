@@ -52,7 +52,7 @@ class Quiz extends Admin_Controller
             //print_r($_SERVER['SERVER_ADDR']);print_r( $questionid); print_r($this->input->post());
             // $d = explode('Physical Address. . . . . . . . .',shell_exec ("ipconfig/all"));  
             // $d1 = explode(':',$d[1]);  
-            // $d2 = explode(' ',$d1[1]); 
+            // $d2 = explode(' ',$d1[1]);
 
             ob_start(); // Turn on output buffering
             system('ipconfig /all'); //Execute external program to display output
@@ -61,8 +61,8 @@ class Quiz extends Admin_Controller
              
             $find_word = "Physical";
             $pmac = strpos($mycom, $find_word); // Find the position of Physical text in array
-            $mac=substr($mycom,($pmac+36),17); // Get Physical Address
-            //print_r($mac);die;            
+            $mac=substr($mycom,($pmac+36),17); // Get Physical Address 
+            print_r($mac);die;          
             $data_array= array(
                 "question_id"=>$questionid,
                 "option_id"=>$optionsid,
