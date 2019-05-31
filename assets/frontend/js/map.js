@@ -1,48 +1,45 @@
 $(document).ready(function(){
     map = L.map("myMap", {
-				center: [map_lat,map_long],
-				zoom: map_zoom,
-				zoomControl:false
-		});
-		var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-		});
-		googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-			maxZoom: 20,
-			subdomains:['mt0','mt1','mt2','mt3']
-		});
-		googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
-			maxZoom: 20,
-			subdomains:['mt0','mt1','mt2','mt3']
-		});
-		googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-			maxZoom: 20,
-			subdomains:['mt0','mt1','mt2','mt3']
-		});
-		googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',{
-			maxZoom: 20,
-			subdomains:['mt0','mt1','mt2','mt3']
-		});
-		var none = "";
-		var baseLayers = {
-			"OpenStreetMap": osm,
-			"Google Streets": googleStreets,
-			"Google Hybrid": googleHybrid,
-			"Google Satellite": googleSat,
-			"Google Terrain": googleTerrain,
-			"None": none
-		};
-		osm.addTo(map);
-
+			center: [map_lat,map_long],
+			zoom: map_zoom,
+			zoomControl:false
+	});
+	var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+	});
+	googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+		maxZoom: 20,
+		subdomains:['mt0','mt1','mt2','mt3']
+	});
+	googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+		maxZoom: 20,
+		subdomains:['mt0','mt1','mt2','mt3']
+	});
+	googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+		maxZoom: 20,
+		subdomains:['mt0','mt1','mt2','mt3']
+	});
+	googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',{
+		maxZoom: 20,
+		subdomains:['mt0','mt1','mt2','mt3']
+	});
+	var none = "";
+	var baseLayers = {
+		"OpenStreetMap": osm,
+		"Google Streets": googleStreets,
+		"Google Hybrid": googleHybrid,
+		"Google Satellite": googleSat,
+		"Google Terrain": googleTerrain,
+		"None": none
+	};
+	osm.addTo(map);
         // view_layername only categories name
         function loadDataToMap(geojson_layer,layer_name,load,marker_type,style,popup_content,view_layername){
-
-          // console.log(geojson_layer);
-          // console.log(layer_name);
-          // console.log(marker_type);
-          // console.log(style);
-          // console.log(popup_content);
-
+            // console.log(geojson_layer);
+            // console.log(layer_name);
+            // console.log(marker_type);
+            // console.log(style);
+            // console.log(popup_content);
             window[layer_name+ "_toggle"] = new L.geoJson(geojson_layer, {
                 pointToLayer: function(feature,Latlng)
                 {   //console.log(style.icon);
@@ -65,7 +62,7 @@ $(document).ready(function(){
                     }
                     return marker;
                 },
-               //on each to load layer and feature no it
+                //on each to load layer and feature no it
                 onEachFeature: function (feature, layer) {
                     if(marker_type !='icon'){
                         layer.setStyle(style);
@@ -98,11 +95,11 @@ $(document).ready(function(){
                     });
                 }
             });
-          //  console.log(window[layer_name+ "_toggle"]);
-          //  if(load) {
+            //  console.log(window[layer_name+ "_toggle"]);
+            //  if(load) {
                 window[layer_name+ "_toggle"].addTo(map);
                 $(".rightSection").addClass("show");
-          //  }
+            //  }
         }
 
         //default load  data retrive

@@ -170,8 +170,9 @@
                     validate_numb("terminology")
                 });
             }
-        });
-        $('.ChangeLanguage').on('change',function(e) {
+        });-->
+        <script type="text/javascript">
+            $('.ChangeLanguage').on('change',function(e) {
             var url  = window.location.href;
             var language=$("#languageCode option:selected").val();//$(this).data('language'); //alert(language);
             var action="<?php echo base_url() ?>/home/change_language";
@@ -193,54 +194,54 @@
         });
 
         // conatct load table
-        $(".contact_tab").click(function(){
-            $("#contact_tbl").html('');
-            var sub_cat = $(this).attr('id');
-            var cat = $(this).attr('name');
-            $.ajax({
-                type: "json",
-                method:"POST",
-                url: '<?php echo base_url() ?>contact/get_contact_tbl',
-                datatype: 'html',
-                data: {category:cat,sub_category:sub_cat},
-                beforeSend: function(){
-                },
-                success: function(result) {
-                //console.log(result);
-                $("#contact_tbl").html(result);
-                }
-            });
-        });
-        $( "#contact_category" ).change(function() {
-            var cat=$(this).val();
-            var url='<?php echo base_url()?>contact?cat='+cat;
-              window.location=url;
-        });
+        // $(".contact_tab").click(function(){
+        //     $("#contact_tbl").html('');
+        //     var sub_cat = $(this).attr('id');
+        //     var cat = $(this).attr('name');
+        //     $.ajax({
+        //         type: "json",
+        //         method:"POST",
+        //         url: '<?php echo base_url() ?>contact/get_contact_tbl',
+        //         datatype: 'html',
+        //         data: {category:cat,sub_category:sub_cat},
+        //         beforeSend: function(){
+        //         },
+        //         success: function(result) {
+        //         //console.log(result);
+        //         $("#contact_tbl").html(result);
+        //         }
+        //     });
+        // });
+        // $( "#contact_category" ).change(function() {
+        //     var cat=$(this).val();
+        //     var url='<?php echo base_url()?>contact?cat='+cat;
+        //       window.location=url;
+        // });
 
-        $(document).ready(function () {
-            $("#searhddr").keyup(function () {
-                var keyword = $('#searhddr').val();
-                var action="<?php echo base_url() ?>/dictionary/ajaxAutoComplete";
-                $.ajax({
-                    type: "POST",
-                    url: action,
-                    dataType: 'html',
-                    data: {keyword:keyword},
-                    beforeSend: function(){
-                        $('#autolist').html();
-                    },
-                    success: function(jsons)
-                    {
-                        data = jQuery.parseJSON(jsons);
-                        $("#autolist").addClass("newAutolist");
-                        if(data.status=='success'){
-                            $('#autolist').html(data.template);
-                        }
-                    }
-                });
-            });
+        // $(document).ready(function () {
+        //     $("#searhddr").keyup(function () {
+        //         var keyword = $('#searhddr').val();
+        //         var action="<?php echo base_url() ?>/dictionary/ajaxAutoComplete";
+        //         $.ajax({
+        //             type: "POST",
+        //             url: action,
+        //             dataType: 'html',
+        //             data: {keyword:keyword},
+        //             beforeSend: function(){
+        //                 $('#autolist').html();
+        //             },
+        //             success: function(jsons)
+        //             {
+        //                 data = jQuery.parseJSON(jsons);
+        //                 $("#autolist").addClass("newAutolist");
+        //                 if(data.status=='success'){
+        //                     $('#autolist').html(data.template);
+        //                 }
+        //             }
+        //         });
+        //     });
 
 
-        });
+        // });
       
-   </script> -->
+   </script> 

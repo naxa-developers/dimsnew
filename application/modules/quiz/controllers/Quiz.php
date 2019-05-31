@@ -50,35 +50,44 @@ class Quiz extends Admin_Controller
             $quiz = $this->general->get_tbl_data_result('*','quiz', array("id"=>$questionid));
             //print_r($questions[0]['right_answer']);die;
             //print_r($_SERVER['SERVER_ADDR']);print_r( $questionid); print_r($this->input->post());
-            // $d = explode('Physical Address. . . . . . . . .',shell_exec ("ipconfig/all"));  
-            // $d1 = explode(':',$d[1]);  
+            // $d = explode('Physical Address. . . . . . . . .',shell_exec ("ipconfig/all"));
+            // $d1 = explode(':',$d[1]);
             // $d2 = explode(' ',$d1[1]);
 
-        ob_start(); // Turn on output buffering
-        system('ifconfig | grep HWaddr'); //Execute external program to display output
-        $mycom=ob_get_contents(); // Capture the output into a variable
-        ob_clean(); // Clean the output buffer
-         
-        $find_word = "Physical";
-        $pmac = strpos($mycom, $find_word); // Find the position of Physical text in array
-        $mac=substr($mycom,($pmac+36),17); // Get Physical Address 
-            print_r($mac);die;          
+            ob_start(); // Turn on output buffering
+            system('ifconfig | grep HWaddr'); //Execute external program to display output
+            $mycom=ob_get_contents(); // Capture the output into a variable
+            ob_clean(); // Clean the output buffer
+
+            $find_word = "Link encap:Ethernet HWaddr";
+            $pmac = strpos($mycom, $find_word); // Find the position of Physical text in array
+            $mac=substr($mycom,($pmac+36),27); // Get Physical Addr
+            $arr1 = explode(' ',trim($mac));
+                //ob_start(); // Turn on output buffering
+                //system('ipconfig /all'); //Execute external program to display output
+                //$mycom=ob_get_contents(); // Capture the output into a variable
+                //ob_clean(); // Clean (erase) the output buffer
+                //$findme = "Physical";
+                //$pmac = strpos($mycom, $findme); // Find the position of Physical text
+                //$macp=substr($mycom,($pmac+36),17); // Get Physical Address
+                //print_r($mycom);die;
+            //print_r($arr1[1]);die;
             $data_array= array(
                 "question_id"=>$questionid,
                 "option_id"=>$optionsid,
                 "cat_id"=>$catid,
-                "mac"=>$mac,
+                "mac"=>$arr1[1],
                 "ip"=>$_SERVER['SERVER_ADDR'],
                 );
             $table="quiz_response";
 
-            $questionsright = $this->general->get_tbl_data_result('*','quiz_response', array('question_id'=>$questionid,'mac'=>$mac));
+            $questionsright = $this->general->get_tbl_data_result('*','quiz_response', array('question_id'=>$questionid,'mac'=>$arr1[1]));
             if(empty($questionsright))
-            {   
+            {
                 $response = $this->quiz_model->insert_data($table,$data_array);
 
                 if($questions[0]['right_answer'] == "1" || $questions[0]['right_answer'] == "on")
-                {   
+                {
                     $rightanswer = $this->quiz_model->update_data_right_answer($response,array('answer'=>"1"));
                     $count = $this->general->get_tbl_data_result('count(id) as total','quiz_response', array("answer"=>"1"));
                     $wcount = $this->general->get_tbl_data_result('count(id) as total','quiz_response', array("answer"=>"2"));

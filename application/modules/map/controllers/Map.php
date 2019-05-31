@@ -13,7 +13,6 @@ class Map extends Admin_Controller
 	}
 	public function index() //default_page
     {
-
     	$this->data=array();
     	$this->body=array();
     	$this->template->set_layout('frontend/maplayout');
