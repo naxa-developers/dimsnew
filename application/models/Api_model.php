@@ -118,9 +118,13 @@ public function get_drr_info(){
 }
 
 public function get_publication(){
-  $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name');
+
+  $this->db->select('p.type,p.id,p.title,p.summary,p.photo,p.file,p.videolink,pc.name,p.filecat,p.subcat,fc.name as filecateroryname,sc.name as subfilecategory');
   $this->db->from('publication as p');
   $this->db->join('publicationcat as pc','pc.id = p.category','LEFT');
+  $this->db->join('publicationsubcat as fc','fc.id = p.filecat','LEFT');
+  $this->db->join('publicationsubcat as sc','sc.id = p.subcat','LEFT');
+
   $query = $this->db->get();
   return $query->result_array();
 
