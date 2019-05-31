@@ -430,5 +430,13 @@ public function  inventory_data(){
   echo json_encode($response);
 
 }
+public function readyapi()
+{
+  $data=$this->general->get_tbl_data_result('id,slug,name,description','beready');//echo $this->db->last_query();die;
+  $response['error'] = 0;
+  $response['message'] = 'Data of Ready Section';
+  $response['data'] = $data;
+  echo json_encode($response);
+}
 
 }//end
