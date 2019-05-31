@@ -212,7 +212,7 @@ class Mobapi extends Admin_Controller
 
     }
 
-echo  json_encode($response);
+    echo  json_encode($response);
 
   }
 
@@ -405,7 +405,7 @@ die;
 
 public function get_publication_data(){
 
-  $data=$this->Api_model->get_publication();
+  $data=$this->Api_model->get_publication(); echo $this->db->last_query();die;
   $response['error'] = 0;
   $response['message'] = 'Data of Publication';
   $response['data'] = $data;
@@ -414,6 +414,7 @@ public function get_publication_data(){
 
 public function contact_category(){
   $data=$this->Api_model->get_contact();
+ 
   $response['error'] = 0;
   $response['message'] = 'Tab List For Contacts';
   $response['data'] = $data;
