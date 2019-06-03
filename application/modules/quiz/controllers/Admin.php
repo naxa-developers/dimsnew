@@ -91,7 +91,7 @@ class Admin extends Admin_Controller {
 	public function add()
 	{
 		$this->data=array();
-		$this->form_validation->set_rules('category_id', 'Quiz Category ', 'trim|required');
+		$this->form_validation->set_rules('name', 'Quiz Category ', 'trim|required');
 		if ($this->form_validation->run() == TRUE){
 	    	$lang=$this->session->get_userdata('Language');
 	        if($lang['Language']=='en') {
@@ -109,7 +109,7 @@ class Admin extends Admin_Controller {
 	      	);
 	      	
 	      	$insert=$this->quiz_model->add_inventory('quiz_category',$data);
-	      	print_r($insert);die;
+	      	//print_r($insert);die;
 	      	if($insert!=""){
 	        	$this->session->set_flashdata('msg','Quiz Category successfully added');
 	        	redirect(FOLDER_ADMIN.'/quiz');
