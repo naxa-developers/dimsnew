@@ -131,24 +131,31 @@ public function get_publication(){
 
 }
 
-public function get_contact(){
+  public function get_contact(){
 
-  $this->db->select('*');
-  //$this->db->where('verify','0');
-  $query = $this->db->get('contact_categories');
-  return $query->result_array();
+    $this->db->select('*');
+    //$this->db->where('verify','0');
+    $query = $this->db->get('contact_categories');
+    return $query->result_array();
 
-}
+  }
 
-public function get_inventory(){
-  $this->db->select('in.*,inc.name as category_name,inc.slug as category_slug,inc.image as category_image,insc.name as subcat_name,insc.slug as sub_cat_slug');
-  $this->db->from('inventory as in');
-  $this->db->join('inventorycategory as inc','inc.id=in.category','LEFT');
-  $this->db->join('inventorycat as insc','insc.id=in.subcat','LEFT');
-  $query = $this->db->get();
-  return $query->result_array();
+  public function get_inventory(){
+    $this->db->select('in.*,inc.name as category_name,inc.slug as category_slug,inc.image as category_image,insc.name as subcat_name,insc.slug as sub_cat_slug');
+    $this->db->from('inventory as in');
+    $this->db->join('inventorycategory as inc','inc.id=in.category','LEFT');
+    $this->db->join('inventorycat as insc','insc.id=in.subcat','LEFT');
+    $query = $this->db->get();
+    return $query->result_array();
 
 
-}
-
+  }
+  public function quiz()
+  {
+    $this->db->select('q.*,c.name as category');
+    $this->db->from('quiz as q');
+    $this->db->join('quiz_category as c','c.id=q.cat_id','LEFT');
+    $query = $this->db->get();
+    return $query->result_array();
+  }
 }//end
