@@ -23,7 +23,7 @@ class Admin extends Admin_Controller {
             $emerg_lang='nep'; 
         }
         $this->data['data'] = $this->general->get_tbl_data_result('id,name,slug,description','quiz_category');
-        //echo "<pre>";print_r($this->data['data']);die;
+
         $admin_type=$this->session->userdata('user_type');
         $this->data['admin']=$admin_type;
         //admin check
@@ -101,15 +101,24 @@ class Admin extends Admin_Controller {
 	        }
 	        $title = $this->input->post('name');
 	        $slug = strtolower (preg_replace('/[[:space:]]+/', '-', $title));
-	      	$data=array(
-	        	'name'=>$title,
-	        	'slug'=>$slug,
-	        	'description'=>$this->input->post('description'),
-	        	'created_at'=>$this->input->post('created_at')
-	      	);
-	      	
+	        $id=$this->input->post('id');
+	        if($id)
+	        {
+	        	$data=array(
+		        	'name'=>$title,
+		        	'description'=>$this->input->post('description'),
+		        	'created_at'=>$this->input->post('created_at')
+		      	);
+	        }else{
+	        	$data=array(
+		        	'name'=>$title,
+		        	'slug'=>$slug,
+		        	'description'=>$this->input->post('description'),
+		        	'created_at'=>$this->input->post('created_at')
+		      	);
+	        }
+	      	//print_r($this->inpu->post());die;
 	      	$insert=$this->quiz_model->add_inventory('quiz_category',$data);
-	      	//print_r($insert);die;
 	      	if($insert!=""){
 	        	$this->session->set_flashdata('msg','Quiz Category successfully added');
 	        	redirect(FOLDER_ADMIN.'/quiz');
