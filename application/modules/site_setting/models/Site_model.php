@@ -12,11 +12,10 @@ class Site_model extends CI_Model {
     }
 
     public function update_data($data,$id){
-
-    $this->db->where('id',$id);
-    $res=$this->db->update('site_setting',$data);
-    return $res;
-
+      //unset($data['submit']);
+      $this->db->where('id',$id);
+      $res=$this->db->update('site_setting',$data);
+      return $res;
     }
 
 

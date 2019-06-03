@@ -402,7 +402,7 @@
                                 <!-- changes -->
                                  <div class="col-md-6">
                                     <div class="panel panel-info class text-center">
-                                        <form method="POST" action="<?php echo base_url(FOLDER_ADMIN); ?>/site_setting/site_setting">
+                                        <form method="POST" action="<?php echo base_url(FOLDER_ADMIN); ?>/site_setting/footer_text_nep">
                                       <div class="panel-heading">
                                         हाम्रो सामाजिक सञ्जाल
                                       </div>

@@ -217,9 +217,9 @@ class Admin extends Admin_Controller {
         $update=$this->Site_model->update_data($_POST,2);
         echo $update;
         if($update){
-          $this->session->set_flashdata('msg','Footer Right Text successfully Updated');
+          $this->session->set_flashdata('msg','social link updated successfully');
           // redirect('site_setting_nep');
-            redirect(FOLDER_ADMIN.'/site_setting/site_setting_nep');
+            redirect(FOLDER_ADMIN.'/site_setting/site_setting');
         }else{
           //error
         }
