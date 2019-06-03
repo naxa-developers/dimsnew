@@ -399,6 +399,39 @@
                                     </form>
                                 </div>
                                 </div>
+                                <!-- changes -->
+                                 <div class="col-md-6">
+                                    <div class="panel panel-info class text-center">
+                                        <form method="POST" action="<?php echo base_url(FOLDER_ADMIN); ?>/site_setting/site_setting">
+                                      <div class="panel-heading">
+                                        हाम्रो सामाजिक सञ्जाल
+                                      </div>
+                                      <div class="panel-body space">
+                                        <div class="row">
+                                        <label for="project_name" class="control-label col-md-4">फेसबुक:</label>
+                                        <div class="col-md-8">
+                                          <input type="text" name="facebook"  id="system_mail" placeholder="फेसबुक" class="form-control" value="<?php echo $site_info['facebook']?>"/>
+                                          </div>
+                                        </div> <br/>
+                                        <div class="row">
+                                        <label for="project_name" class="control-label col-md-4">ट्विटर:</label>
+                                        <div class="col-md-8">
+                                          <input type="text" name="twitter"  id="system_mail" placeholder="ट्विटर" class="form-control" value="<?php echo $site_info['twitter']?>"/>
+                                          </div>
+                                        </div> <br/>
+                                        <div class="row">
+                                        <label for="project_name" class="control-label col-md-4">गूगल :</label>
+                                        <div class="col-md-8">
+                                          <input type="text" name="google"  id="system_mail" placeholder="गूगल" class="form-control" value="<?php echo $site_info['google']?>"/>
+                                          </div>
+                                        </div> <br/>
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-8">
+                                          <button type="submit" name="submit" class="btn btn-primary"><?php echo $this->lang->line("update"); ?></button>
+                                        </div>
+                                          </form>
+                                      </div>
+                                  </div>
                               </div>
 
 

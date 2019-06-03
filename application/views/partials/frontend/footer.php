@@ -26,13 +26,13 @@
                                 <?php if(FACEBOOK): ?>
                                 <li>
                                     <a href="<?php echo FACEBOOK ?>">
-                                        <i class="la la-twitter"></i>
+                                        <i class="la la-facebook"></i>
                                     </a>
                                 </li>
                                 <?php endif; if(TWITTER): ?>
                                 <li>
                                     <a href="<?php echo TWITTER ?>">
-                                        <i class="la la-facebook"></i>
+                                        <i class="la la-twitter"></i>
                                     </a>
                                 </li>
                                 <?php endif; if(GOOGLE): ?>
