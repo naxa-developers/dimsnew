@@ -23,7 +23,7 @@ class Admin extends Admin_Controller {
             $emerg_lang='nep'; 
         }
         $this->data['data'] = $this->general->get_tbl_data_result('id,name,slug,description','quiz_category');
-
+        //echo "<pre>";print_r($this->data['data']);die;
         $admin_type=$this->session->userdata('user_type');
         $this->data['admin']=$admin_type;
         //admin check
@@ -108,7 +108,7 @@ class Admin extends Admin_Controller {
 	        	'created_at'=>$this->input->post('created_at')
 	      	);
 	      	//print_r($this->inpu->post());die;
-	      	$insert=$this->quiz_model	->add_inventory('quiz_category',$data);
+	      	$insert=$this->quiz_model->add_inventory('quiz_category',$data);
 	      	if($insert!=""){
 	        	$this->session->set_flashdata('msg','Quiz Category successfully added');
 	        	redirect(FOLDER_ADMIN.'/quiz');
