@@ -107,8 +107,9 @@ class Admin extends Admin_Controller {
 	        	'description'=>$this->input->post('description'),
 	        	'created_at'=>$this->input->post('created_at')
 	      	);
-	      	//print_r($this->inpu->post());die;
+	      	
 	      	$insert=$this->quiz_model->add_inventory('quiz_category',$data);
+	      	print_r($insert);die;
 	      	if($insert!=""){
 	        	$this->session->set_flashdata('msg','Quiz Category successfully added');
 	        	redirect(FOLDER_ADMIN.'/quiz');
