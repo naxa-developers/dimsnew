@@ -81,7 +81,7 @@
     <script src="<?php echo base_url();?>assets/frontend/newdimsjs/jquery.magnific-popup.min.js"></script>
     <script src="<?php echo base_url();?>assets/frontend/newdimsjs/jquery.nice-select.min.js"></script>
     <script src="<?php echo base_url();?>assets/frontend/newdimsjs/aos.js"></script>
-    <script src="<?php echo base_url();?>assets/frontend/newdimsjs/jquery.slimscroll.min"></script>
+    <script src="<?php echo base_url();?>assets/frontend/newdimsjs/jquery.slimscroll.min.js"></script>
     
     <script src="<?php echo base_url();?>assets/frontend/newdimsjs/script.js"></script>
   </body>

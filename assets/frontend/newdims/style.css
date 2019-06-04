@@ -2811,8 +2811,8 @@ pre code {
 }
 .legend .legend-list {
   background-color: #ffffff;
-  padding: 0.7rem 1rem;
-  max-width: 170px;
+  padding: 0.7rem 0.6125rem;
+  max-width: 150px;
 }
 .legend .legend-list h4 {
   font-size: 1.2rem;
@@ -2820,12 +2820,12 @@ pre code {
 }
 .legend .legend-list a {
   margin-bottom: 0.5rem;
-  height: 40px;
   font-size: 1rem;
   text-transform: capitalize;
   text-align: center;
-  min-width: 140px;
-  line-height: 1.8rem;
+  line-height: 1rem;
+  min-width: 120px;
+  padding: 0.5rem 1rem;
 }
 .legend .legend-list a.active {
   background-color: #DE3535;
@@ -3058,6 +3058,44 @@ pre code {
   left: 0;
   top: 0;
 }
+.knowledge aside.left-sidebar.dictionary-sidebar .card .card-body ul li {
+  margin: 0;
+}
+.knowledge aside.left-sidebar.dictionary-sidebar .card .card-body ul li a {
+  border: 0;
+  border-bottom: 1px solid #f6f6f6;
+  padding: 0.6215rem 0;
+  border-radius: 0;
+  font-weight: 400;
+  color: #060606;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.knowledge aside.left-sidebar.dictionary-sidebar .card .card-body ul li a::after {
+  display: none;
+}
+.knowledge aside.left-sidebar.dictionary-sidebar .card .card-body ul li a.active {
+  color: #366CAD;
+  border-color: #366CAD;
+}
+.knowledge aside.left-sidebar.dictionary-sidebar .card .card-body ul li a.active::before {
+  content: "";
+  border-color: transparent #ffffff;
+  border-style: solid;
+  border-width: 18px 0px 18px 16px;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: -2rem;
+  display: inline-block;
+}
+.knowledge aside.left-sidebar.dictionary-sidebar .card .card-body ul li:first-child a {
+  padding-top: 0;
+}
 .knowledge .knoledge-body .card {
   border: none;
   background-color: #f7f7f7;
@@ -3138,6 +3176,27 @@ pre code {
 }
 .knowledge .knoledge-body .card .knoledge-list.doclist .knowldege-content {
   padding-top: 0;
+}
+
+.ditionary-section .dictionary-body .card .card-body p {
+  font-size: 1rem;
+}
+.ditionary-section .dictionary-body .card .card-body figure {
+  margin-bottom: 1rem;
+  border: 1px solid #f6f6f6;
+  padding: 5px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.ditionary-section .dictionary-body .card .card-body figure img {
+  max-height: 150px;
+}
+.ditionary-section .dictionary-body .card .card-body .comment h5 {
+  font-size: 1rem;
+}
+.ditionary-section .dictionary-body .card .card-body .comment p {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
 }
 
 .calendar .calendar-wrap {
@@ -3270,6 +3329,21 @@ pre code {
     padding: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  .calendar .calendar-wrap aside.left-sidebar .card .card-body ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+  }
+}
 #playlist, audio {
   width: 100%;
 }
@@ -3293,7 +3367,7 @@ pre code {
 }
 
 .quiz-section {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 3rem auto;
   padding: 0 1rem;
 }
@@ -3402,6 +3476,27 @@ pre code {
     font-size: 1rem;
   }
 }
+.quiz-section .quiz-container .nav-tabs {
+  padding-bottom: 0.6215rem;
+  margin-bottom: 1rem;
+}
+.quiz-section .quiz-container .nav-tabs li {
+  border-radius: 4px;
+  margin: 0;
+}
+.quiz-section .quiz-container .nav-tabs li a {
+  border-radius: 4px;
+  margin: 0;
+  font-size: 1rem;
+}
+.quiz-section .quiz-container .nav-tabs li a.active {
+  margin: 0;
+  border-radius: 4px;
+}
+.quiz-section .quiz-container .btn {
+  margin-top: 1rem;
+}
+
 .terminology-acc .flex {
   display: flex;
 }
