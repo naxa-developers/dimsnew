@@ -1,12 +1,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<style>
- 
-</style>
 <section class="resource-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" style="background-image: url(&quot;images/details-breadcrumb.jpg&quot;);">
 <div class="overlay"></div>
 <div class="breadcrumb-content">
-    <h1>Drr Terminology</h1>
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At veroLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero</p>
+    <h1>विपदका शब्दावली</h1>
+    <p>के तपाईलाई विपद भनेको के हो थाहा छ? विपदका शब्दावलीहरुको बारेमा थाहा छ? विपदको शब्दहरुको बारे जानकारीकोलागी यो शब्दावली प्रयोग गर्नुस</p>
 </div>
 </section>
 <section class="knowledge pdtb-50">
@@ -76,7 +73,6 @@
             </div>
     </div>
 </section>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
 <script>
     $(document).ready(function(){
         $('[data-toggle="popover"]').popover();   
