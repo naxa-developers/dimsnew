@@ -1,3 +1,19 @@
+
+<style >
+.calendar .calendar-body .card .timeline:after {
+    left: 2rem;
+}
+@media screen and (max-width: 767px){
+  .left-sidebar ul{
+        display:flex;
+        -webkit-flex:flexbox;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }  
+}
+    
+</style>
 <section class="resource-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>">
     <div class="overlay"></div>
     <div class="breadcrumb-content">

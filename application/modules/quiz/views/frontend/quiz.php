@@ -40,14 +40,27 @@
         position: relative;
     }
 
-    .btn-circle {
-      width: 30px;
-      height: 30px;
-      text-align: center;
-      padding: 6px 0;
-      font-size: 12px;
-      line-height: 1.428571429;
-      border-radius: 15px;
+    .quiz-container ul{
+        margin-bottom:1rem;
+        padding-bottom:0.6rem;
+        border-bottom:1px solid #efefef;
+    }
+    .quiz-container .btn{
+        margin-top:1rem;
+    }
+    .quiz-container ul li.nav-item{
+        margin:0;
+    }
+    .quiz-container ul li a.nav-link{
+        border-radius:0;
+            padding: .2rem 1rem;
+
+    }
+    .quiz-container ul li a.nav-link.active, .quiz-container ul li a.nav-link:hover{
+        border: none;
+        border-radius: 4px;
+        background-color:#366CAD;
+        color:#fff;
     }
 </style>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
