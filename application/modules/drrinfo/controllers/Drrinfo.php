@@ -33,6 +33,7 @@ class Drrinfo extends Admin_Controller
 	public function drrdetails($cond=FALSE)
 	{
 		$this->data=array();
+		$id = base64_decode($this->input->get('id'));
 		if($this->session->userdata('Language')==NULL){
 
       	$this->session->set_userdata('Language','nep');
@@ -51,7 +52,7 @@ class Drrinfo extends Admin_Controller
 	    $this->data['drrsubcat'] = $this->DrrModel->only_information_id($list);
 	    //$this->data['drrsubcat'] = $this->general->get_tbl_data_result('slug,id,name','drrsubcategory',array('language'=>$language));
 
-	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name,description','drrcategory',array('id'=>$cond,'language'=>$language));
+	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name,description','drrcategory',array('id'=>$id,'language'=>$language));
 	    $this->data['pubd']=$this->Publication_model->get_publication_search();
 	    $this->data['page_title'] ="Disaster Information System";
 	    //echo "<pre>"; print_r($this->data['drrsubcat']);die;

@@ -35,7 +35,7 @@
                     <div class="hazard-item" >
                         <?php echo $value['svgimage']; ?>
                         <div class="hazard-content">
-                            <h4><a href="<?php echo base_url('/drrinfo/drrdetails/'.$value['id']) ?>"><?php echo $value['name']; ?></a></h4>
+                            <h4><a href="<?php echo base_url('/drrinfo/')?>drrdetails?id=<?php echo base64_encode($value['id']);?>"><?php echo $value['name']; ?></a></h4>
                             <p><?php echo $value['description']; ?></p>
                         </div>
                     </div>
