@@ -31,9 +31,9 @@ class Quiz extends Admin_Controller
         }else{
             $emerg_lang='nep'; 
         }
-        $this->data['cat'] = $this->general->get_tbl_data_result('id','quiz_category',array('slug'=>$slug));
+        $this->data['cat'] = $this->general->get_tbl_data_result('id,name','quiz_category',array('slug'=>$slug));
         $this->data['category'] = $this->general->get_tbl_data_result('*','quiz',array('cat_id'=>$this->data['cat'][0]['id']));
-        //echo "<pre>"; print_r($this->data['category']);die;
+        //echo "<pre>"; print_r($this->data['cat']);die;
         $this->template
             ->enable_parser(FALSE)
             ->build('frontend/quiz', $this->data);

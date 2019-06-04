@@ -67,15 +67,13 @@
     <section class="details-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>">
         <div class="overlay"></div>
         <div class="breadcrumb-content">
-            <figure>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="47.404" height="42.749" viewBox="0 0 47.404 42.749"><g transform="translate(1 -33)"><path d="M12.862,33.73c0,9.01,8.31,16.319,18.621,16.319,3.7,0,10.112-2.6,10.112-2.6s5.456,1.5,7.108,1.3a.522.522,0,0,0,.2-.951,7.707,7.707,0,0,1-2.953-3.8A14.987,14.987,0,0,0,50.1,33.73c0-9.01-8.31-16.319-18.621-16.319S12.862,24.72,12.862,33.73Zm25.529-3-6.057,6.007-2.653,2.6-2.6-2.653-2.5-2.553,2.653-2.6,2.5,2.553,6.057-6.007ZM6.1,29.275a12.317,12.317,0,0,1-3.4-8.46C2.7,13.357,9.608,7.3,18.068,7.3a15.829,15.829,0,0,1,13.415,6.908h0c-11.413,0-20.824,7.909-21.775,17.921h0A8.933,8.933,0,0,1,3.851,33.18a.4.4,0,0,1-.15-.751A6.93,6.93,0,0,0,6.1,29.275Z" transform="translate(-3.7 25.7)" fill=""></path></g></svg>
-            </figure>
             <h1>हाजिरीजवाफ खेल्नुहोस् </h1>
             <p>विभिन्न विपदको जानकारी सम्बन्धि हाजिरीजवाफ खेल खेल्नुहोस् र वास्तविक जानकारी लिनुहोस्</p>
         </div>
     </section>
     <section class="quiz-section pdtb-30 aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
         <div class="quiz-container">
+        <h3><?php echo $cat[0]['name']; ?></h3>
             <div class="container">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <?php if($category):
@@ -112,8 +110,8 @@
                         </div>
                     <?php } endif; ?>
                 </div>
-                <button class="prevtab btn btn-primary">Prev</button>
-                <button class="nexttab btn btn-success">Next</button>
+                <button class="prevtab btn btn-primary">अघिल्लो</button>
+                <button class="nexttab btn btn-success">अर्को</button>
             </div> 
         </div> 
     </section>
