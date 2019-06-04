@@ -136,12 +136,14 @@ class DrrModel extends CI_Model {
       }
 
     }
-    public function only_information()
+    public function only_information($id)
     {
         $this->db->select('subcat_id');
         $this->db->from('drrinformation');
         $this->db->group_by('subcat_id');
+        $this->db->where('category_id',$id);
         $query = $this->db->get();
+        //echo $this->db->last_query();die;
         if ($query->num_rows() > 0)
         {
             return $data=$query->result_array();

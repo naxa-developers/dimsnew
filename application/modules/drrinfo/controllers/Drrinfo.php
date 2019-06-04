@@ -44,7 +44,7 @@ class Drrinfo extends Admin_Controller
 	    }else{
 	      $language='nep'; 
 	    }
-	    $this->data['subcat'] = $this->DrrModel->only_information();
+	    $this->data['subcat'] = $this->DrrModel->only_information($id);
 	    foreach ($this->data['subcat'] as $key => $value) {
 	    	$list[]=$value['subcat_id'];
 	    }
