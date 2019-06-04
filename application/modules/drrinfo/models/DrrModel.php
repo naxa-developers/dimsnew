@@ -154,7 +154,7 @@ class DrrModel extends CI_Model {
         $this->db->from('drrsubcategory');
         $this->db->where_in("id",$cond);
         $query = $this->db->get();
-        //echo $this->db->last_query();die;
+        echo $this->db->last_query();die;
         if ($query->num_rows() > 0)
         {
             return $data=$query->result_array();
