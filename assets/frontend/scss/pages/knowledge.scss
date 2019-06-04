@@ -46,6 +46,50 @@
                 }
             }
         }
+        &.dictionary-sidebar{
+            .card{
+                .card-body{
+                    ul{
+                        li{
+                            margin:0;
+                            a{
+                                border: 0;
+                                border-bottom: 1px solid $color-bg;
+                                padding: 0.6215rem 0;
+                                border-radius: 0;
+                                font-weight: 400;
+                                color:$color-primary;
+                                font-size:1rem;
+                                line-height: 1rem;
+                                &::after{
+                                    display: none;
+                                }
+                                &.active{
+                                    color:$color-secondary;
+                                    border-color:$color-secondary;
+                                    &::before{
+                                        content: "";
+                                        border-color: transparent $color-white;
+                                        border-style: solid;
+                                        border-width: 18px 0px 18px 16px;
+                                        height: 0px;
+                                        width: 0px;
+                                        @include translatey;
+                                        right: -2rem;
+                                        display: inline-block;
+                                    }
+                                }
+                            }
+                            &:first-child{
+                                a{
+                                    padding-top:0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .knoledge-body{
         .card{
@@ -103,6 +147,36 @@
                     }
                     .knowldege-content{
                         padding-top:0;
+                    }
+                }
+            }
+        }
+    }
+}
+.ditionary-section{
+    .dictionary-body{
+        .card{
+            .card-body{
+                p{
+                    font-size: 1rem;
+                }
+                figure{
+                    margin-bottom: 1rem;
+                    border:1px solid $color-bg;
+                    padding:5px;
+                    border-radius: 4px;
+                    display: inline-block;
+                    img{
+                        max-height: 150px;
+                    }
+                }
+                .comment{
+                    h5{
+                        font-size:1rem;
+                    }
+                    p{
+                        font-size:0.875rem;
+                        line-height: 1.5rem;
                     }
                 }
             }

@@ -1,0 +1,104 @@
+.quiz-section{
+    max-width: 1000px;
+    margin:3rem auto;
+    
+    padding:0 1rem;
+    .quiz-container{
+        padding:2rem;
+        @include boxshadow;
+        position: relative;
+        background-color: $color-white;
+        overflow: hidden;
+        .quiz-content{
+            margin-bottom: 1rem;
+            .quiz-qs{
+                @include flexjust;
+                justify-content: flex-start;
+                align-items: center;
+                padding-bottom: 1rem;
+                flex-wrap: nowrap;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid $color-bg;
+                h4{
+                    font-size:1.2rem;
+                    margin:0;
+                }
+                span{
+                    flex:0 0 24px;
+                    width:24px;
+                    height: 24px;
+                    @include flexvr;
+                    background-color: $color-blue;
+                    color:$color-white;
+                    margin-right: 0.875rem;
+                }
+            }
+            ul{
+                // @include rowflex;
+                padding-left: 2rem;
+                li{
+                    // @include rowcol;
+                    // -ms-flex: 0 0 50%;
+                    // flex: 0 0 50%;
+                    // max-width: 50%;
+                    margin-bottom: 0.5rem;
+                }
+            }
+            
+        }
+        .next-prev-btn{
+            text-align: center;
+        }
+        .success-message{
+            position: absolute;
+            left:0;
+            right:0;
+            width:96%;
+            margin:0 2%;
+            bottom:0;
+            padding:0.875rem;
+            border:1px solid rgba(#316e66, 0.5);
+            background: $color-white;
+            z-index: 12;
+            text-align: justify;
+            p{
+                color:rgba(#316e66, 0.5);
+                margin:0;
+                position: relative;
+                padding-left: 40px;
+                &::after{
+                    content:"\f17b";
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    font-family: "LineAwesome";
+                    font-weight: 700;
+                    font-size:1.5rem;
+                }
+            }
+            &.error-message{
+                border-color:rgba(#c81c37, 0.5);
+                p{
+                    color:rgba(#c81c37, 0.5);
+                    &::after{
+                        content:"\f191";
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:$mb-xl){
+    .quiz-section{
+        .quiz-container{
+            padding:1rem;
+            .quiz-content{
+                .quiz-qs{
+                    h4{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

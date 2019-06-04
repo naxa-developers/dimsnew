@@ -1,12 +1,10 @@
 
 .iset-btn{
-    height: 50px;
-    line-height: 38px;
-    min-width: 12rem;
+    min-width: 11rem;
     display: inline-block;
     transform: perspective(1px) translateZ(0px);
     vertical-align: middle;
-    padding: 5px 20px;
+    padding: 10px 20px;
     background: $color-blue;
     color: $color-white;
     overflow: hidden;
@@ -14,7 +12,7 @@
     box-shadow: none;
     border:none;
     text-transform: capitalize;
-    font-size:1.2rem;
+    font-size:1.1rem;
     cursor: pointer;
     position: relative;
     i{

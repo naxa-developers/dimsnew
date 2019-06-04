@@ -132,10 +132,24 @@
 
         $('select').niceSelect();
 
+        $('[data-toggle="popover"]').popover();
+
         AOS.init();
+
+        function customScroll (){
+            $(".dictionary-sidebar .card-body").slimscroll({
+                height: "500px",
+                color: "#8c909a",
+                size: "2px",
+                alwaysVisible: 1,
+                borderRadius: "3px",
+                railBorderRadius: "2px"
+            });
+        };
+        
+        customScroll();
 
         
         
     });
 })(jQuery);
-

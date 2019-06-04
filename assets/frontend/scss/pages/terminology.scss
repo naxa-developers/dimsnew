@@ -1,0 +1,54 @@
+.terminology-acc{
+    .flex{
+        display: flex;
+        .citems {
+            min-height: 40px;
+            min-width: 40px;
+            border-radius: 50%;
+            background-color: $color-bg;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: relative;
+            &.ind{
+                &:after {
+                    content: "\f2c2"; /* fa-chevron-down */
+                    font-family: 'LineAwesome';
+                    @include translatey;
+                  }
+            }
+            
+        }
+        .grow{
+            flex-grow: 1;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border: 0;
+            border-top: 1px solid $color-bg;
+        }
+        
+    }
+    .flex[aria-expanded="true"] {
+        .citems{
+            &.ind{
+                &::after{
+                    content: "\f28e"; /* fa-chevron-up */
+                }
+            }
+        }
+        
+      }
+    .dictionary-list{
+        padding:1rem 2rem;
+        a{
+            font-size: 0.875rem;
+        }
+        a[data-content]{
+            h5{
+                font-size:0.875rem;
+            }
+        }
+    }
+    
+}

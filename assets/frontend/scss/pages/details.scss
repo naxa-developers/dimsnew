@@ -5,7 +5,7 @@
         position: relative;
         .overlay{
             @include overlay;
-            background-color:rgba(0,0,0,0.5);
+            background-color:rgba($color-primary,0.7)
         }
         .page-breadcrumb{
             position: relative;

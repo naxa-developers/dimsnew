@@ -120,6 +120,18 @@ footer.site-footer{
         }
     }
 }
+.copyright{
+    background-color: $color-blue;
+    color:$color-white;
+    text-align: center;
+    font-size: 0.775rem;
+    border:1px solid rgba($color-white, 0.2);
+    padding:0.875rem 1rem;
+    a{
+        color:$color-white;
+        
+    }
+}
 @media screen and (max-width:$lg-tab){
     footer.site-footer{
         margin-top:1rem;

@@ -1,4 +1,7 @@
 .calendar{
+    .calendar-wrap{
+        position: relative;
+    }
     aside.left-sidebar{
         .card{
             background-color: transparent;
@@ -11,12 +14,17 @@
                             color:$color-blue;
                             padding-left: 1.2rem;
                             position: relative;
-                            font-family: $montserrat;
+                            font-family: $sanse;
                             font-weight: 600;
                         }
                     }
                 }
             }
+        }
+        &.sidebar-fixed{
+            position: fixed;
+            left:0;
+            top:50px;
         }
     }
     .calendar-body{
@@ -32,7 +40,7 @@
                 width:100%;
                 overflow-y: auto;
                 flex-wrap: nowrap;
-                padding:0.4rem 0;
+                padding:0.745rem 0;
                 &:after{
                     content:'';
                     position: absolute;
@@ -41,7 +49,7 @@
                     top:0;
                     bottom:0;
                     right:0;
-                    left:4rem;
+                    left:3.75rem;
                     background-color: #D1D1D1;
                 }
                 .timeline-list{
@@ -50,7 +58,7 @@
                         padding:0.5rem 0.775rem;
                         text-transform: capitalize;
                         font-weight: 600;
-                        font-family: $montserrat;
+                        font-family: $sanse;
                         color:$color-blue;
                         border:1px solid $color-blue;
                         @include radius30;
@@ -127,6 +135,25 @@
             .card{
                 .card-body{
                     padding:0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:$pt-tab){
+    .calendar{
+        .calendar-wrap{
+            aside.left-sidebar{
+                .card{
+                    .card-body{
+                        ul{
+                            @include flexjust;
+                            justify-content: center;
+                            align-items: center;
+                            position: sticky;
+                            top: 0;
+                        }
+                    }
                 }
             }
         }

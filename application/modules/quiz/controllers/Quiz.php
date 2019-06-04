@@ -41,7 +41,8 @@ class Quiz extends Admin_Controller
     public function check_status()
     {
         if($this->input->server('REQUEST_METHOD')=='POST')
-        {
+        {   $mac = $this->general->get_Mac_Address();
+            print_r($mac);die;
             $questionid = $this->input->post('nqnid');
             $catid = $this->input->post('catid');
             $optionsid = $this->input->post('optionid');
@@ -124,3 +125,4 @@ class Quiz extends Admin_Controller
     }
 }
 
+ //  F4-30-B9-93-43-71

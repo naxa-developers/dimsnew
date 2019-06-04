@@ -248,4 +248,23 @@ class General {
 	public function salt() {
 		return substr(md5(uniqid(rand(), true)), 0, '10');
 	}
+	public function get_Mac_Address() {
+
+		ob_start();
+
+		system('ipconfig /all');
+
+		$mycomsys = ob_get_contents();
+
+		ob_clean();
+
+		$find_mac = "Physical";
+
+		$pmac = strpos($mycomsys, $find_mac);
+
+		$macaddress = substr($mycomsys, ($pmac + 36), 17);
+
+		return $macaddress;
+
+	}
 }

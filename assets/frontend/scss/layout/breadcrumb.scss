@@ -1,10 +1,11 @@
 .inner-banner{
     @include coverbg;
-    min-height: 500px;
+    min-height: 300px;
     @include flexvr;
     position: relative;
     .overlay{
-        @include overlay; 
+        @include overlay;
+        background-color:rgba($color-primary,0.7)
     }
     
     .breadcrumb-content{
@@ -13,8 +14,10 @@
         padding:0 1rem;
         margin:0 auto;
         text-align: center;
+        color:$color-white;
         h1{
             text-transform: capitalize;
+            font-size: 1.8rem;
         }
         p{
             margin:1.5rem 0;
@@ -34,9 +37,10 @@
         
     }
     &.hazard-breadcrumb{
-        padding-bottom: 120px;
+        padding-bottom: 80px;
+        min-height: 380px;
         .overlay{
-            background-color: rgba($color-blue,0.7);
+            background-color:rgba($color-primary,0.7)
         }
         .breadcrumb-content{
             color:$color-white;
@@ -66,7 +70,7 @@
     }
     &.details-breadcrumb{
         .overlay{
-            background-color: rgba($color-white,0.8);
+            background-color:rgba($color-primary,0.5)
         }
     }
     &.resource-breadcrumb{
@@ -88,10 +92,7 @@
         border-radius: 0;
         height: 3rem;
         font-size: 1rem;
-    }
-    .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
-        background-color: $color-blue;
-        color:$color-white;
+        line-height: 50px;
     }
     .nice-select:after {
         border-bottom: 2px solid $color-blue;
@@ -122,6 +123,11 @@
     .breadcrumb-form{
         max-width: 960px;
         width:100%;
+    }
+    .about-list{
+        .about-content{
+            margin-top:1rem;
+        }
     }
 }
 @media screen and (max-width:$ls-tab){
