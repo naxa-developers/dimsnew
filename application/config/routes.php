@@ -66,6 +66,8 @@ $route['home'] = 'home/index';
 $route['datacategory'] = 'home/datacategory';
 $route['riskprofile'] = 'home/riskprofile';
 $route['knowledge-portal'] = 'home/knowledge';
+$route['knowledge-portal'] = 'home/disasterdetails/$1/$2';
+
 $route['terminologies'] ='dictionary';
 $route['aboutus'] = 'home/aboutus';
 $route['nepal_info'] = 'home/nepal_info';

@@ -115,7 +115,7 @@ class Quiz extends Admin_Controller
                     exit;
                 }
             }else{
-                print_r(json_encode(array('status'=>'success','result'=>'<div class="alert alert-danger alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> You can not chnage your choice for this question   !!!!!  </div>','message'=>'Successfully')));
+                print_r(json_encode(array('status'=>'success','result'=>'<div class="alert alert-danger alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> You can not change your choice for this question  !!  </div>','message'=>'Successfully')));
                 exit;
             }
         }else{
