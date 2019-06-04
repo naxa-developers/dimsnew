@@ -24,7 +24,7 @@ class Site_model extends CI_Model {
 
       $field_name                     = $name;
       $config['upload_path']          = './uploads/site_setting/';
-      $config['allowed_types']        = 'png';
+      $config['allowed_types']        = 'png|jpg|jpeg';
       $config['max_size']             = 7000;
       $config['overwrite']             = TRUE;
       $config['file_name']           = $name;

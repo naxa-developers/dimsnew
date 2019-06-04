@@ -25,7 +25,7 @@ class Admin extends Admin_Controller {
           $this->body['site_info']=$this->Site_model->site_setting(1);
         }
        
-        //var_dump($this->body['site_info']);
+        //echo"<pre>";var_dump($this->body['site_info']);die;
         //admin check
         $admin_type=$this->session->userdata('user_type');
 
@@ -54,7 +54,7 @@ class Admin extends Admin_Controller {
     }
     public function update_site_text(){
         if( $_FILES['site_logo']['name']==''){
-          var_dump($_POST);
+          //var_dump($_POST); die;
           unset($_POST['submit']);
           $update=$this->Site_model->update_data($_POST,1);
           echo $update;
@@ -65,12 +65,14 @@ class Admin extends Admin_Controller {
             //error
           }
         }else{
+          //echo "<pre>";print_r($_FILES['site_logo']['name']);die;
           $file_name = $_FILES['site_logo']['name'];
           $img_upload=$this->Site_model->do_upload($file_name,'site_logo');
           if($img_upload['status']==1){
             $ext=$img_upload['upload_data']['file_ext'];
             unset($_POST['submit']);
-            $image_path=base_url().'uploads/site_setting/site_logo'.$ext ;
+            $image_path=base_url().'uploads/site_setting'.$ext ;
+            // print_r($image_path);die;
             $_POST['site_logo']=$image_path;
             $update=$this->Site_model->update_data($_POST,1);
             if($update){

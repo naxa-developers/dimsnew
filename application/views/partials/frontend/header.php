@@ -44,7 +44,7 @@
                 <div class="headerWrap">
                     <div class="headLeft">
                         <div class="logo">
-                            <a href="<?php echo base_url() ?>"><img src="<?php echo base_url();?>/assets/frontend/images/site_logo.svg" alt="logo"></a>
+                            <a href="<?php echo base_url() ?>"><img src="<?php  echo SITE_SLOGAN_EN; ?>" alt="logo"></a>
                         </div>
                     </div>
                     <div class="headRight">

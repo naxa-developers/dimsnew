@@ -265,18 +265,7 @@
                                   <div class="col-md-10">
                                     <button type="submit" name="submit" class="btn btn-primary">Update</button>
                                   </div>
-
-
-                </form>
-
-
-
-
-
-
-
-
-
+                          </form>
                                 </div>
                               </div>
 

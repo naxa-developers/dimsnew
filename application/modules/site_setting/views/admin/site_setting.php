@@ -60,7 +60,16 @@
                     <div class="form-group ">
                       <label class="control-label col-md-3"><?php echo $this->lang->line("site_logo"); ?></label>
                       <div class="col-md-9">
-                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                         <div class="col-md-6">
+                            <label for="image">Image : </label>
+                            <input type="file" class="btn btn-primary" id="image" name="site_logo">
+                        </div>
+                            <div class="col-md-9">
+                                <label for="image">Old Image : </label>
+                                <img src="<?php  echo  $site_info['site_logo']; ?>" alt="Image Logo" height="100px" width="200px">
+                                <!-- <input type="hidden" class="btn btn-primary" id="image" name="old_image" value="<?php echo !empty( $site_info['site_logo'])? $site_info['site_logo']:'' ?>"> -->
+                            </div>
+                      <!--   <div class="fileupload fileupload-new" data-provides="fileupload">
                           <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
                             <img src="<?php echo $site_info['site_logo']?>" alt="" />
                           </div>
@@ -73,7 +82,7 @@
                             </span>
 
                           </div>
-                        </div>
+                        </div> -->
 
                       </div>
                     </div>
@@ -118,7 +127,7 @@
                     <div class="col-md-9">
                       <div class="fileupload fileupload-new" data-provides="fileupload">
                         <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                          <img src="<?php echo $site_info['cover_photo']?>" alt="" />
+                          <img src="<?php echo $site_info['cover_photo'] ?>" alt="" />
                         </div>
                         <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                         <div>
