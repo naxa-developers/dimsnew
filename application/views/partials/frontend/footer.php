@@ -61,9 +61,7 @@
                     <div class="footer-widget">
                         <h4>वेबसाइट भ्रमण गर्नुहोस्</h4>
                         <div class="ft-content">
-                                <!-- Start of CuterCounter Code -->
-                                 <a href="javascript:voiv(0);" target="_blank"><img src="http://www.cutercounter.com/hits.php?id=gmepoxad&nd=9&style=80" border="0" alt="free counter"></a>
-                                <!-- End of CuterCounter Code -->
+                            <a href="javascript:voiv(0);" target="_blank"><img src="http://www.cutercounter.com/hits.php?id=grppcnq&nd=9&style=10" border="0" alt="visitor counter"></a>
                         </div>
                     </div>
                 </div>
