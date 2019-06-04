@@ -27,15 +27,6 @@
                                     </li>
 
                                 <?php } } ?>
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link active" id="dict_2_tab" data-toggle="tab" href="#dict_2" role="tab" aria-controls="dict_2" aria-selected="true">प्रविधिगत प्रकोप</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="dict_3_tab" data-toggle="tab" href="#dict_3" role="tab" aria-controls="dict_3" aria-selected="false">आपत्कालीन व्यवस्थापन</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="dict_4_tab" data-toggle="tab" href="#dict_4" role="tab" aria-controls="dict_4" aria-selected="false">क्षमता विकास</a>
-                                    </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -69,7 +60,7 @@
                                     <div class="card-body">
                                         <p><?php echo $ds['meaning'] ?></p>
                                         <figure>
-                                            <img src="<?php echo $ds['image'] ?>'" alt="<?php echo $ds['word']; ?>" />
+                                            <img src="<?php echo $ds['image'] ?>" alt="<?php echo $ds['word']?>" />
                                         </figure>
                                         <div class="comment">
                                                 <h5>Comment</h5>
@@ -79,37 +70,6 @@
                                 </div> 
                             </div>
                             <?php } }   ?>
-                            <!-- <div class="tab-pane fade" id="dict_3" role="tabpanel" aria-labelledby="dict_3_tab">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Meaning of आपत्कालीन व्यवस्थापन</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>दुर्घटना, खतरनाक कार्यविधि पूर्वाधार नाकाम हुनु, वा खास खालका मानवीय क्रियाकलाप लगायतका प्रविधिगत तथा औद्योगिक अवस्थाबाट उत्पन्न हुने प्रकोपहरु जसको परिणाम स्वरुप मृत्यु, क्षति, घाइते, विरामी वा अन्य स्वास्थ्य सम्बन्धी असर, धनमालको नोक्सानी, जनजीविका र आधारभूत सेवाहरुमा प्रभाव, सामाजिक तथा आर्थिक गतिरोध, अथवा वातावरणीय क्षति आदि हुन सक्छ ।</p>
-                                        <figure>
-                                            <img src="images/resource-1.jpg" alt="dictionary" />
-                                        </figure>
-                                        <div class="comment">
-                                                <h5>Comment</h5>
-                                                <p>प्रविधिगत प्रकोपका उदाहरणमा औद्योगिक प्रदूषण, आणविक विकिरण, विषालु अपशेष, बाँध भत्कनु, यातायात दुर्घटना, कारखानामा हुने विष्फोटन, आगलागी तथा रासायनिक चुहावट पर्दछन्। प्रविधिगत प्रकोपहरु प्रत्यक्षतः प्राकृतिक प्रकोप घटनाका असरका परिणामको रुपमा पनि उत्पन्न हुन सक्छन् ।</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="dict_4" role="tabpanel" aria-labelledby="dict_4_tab">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Meaning of क्षमता विकास</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>दुर्घटना, खतरनाक कार्यविधि पूर्वाधार नाकाम हुनु, वा खास खालका मानवीय क्रियाकलाप लगायतका प्रविधिगत तथा औद्योगिक अवस्थाबाट उत्पन्न हुने प्रकोपहरु जसको परिणाम स्वरुप मृत्यु, क्षति, घाइते, विरामी वा अन्य स्वास्थ्य सम्बन्धी असर, धनमालको नोक्सानी, जनजीविका र आधारभूत सेवाहरुमा प्रभाव, सामाजिक तथा आर्थिक गतिरोध, अथवा वातावरणीय क्षति आदि हुन सक्छ ।</p>
-                                        <div class="comment">
-                                                <h5>Comment</h5>
-                                                <p>प्रविधिगत प्रकोपका उदाहरणमा औद्योगिक प्रदूषण, आणविक विकिरण, विषालु अपशेष, बाँध भत्कनु, यातायात दुर्घटना, कारखानामा हुने विष्फोटन, आगलागी तथा रासायनिक चुहावट पर्दछन्। प्रविधिगत प्रकोपहरु प्रत्यक्षतः प्राकृतिक प्रकोप घटनाका असरका परिणामको रुपमा पनि उत्पन्न हुन सक्छन् ।</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
