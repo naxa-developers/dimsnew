@@ -13,7 +13,7 @@
                     <aside class="left-sidebar dictionary-sidebar sticky-top">
                         <div class="card">
                             <div class="card-header main-card-header">
-                                <h5>Words</h5>
+                                <h5>शब्द</h5>
                             </div>
                             <div class="card-body">
                                 <ul class="nav nav-tabs flex-column border-tabs" id="myTab" role="tablist">
@@ -32,27 +32,12 @@
                 <div class="col-lg-9">
                     <div class="dictionary-body">
                         <div class="tab-content" id="myTabContent">
-                            <!-- <div class="tab-pane fade" id="dict_1" role="tabpanel" aria-labelledby="dict_1_tab">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Meaning of अनुकूलन</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>प्राकृतिक तथा मानवीय कृयाकलाप औ प्रणालीमा गरिने समायोजन प्रकृया जसले गर्दा वास्तविक वा अपेक्षित जलवायू अदलबदल (Climatic Stimuli) वा त्यस्ता प्रभावहरुबाट हुने हानी–नोक्सानीको अल्पीकरण गर्ने तथा तद्जन्य उपयोगी अवसरहरुबाट अधिकतम लाभ लिन सकिन्छ ।</p>
-                                        <div class="comment">
-                                                <h5>Comment</h5>
-                                                <p>यस परिभाषाले जलवायू परिवर्तनको सरोकारहरुलाई सम्बोधन गर्दछ । यसको स्रोत जलवायू परिवर्तनसम्बन्धी राष्ट्रसंघीय कार्यसंरचना महासभा (UNFCCC) द्धारा प्रतिपादित “अनुकूलन”भन्ने अभिव्यक्तिको व्यापक
-                                                        अवधारणा भित्र “जलवायू” सँग सम्बन्ध नरहेका टडकारो भू–स्खलन जस्ता कारक प्रकृया वा परिणाम समेत समावेश हुन सक्छन् । अनुकूलनको प्रकृया स्वतःस्फूर्त हुनसक्छ । उदाहरणका लागि बजार परिवर्तनमार्फत अथवा अनुकूलन प्रकृयालाई सहायता पुग्ने किसिमका सरकारी नीति तथा योजनाहरुको परिणामको फलस्वरुप विपद् जोखिम न्यूनिकरणका अधिकांश उपायहरुले अनुकूलन कार्यलाई बढावा दिन योगदान दिन्छन् ।</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <?php if($dictionary){
                                     foreach ($dictionary as $kdk => $ds) { ?>
                             <div class="tab-pane fade <?php if($kdk+1 == '1') { echo "show active"; } ?> " id="dict_1<?php echo $kdk+1; ?>" role="tabpanel" aria-labelledby="dict_1_tab<?php echo $kdk+1; ?>">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Meaning of <?php echo $ds['word']; ?></h5>
+                                        <h5><?php echo $ds['word']; ?> को अर्थ</h5>
                                     </div>
                                     <div class="card-body">
                                         <p><?php echo $ds['meaning'] ?></p>
