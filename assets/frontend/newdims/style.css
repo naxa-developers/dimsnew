@@ -2838,8 +2838,6 @@ pre code {
 .before-list ul li {
   position: relative;
   margin-bottom: 1rem;
-}
-.before-list ul li a {
   padding-left: 2rem;
   display: block;
   -moz-transition: all 0.5s;
@@ -2849,7 +2847,7 @@ pre code {
   letter-spacing: 0.5px;
   line-height: 2rem;
 }
-.before-list ul li a::before {
+.before-list ul li::before {
   content: "";
   font-family: "LineAwesome";
   position: absolute;
@@ -2857,11 +2855,11 @@ pre code {
   top: 0;
   color: #366CAD;
 }
-.before-list ul li:hover a {
+.before-list ul li:hover {
   padding-left: 2.5rem;
   color: #366CAD;
 }
-.before-list ul li:hover a:before {
+.before-list ul li:hover:before {
   color: #DE3535;
 }
 .before-list.bef-aft-list {
