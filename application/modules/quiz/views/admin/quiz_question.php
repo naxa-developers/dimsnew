@@ -61,7 +61,9 @@
                                 <div class="col-md-3">
                                     <label></label>
                                     <div class="mt-radio-list" data-error-container="#form_2_membership_error">
-                                        <span> Check The right Answer <input type="checkbox" data-id="1" class="rightAnswer" name="right_answer[]" onclick="$(this).attr('value', this.checked ? 1 : 0)"></input></span>
+                                        <span> Check The right Answer <input type="checkbox" data-id="1" class="rightAnswer" name="right_answer[]" value="y" onclick="$(this).attr('value', this.checked ? 1 : 0)"></input>
+                                       
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -80,7 +82,7 @@
                                 <div class="col-md-3">
                                     <label></label>
                                     <div class="mt-checkbox-list">
-                                    <span>Check The right Answer <input type="checkbox" name="right_answer_radio[]" onclick="$(this).attr('value', this.checked ? 1 : 0)"></input></span>
+                                    <span>Check The right Answer <input type="checkbox" class="rightAnswer" data-id="1" name="right_answer_radio[]" onclick="$(this).attr('value', this.checked ? 1 : 0)"></input> <input type="hidden" name="checkboxoption" id="checkrightAnswer1" value="2"></input></span>
                                     </div>
                                 </div>
                                  <div class="col-md-6">
@@ -148,10 +150,18 @@
     $(document).off('.datepicker.data-api');
 </script>
 <script>
-    $(".rightAnswer").click(function () {
-        //var recentid = $(this).data('id');
+
+    $(".rightAnswer").change(function () {
+        var recentid = $(this).data('id');
+        // alert(recentid);
+        // console.log(recentid);
         if ($(this).prop("checked")) {
             $(this).attr('value', 1);
+            $("#checkrightAnswer1").attr('value', 1);
+            $("#checkrightAnswer2").attr('value', 1);
+            $("#checkrightAnswer3").attr('value', 1);
+            $("#checkrightAnswer4").attr('value', 1);
+            $("#checkrightAnswer5").attr('value', 1);
         }
         else {
            $(this).attr('value', 1);
@@ -173,7 +183,8 @@
             $(this).closest('.form-group').remove();
         });
         var count = $('.addCheckOptionRow .btnminus').length+1;
-        $('.addCheckOptionRow').append('<div class="form-group"> <div class="col-md-3"> <label></label> <div class="mt-checkbox-list"> <label class="mt-checkbox mt-checkbox-outline"> </label> <span>Check The right Answer <input type="checkbox" name="right_answer_radio[]" onclick="$(this).attr(\'value\', this.checked ? 1 : 0)"></input></span></div></div><div class="col-md-6"> <label class="control-label">Please Enter Otption <span class="required" aria-required="true"> * </span> </label> <input id="check'+count+'" type="text" name="checkboxoption[]" class="form-control" placeholder="Enter Please Enter Otption "> </div><div class="col-md-3"> <br><button class="btn btn-danger btnminus " type="button">x</button> <label class="control-label"></label></div></div>');
+        var ncount =count+1;
+        $('.addCheckOptionRow').append('<div class="form-group"> <div class="col-md-3"> <label></label> <div class="mt-checkbox-list"> <label class="mt-checkbox mt-checkbox-outline"> </label> <span>Check The right Answer <input type="checkbox" class="rightAnswer"  name="right_answer_radio[]" data-id="'+ncount+'"  onclick="$(this).attr(\'value\', this.checked ? 1 : 0)"></input><input type="hidden" name="checkboxoption" id="checkrightAnswer'+ncount+'" value="2"></span></div></div><div class="col-md-6"> <label class="control-label">Please Enter Otption <span class="required" aria-required="true"> * </span> </label> <input id="check'+count+'" type="text" name="checkboxoption[]" class="form-control" placeholder="Enter Please Enter Otption "> </div><div class="col-md-3"> <br><button class="btn btn-danger btnminus " type="button">x</button> <label class="control-label"></label></div></div>');
 
     });
     $(document).off('click','#addDropdownOption');

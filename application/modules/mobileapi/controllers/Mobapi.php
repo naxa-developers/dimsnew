@@ -438,33 +438,39 @@ die;
     $response['data'] = $data;
     echo json_encode($response);
   }
+
+  public function quizapi_category()
+  {
+    $data=$this->general->get_tbl_data_result('*','quiz_category');
+    //echo "<pre>"; print_r($data);die;
+    $response['error'] = 0;
+    $response['message'] = 'Data of Ready Section';
+    $response['data'] = $data;
+    echo json_encode($response);
+  }
   public function quizapi()
   {
-    $data['quiz']=$this->general->get_tbl_data_result('id,question,,cat_id,answer,wrong_answer','quiz');//$this->Api_model->quiz();
-    
-   // echo "<pre>";print_r($data['quiz']);
-      if (!empty($data['quiz'])) {
-          foreach ($data['quiz'] as $key => $value) {
-              $quizall[] = array(
-                  'id' => $value['id'],
-                  'question' => $value['question'],
-                  'wrong_answer' => $value['wrong_answer'],
-                  'right_answer' => $value['answer'],
-                  'options' => $this->general->get_tbl_data_result('name,category_id,right_answer','quiz_options',array('category_id'=>$value['id'])),
-              );
-          }
-          print(json_encode($quizall));
-      } else {
-          $quizall = array(
-              'status' => 'No Data Found',
-              'message' => 'No Data Found',
-          );
-          print(json_encode($quizall));
-      }
-    // $response['error'] = 0;
-    // $response['message'] = 'Data of Ready Section';
-    // $response['data'] = $data;
-    // echo json_encode($response);
+    $id = $this->input->post('id');
+    $data['quiz']=$this->general->get_tbl_data_result('id,question,,cat_id,answer,wrong_answer','quiz',array('cat_id'=>$id));
+    //echo $this->db->last_query();die;
+    if (!empty($data['quiz'])) {
+        foreach ($data['quiz'] as $key => $value) {
+            $quizall[] = array(
+                'id' => $value['id'],
+                'question' => $value['question'],
+                'wrong_answer' => $value['wrong_answer'],
+                'right_answer' => $value['answer'],
+                'options' => $this->general->get_tbl_data_result('name,category_id,right_answer','quiz_options',array('category_id'=>$value['id'])),
+            );
+        }
+        print(json_encode($quizall));
+    } else {
+        $quizall = array(
+            'status' => 'No Data Found',
+            'message' => 'No Data Found',
+        );
+        print(json_encode($quizall));
+    }
   }
 }//end
 
