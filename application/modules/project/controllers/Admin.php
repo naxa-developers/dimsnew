@@ -52,7 +52,6 @@ class Admin extends Admin_Controller {
     {
       $id=$this->input->post('id');
       $file_name = $_FILES['map_pic']['name'];
-      //$ext = pathinfo($file_name, PATHINFO_EXTENSION);
       $img_upload=$this->Feature_model->do_upload($file_name,$id);
       if($img_upload != " "){
           $ext=$img_upload['upload_data']['file_ext'];
@@ -78,9 +77,6 @@ class Admin extends Admin_Controller {
       $this->template
                           ->enable_parser(FALSE)
                           ->build('admin/feature_dataset_nep',$this->body);
-      // $this->load->view('admin/header',$this->body);
-      // $this->load->view('admin/feature_dataset_nep',$this->body);
-      // $this->load->view('admin/footer');
       }
   } 
   public function feature()

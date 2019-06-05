@@ -55,35 +55,20 @@
 
                   <div class="panel-body space">
 
-                      <form method="post" action ="<?php echo base_url(FOLDER_ADMIN); ?>/site_setting/update_site_text" enctype="multipart/form-data" >
+                      <form method="post" action ="<?php echo base_url(FOLDER_ADMIN); ?>/site_setting/update_site_text_nep" enctype="multipart/form-data" >
 
                     <div class="form-group ">
                       <label class="control-label col-md-3"><?php echo $this->lang->line("site_logo"); ?></label>
                       <div class="col-md-9">
                          <div class="col-md-6">
-                            <label for="image">Image : </label>
-                            <input type="file" class="btn btn-primary" id="image" name="site_logo">
+                            <label for="site_logo">Image : </label>
+                            <input type="file" class="btn btn-primary" id="site_logo" name="site_logo">
                         </div>
                             <div class="col-md-9">
                                 <label for="image">Old Image : </label>
                                 <img src="<?php  echo  $site_info['site_logo']; ?>" alt="Image Logo" height="100px" width="200px">
-                                <!-- <input type="hidden" class="btn btn-primary" id="image" name="old_image" value="<?php echo !empty( $site_info['site_logo'])? $site_info['site_logo']:'' ?>"> -->
+                                <input type="hidden" class="btn btn-primary" id="image"  value="<?php echo !empty( $site_info['site_logo'])? $site_info['site_logo']:'' ?>">
                             </div>
-                      <!--   <div class="fileupload fileupload-new" data-provides="fileupload">
-                          <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                            <img src="<?php echo $site_info['site_logo']?>" alt="" />
-                          </div>
-                          <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                          <div>
-                            <span class="btn btn-white btn-file">
-                              <span class="fileupload-new"><i class="fa fa-paper-clip"></i> <?php echo $this->lang->line("select_image"); ?></span>
-                              <span class="fileupload-exists"><i class="fa fa-undo"></i><?php echo $this->lang->line("change"); ?></span>
-                              <input type="file" name="site_logo" class="default" />
-                            </span>
-
-                          </div>
-                        </div> -->
-
                       </div>
                     </div>
 

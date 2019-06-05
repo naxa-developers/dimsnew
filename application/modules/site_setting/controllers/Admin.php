@@ -25,7 +25,7 @@ class Admin extends Admin_Controller {
           $this->body['site_info']=$this->Site_model->site_setting(1);
         }
        
-        //echo"<pre>";var_dump($this->body['site_info']);die;
+        //var_dump($this->body['site_info']);
         //admin check
         $admin_type=$this->session->userdata('user_type');
 
@@ -54,7 +54,7 @@ class Admin extends Admin_Controller {
     }
     public function update_site_text(){
         if( $_FILES['site_logo']['name']==''){
-          //var_dump($_POST); die;
+          var_dump($_POST);
           unset($_POST['submit']);
           $update=$this->Site_model->update_data($_POST,1);
           echo $update;
@@ -65,14 +65,12 @@ class Admin extends Admin_Controller {
             //error
           }
         }else{
-          //echo "<pre>";print_r($_FILES['site_logo']['name']);die;
           $file_name = $_FILES['site_logo']['name'];
           $img_upload=$this->Site_model->do_upload($file_name,'site_logo');
           if($img_upload['status']==1){
             $ext=$img_upload['upload_data']['file_ext'];
             unset($_POST['submit']);
-            $image_path=base_url().'uploads/site_setting'.$ext ;
-            // print_r($image_path);die;
+            $image_path=base_url().'uploads/site_setting/site_logo'.$ext ;
             $_POST['site_logo']=$image_path;
             $update=$this->Site_model->update_data($_POST,1);
             if($update){
@@ -90,9 +88,10 @@ class Admin extends Admin_Controller {
     }
     public function update_site_text_nep(){
         if( $_FILES['site_logo']['name']==''){
+          // print_r($_FILES['site_logo']['name']);die;
           unset($_POST['submit']);
           $update=$this->Site_model->update_data($_POST,2);
-        //  echo $update;
+          //  echo $update;
           if($update){
             $this->session->set_flashdata('msg','Site Logo and Site Text successfully Updated');
             // redirect('site_setting_nep');
@@ -103,6 +102,7 @@ class Admin extends Admin_Controller {
         }else{
           $file_name = $_FILES['site_logo']['name'];
           $img_upload=$this->Site_model->do_upload($file_name,'site_logo');
+          //print_r($img_upload);die;
           if($img_upload['status']==1){
             $ext=$img_upload['upload_data']['file_ext'];
             unset($_POST['submit']);
@@ -112,15 +112,14 @@ class Admin extends Admin_Controller {
             if($update){
               $this->session->set_flashdata('msg','Site Logo and Site Text successfully Updated');
               // redirect('site_setting_nep');
-              redirect(FOLDER_ADMIN.'/site_setting/site_setting_nep');
+              redirect(FOLDER_ADMIN.'/site_setting/site_setting/site_setting');
             }else{
               echo 'errp';
             }
           }else{
             $code= strip_tags($img_upload['error']);
             $this->session->set_flashdata('msg', $code);
-            // redirect('site_setting_nep');
-            redirect(FOLDER_ADMIN.'/site_setting/site_setting_nep');
+            redirect(FOLDER_ADMIN.'/site_setting/site_setting/site_setting');
           }
         }
     }

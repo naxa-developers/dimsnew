@@ -18,37 +18,57 @@ class Site_model extends CI_Model {
       return $res;
     }
 
-
     public function do_upload($filename,$name)
     {
-
-      $field_name                     = $name;
-      $config['upload_path']          = './uploads/site_setting/';
-      $config['allowed_types']        = 'png|jpg|jpeg';
+      $field_name                     ='site_logo';
+      $config['upload_path']          = './uploads/site_setting/site_logo/';
+      $config['allowed_types']        = 'gif|jpg|png|JPEG';
       $config['max_size']             = 7000;
       $config['overwrite']             = TRUE;
       $config['file_name']           = $name;
-
+      //print_r($config['file_name']);die;
       $this->load->library('upload', $config);
-
-      if ( ! $this->upload->do_upload($field_name))
+      if (!$this->upload->do_upload($field_name))
       {
         $error = array('error' => $this->upload->display_errors());
-        $error['status']=0;
         return $error;
-
-
       }
       else
       {
-
         $data = array('upload_data' => $this->upload->data());
-        $data['status']=1;
-
         return $data;
-
       }
     }
+    // public function do_upload($filename,$name)
+    // {
+
+    //   $field_name                     = $name;
+    //   $config['upload_path']          = './uploads/site_setting/';
+    //   $config['allowed_types']        = 'png|jpeg|jpg';
+    //   $config['max_size']             = 7000;
+    //   $config['overwrite']             = TRUE;
+    //   $config['file_name']           = $name;
+
+    //   $this->load->library('upload', $config);
+
+    //   if ( ! $this->upload->do_upload($field_name))
+    //   {
+    //     $error = array('error' => $this->upload->display_errors());
+    //     $error['status']=0;
+    //     return $error;
+
+
+    //   }
+    //   else
+    //   {
+
+    //     $data = array('upload_data' => $this->upload->data());
+    //     $data['status']=1;
+
+    //     return $data;
+
+    //   }
+    // }
     public function do_upload_cover($filename,$name)
     {
 
@@ -207,7 +227,7 @@ class Site_model extends CI_Model {
         }
     }
     public function doupload($file) {
-      $config['upload_path'] = './'.'uploads/project';
+      $config['upload_path'] = './'.'uploads/site_setting';
       $config['allowed_types'] = 'png|jpg|gif|jpeg';
       $config['overwrite'] = FALSE;
       $config['remove_spaces'] = TRUE;    
@@ -218,12 +238,16 @@ class Site_model extends CI_Model {
       $this->load->library('upload', $config);
       $this->upload->do_upload($file);
       $data = $this->upload->data();
-      $name_array = $data['file_name'];   
+      $name_array = $data['file_name']; //echo "<pre>";print_r($file);die;  
       return $name_array;
     }
     public function deleteslider($id,$tbl){
         $this->db->where('id',$id);
         return $this->db->delete($tbl);
+    }
+    public function update_image_image($id,$data,$tbl){
+      $this->db->where('id',$id);
+      return $this->db->update($tbl,$data);
     }
 
 }
