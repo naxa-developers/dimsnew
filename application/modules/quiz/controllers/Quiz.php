@@ -15,7 +15,7 @@ class Quiz extends Admin_Controller
         }else{
             $emerg_lang='nep'; 
         }
-        $this->data['category'] = $this->general->get_tbl_data_result('*','quiz_category');
+        $this->data['category'] = $this->general->get_tbl_data_result('*','quiz_category',false,'id',"DESC");
         //echo "<pre>"; print_r($this->data['category']);die;
 		$this->template
 			->enable_parser(FALSE)

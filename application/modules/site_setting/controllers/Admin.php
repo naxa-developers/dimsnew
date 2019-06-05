@@ -86,6 +86,43 @@ class Admin extends Admin_Controller {
           }
         }
     }
+    public function test()
+    {
+      if(isset($_POST['submit'])){
+         //echo "<pre>"; print_r($this->input->post()); die;
+          $file_name = $_FILES['project_pic']['name'];
+          $data=array(
+            'site_text'=>$this->input->post('site_text'),
+            'site_name'=>$this->input->post('site_name')
+          );
+          $insert=$this->Site_model->update_data($data,2);
+          if($insert){
+            $old_image=$this->input->post('old_image');
+            $img_upload=$this->Site_model->do_upload($file_name,$insert);
+              if($img_upload['status']== 1) {
+                @unlink($old_image);  
+              $ext=$img_upload['upload_data']['file_ext'];
+                $image_path=base_url() . 'uploads/drrinfo/'.$insert.$ext ; 
+                
+            }else{
+              $id=$this->input->post('id');
+              if($id) {
+                $image_path =$old_image;
+              }else{
+                $code= strip_tags($img_upload['error']);
+                $this->session->set_flashdata('msg', $code);
+                redirect(FOLDER_ADMIN.'/site_setting/site_setting');  
+              }
+            }
+            $img=array(
+                  'image'=>$image_path,
+              );
+            $update_path=$this->DrrModel->update_path($insert,$img);
+            $this->session->set_flashdata('msg','site successfully added');
+            redirect(FOLDER_ADMIN.'/site_setting/site_setting');
+          }
+      }
+    }
     public function update_site_text_nep(){
         if( $_FILES['site_logo']['name']==''){
           // print_r($_FILES['site_logo']['name']);die;

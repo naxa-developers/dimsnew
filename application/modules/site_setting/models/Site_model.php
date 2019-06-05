@@ -17,28 +17,67 @@ class Site_model extends CI_Model {
       $res=$this->db->update('site_setting',$data);
       return $res;
     }
-
-    public function do_upload($filename,$name)
+     public function do_upload($filename,$name)
     {
-      $field_name                     ='site_logo';
-      $config['upload_path']          = './uploads/site_setting/site_logo/';
-      $config['allowed_types']        = 'gif|jpg|png|JPEG';
-      $config['max_size']             = 7000;
-      $config['overwrite']             = TRUE;
-      $config['file_name']           = $name;
-      //print_r($config['file_name']);die;
-      $this->load->library('upload', $config);
-      if (!$this->upload->do_upload($field_name))
-      {
-        $error = array('error' => $this->upload->display_errors());
-        return $error;
-      }
-      else
-      {
-        $data = array('upload_data' => $this->upload->data());
-        return $data;
-      }
+
+        $field_name                     ='project_pic';
+        $config['upload_path']          = base_url().'/uploads/drrinfo/';
+        $config['allowed_types']        = 'gif|jpg|jpeg|png';
+        $config['max_size']             = 70000;
+        $config['overwrite']            = TRUE;
+        $config['file_name']           = $name;
+
+        $this->load->library('upload', $config);
+        // changes for image resize
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = './uploads/drrinfo/'.$name;
+            $config['maintain_ratio'] = TRUE;
+            $config['width'] = 100;
+            $config['height'] = 100;
+            $config['master_dim'] = 'width';
+            $config['new_image'] = './uploads/drrinfo/'.'_thumb'.$name;
+            //print_r($config['upload_path']);die;
+            $this->load->library('image_lib');
+        if ( ! $this->upload->do_upload($field_name))
+        { //print_r($field_name); die;
+          $error = array('error' => $this->upload->display_errors());
+          return $error;
+
+
+        }
+        else
+        {
+
+
+          $data = array('upload_data' => $this->upload->data());
+            $data['status']=1;
+      //echo "hello"; print_r($data); die;
+          return $data;
+
+
+        }
     }
+    // public function do_upload($filename,$name)
+    // {
+    //   $field_name                     ='site_logo';
+    //   $config['upload_path']          = './uploads/site_setting/site_logo/';
+    //   $config['allowed_types']        = 'gif|jpg|png|JPEG';
+    //   $config['max_size']             = 7000;
+    //   $config['overwrite']             = TRUE;
+    //   $config['file_name']           = $name;
+    //   //print_r($config['file_name']);die;
+    //   $this->load->library('upload', $config);
+    //   if (!$this->upload->do_upload($field_name))
+    //   {
+    //     $error = array('error' => $this->upload->display_errors());
+    //     return $error;
+    //   }
+    //   else
+    //   {
+    //     $data = array('upload_data' => $this->upload->data());
+    //     return $data;
+    //   }
+    // }
     // public function do_upload($filename,$name)
     // {
 

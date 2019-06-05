@@ -55,12 +55,34 @@
 
                   <div class="panel-body space">
 
-                      <form method="post" action ="<?php echo base_url(FOLDER_ADMIN); ?>/site_setting/update_site_text_nep" enctype="multipart/form-data" >
+                      <form method="post" action ="<?php echo base_url(FOLDER_ADMIN); ?>/site_setting/test" enctype="multipart/form-data" >
 
                     <div class="form-group ">
                       <label class="control-label col-md-3"><?php echo $this->lang->line("site_logo"); ?></label>
                       <div class="col-md-9">
-                         <div class="col-md-6">
+                        <div class="col-md-4">
+                          <label class="control-label">Photo </label>
+                          <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                              <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                            </div>
+                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                            <div>
+                              <span class="btn btn-white btn-file">
+                                <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
+                                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                <input type="file" name="project_pic" class="default" >
+                                <input type="hidden" name="old_image" value="<?php echo !empty($site_info['site_logo'])?$site_info['site_logo']:'' ?>">
+                              </span>
+                            </div>
+                          </div><?php  $error= $this->session->flashdata('msg');
+                              if($error){ ?>
+                              <div class="alert alert-danger">
+                                <?php echo $error ; ?>
+                              </div>
+                               <?php } ?>
+                        </div>
+                        <!--  <div class="col-md-6">
                             <label for="site_logo">Image : </label>
                             <input type="file" class="btn btn-primary" id="site_logo" name="site_logo">
                         </div>
@@ -68,7 +90,7 @@
                                 <label for="image">Old Image : </label>
                                 <img src="<?php  echo  $site_info['site_logo']; ?>" alt="Image Logo" height="100px" width="200px">
                                 <input type="hidden" class="btn btn-primary" id="image"  value="<?php echo !empty( $site_info['site_logo'])? $site_info['site_logo']:'' ?>">
-                            </div>
+                            </div> -->
                       </div>
                     </div>
 
