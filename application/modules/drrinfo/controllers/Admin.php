@@ -12,7 +12,7 @@ class Admin extends Admin_Controller {
 		$this->load->model('Table_model');
 		$this->load->model('DrrModel');
 		$this->load->library('form_validation');
-		// $this->load->library('');
+		$this->load->library('upload');
 		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 	}
 	public function index()
@@ -26,13 +26,46 @@ class Admin extends Admin_Controller {
         }
         $admin_type=$this->session->userdata('user_type');
         $this->data['admin']=$admin_type; 
+        
+        // $this->data['drrdata'] = $this->DrrModel->get_hazard_images();
+        // echo $this->db->last_query();die;
 		$this->data['drrdata'] = $this->general->get_tbl_data_result('id,image,name','drrcategory',array('language'=>$emerg_lang));
-		
-		
 		
 		$this->template
 	                    ->enable_parser(FALSE)
 	                    ->build('backend/drrinfo',$this->data);
+	}
+	public function add_image()
+	{
+		$admin_type=$this->session->userdata('user_type');
+        $this->data['admin']=$admin_type; 
+		$id = base64_decode($this->input->get('id'));
+		$this->data['hazard_id']=$id;
+		$this->data['drreditdata']='';
+		$this->form_validation->set_rules('title[]', 'slider title required', 'trim|required');
+		if($this->form_validation->run()==TRUE )
+		{	
+			$insert=$this->DrrModel->add_sliderimages();
+			if($insert)
+			{
+				redirect(FOLDER_ADMIN.'/drrinfo/slider_all_images/?id='.base64_encode($id));
+			}
+		}
+		$admin_type=$this->session->userdata('user_type');
+	      	$this->data['admin']=$admin_type;
+	      	$this->template
+	                        ->enable_parser(FALSE)
+	                        ->build('backend/slider_image',$this->data);
+	}
+	public function slider_all_images()
+	{   $hid = base64_decode($this->input->get('id'));
+		$admin_type=$this->session->userdata('user_type');
+        $this->data['admin']=$admin_type; 
+        $this->data['catid']=$hid;
+		$this->data['drrdata'] =$this->data['drrdata'] = $this->DrrModel->get_hazard_images(array('hazard_id'=>$hid));
+		$this->template
+	                    ->enable_parser(FALSE)
+	                    ->build('backend/all_images',$this->data);
 	}
 	public function add_drrinfo(){
 	 	$this->data=array();
@@ -121,6 +154,16 @@ class Admin extends Admin_Controller {
 	                        ->enable_parser(FALSE)
 	                        ->build('backend/index',$this->data);
 	    }
+	}
+	public function delete_sliderimage()
+	{
+		$tbl="hazard_slider";
+	    $id = base64_decode($this->input->get('id'));
+	    $delete=$this->DrrModel->delete($id,$tbl);
+	    if($delete){
+      		$this->session->set_flashdata('msg','Successfully Deleted');
+	        redirect(FOLDER_ADMIN.'/slider_all_images/?id='.base64_encode($id));
+    	}
 	}
 	public function delete(){
 	    $tbl="drrcategory";

@@ -94,6 +94,7 @@ define('DRRINFORMAION_PATH','uploads/drrinformation');
 define('DRR_INFORMAION_PATH','uploads/drrinfo');
 define('PROJECT_PATH','uploads/project');
 define('SESSION','disastermanagement');
-
+define('UPLOAD_DIR','uploads/');
+define('GALLERY_PATH',UPLOAD_DIR.'hazadr_gallerys/');
 
 define('APP_SECRET_KEY', '!@10293848576qwertyuiopasdfghjklmnbvcxzkhadkapoiuytrewq!0_p_123456r_@a_@k_@a_@s_@h_aquickbrownfoxjumpoverthelazydog');

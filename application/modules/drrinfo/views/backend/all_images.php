@@ -11,7 +11,7 @@
                   <header class="panel-heading">
                      <b>DRR info</b>
                       <span class="tools pull-right">
-                        <a href="<?php echo base_url(FOLDER_ADMIN)?>/drrinfo/add_drrinfo"><button type="submit" name="upload_data" class="btn btn-danger" style="background-color: #1fb5ad;border-color: #1fb5ad;margin-top: -7px;"><i class="fa fa-plus"></i> add drrinfo</button></a>
+                        <a href="<?php echo base_url(FOLDER_ADMIN)?>/drrinfo/add_image?id=<?php echo base64_encode($catid);?>"><button type="submit" name="upload_data" class="btn btn-danger" style="background-color: #1fb5ad;border-color: #1fb5ad;margin-top: -7px;"><i class="fa fa-plus"></i> add slider image</button></a>
                        </span>
                   </header>
                   <div class="panel-body">
@@ -43,7 +43,6 @@
                														      }?>
                               </td>
                             <?php  } ?>
-                            <td>Slider Image</td>
                             <td>
                               <?php echo $this->lang->line('operation'); ?>
                             </td>
@@ -57,10 +56,9 @@
 
                               <td><?php echo $value;?></td>
                             <?php }  ?>
-                             <td><a href="<?php echo base_url(FOLDER_ADMIN)?>/drrinfo/add_image?id=<?php echo base64_encode($v['id']);?>" class="btn btn-success btn-sm">Add Slider Image</a> | <a href="<?php echo base_url(FOLDER_ADMIN)?>/drrinfo/slider_all_images?id=<?php echo base64_encode($v['id']);?>" class="fa fa-eye 2x"></a></td>
                               <td>
                                 <a href="<?php echo base_url(FOLDER_ADMIN)?>/drrinfo/add_drrinfo?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('edit'); ?></a> /
-                                <a onclick="return confirm('Are you sure you want to delete?')" href="<?php echo base_url(FOLDER_ADMIN)?>/drrinfo/delete?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('delete'); ?></a></td>
+                                <a onclick="return confirm('Are you sure you want to delete?')" href="<?php echo base_url(FOLDER_ADMIN)?>/drrinfo/delete_sliderimage?id=<?php echo base64_encode($v['id']);?>"><?php echo $this->lang->line('delete'); ?></a></td>
                           </tr>
                         <?php  } ?>
                           </tbody>

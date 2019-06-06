@@ -205,10 +205,88 @@ class DrrModel extends CI_Model {
 
       }
     }
-public function update_path_drrarticle($id,$data){
+    public function update_path_drrarticle($id,$data){
 
         $this->db->where('id',$id);
         $this->db->update('drr_article',$data);
 
+    }
+    public function add_sliderimages()
+    {
+        $error = true;
+        $loop = 0;
+        $gly_title = $this->input->post('title');
+        $gly_content = $this->input->post('short_summary');
+        $gly_catid = $this->input->post('id');
+        foreach($gly_content as $key => $value) {
+            $_FILES['gallery']['name'] = $_FILES['gly_path']['name'][$key];
+            $_FILES['gallery']['type'] = $_FILES['gly_path']['type'][$key];
+            $_FILES['gallery']['tmp_name'] = $_FILES['gly_path']['tmp_name'][$key];
+            $_FILES['gallery']['error'] = $_FILES['gly_path']['error'][$key];
+            $_FILES['gallery']['size'] = $_FILES['gly_path']['size'][$key];
+            if (!empty($_FILES))
+            {
+                $new_image_name = $_FILES['gly_path']['name'][$key];
+                //echo "<pre>";print_r($new_image_name);die;
+                $imgfile = $this->douploadgallery('gallery');
+                $imagename= base_url().'uploads/hazadr_gallerys/'.$imgfile;
+                //print_r($imagename);die;
+                //$this->resize_image(GALLERY_PATH, $imgfile, 'thumb_'.$imgfile, 157, 117); //55,74
+            } else
+            {
+                $imgfile = '';
+            }
+            $dataArray[] = array(
+                    'title' => $gly_title[$key],
+                    'gly_path' =>$imagename,
+                    'short_summary'=> $gly_status,
+                    'hazard_id'=>$gly_catid
+            );
+        }
+        // print_r($dataArray);die(); 
+        if (!empty($dataArray))
+        {
+            $this->db->insert_batch('hazard_slider', $dataArray);
+            $rowaffected = $this->db->affected_rows();
+            if ($rowaffected)
+            {
+                return $rowaffected;
+            }
+            return false;
+        }
+        return false;
+    }
+    public function douploadgallery($file) {
+        //print_r($file);die;
+        $config['upload_path'] = './'.GALLERY_PATH;
+        $config['allowed_types'] = 'png|jpg|gif|jpeg ';
+        $config['encrypt_name'] = TRUE;
+        $config['remove_spaces'] = TRUE;    
+        $config['max_size'] = '20000000';
+        $this->upload->initialize($config);
+        $this->load->library('upload', $config);
+        $this->upload->do_upload($file);
+        $data = $this->upload->data();
+        //echo "<pre>"; echo "file: ";print_r($file);echo "<br/>";echo "Data: ";print_r($data);exit;
+        $name_array = $data['file_name'];
+            // echo $name_array;exit;
+            // $names= implode(',', $name_array);   
+            // return $names;
+        return $name_array;
+    }
+    public function get_hazard_images($cond =false)
+    {
+        $this->db->select('dc.name,"hs.id", "hs.title", "hs.gly_path", "hs.short_summary"');
+        $this->db->from('hazard_slider as hs');
+        $this->db->join('drrcategory as dc','dc.id = hs.hazard_id','LEFT');
+        if($cond) {
+          $this->db->where($cond); //change
+        }
+        $query = $this->db->get();
+        if ($query->num_rows() > 0)
+        {
+            return $data=$query->result_array();
+        } 
+        return false;
     }
 }
