@@ -45,7 +45,7 @@
             <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
             <?php } ?>
             <?php if($kdk['slug'] == "flood"){ ?>
-            <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
+            <img src="<?php echo base_url('assets/frontend/images/icon/flood.svg') ?>">
             <?php } ?>
             <?php if($kdk['slug'] == "fire"){ ?>
             <img src="<?php echo base_url('assets/frontend/images/icon/fire.svg') ?>">
@@ -63,20 +63,18 @@
             <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
             <?php } ?>
             <?php if($kdk['slug'] == "लु-"){ ?>
-            <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
+            <img src="<?php echo base_url('assets/frontend/images/icon/wave.svg') ?>">
+            <?php } ?>
+            <?php if($kdk['slug'] == "thunder"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/thunder.svg') ?>">
             <?php } ?>
             <span><?php echo $kdk['name'] ?></span> </a>
         <?php } endif; ?>
-            <!-- <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/landslide.svg') ?>"><span>पहिरो</span> </a>
-            <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/fire.svg') ?>"><span>आगलागी</span> </a>
-            <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/thunder.svg') ?>"><span>चट्यांग</span> </a>
-            <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/wave.svg') ?>"><span>लु </span> </a>
-            <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/draought.svg') ?>"><span>सुख्खा खडेरी </span> </a> -->
+           
         </div>
     </div>
     <div class="legend">
         <div class="legend-list">
-            <h4>Remain Safe</h4>
             <?php if($drrsubcat):
                 foreach ($drrsubcat as $key => $dsbub): ?>
                     <a href="#before-section<?php echo $dsbub['slug']; ?>" class="iset-btn"><?php echo  ucfirst($dsbub['name']); ?> <i class="la la-long-arrow-right"></i></a>
