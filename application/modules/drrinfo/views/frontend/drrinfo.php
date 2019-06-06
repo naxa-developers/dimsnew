@@ -94,7 +94,7 @@
             $drrsubcateg = $this->general->get_tbl_data_result('*','drrinformation',array('subcat_id'=>$d['id'],'language'=>$language,'category_id'=>$drrdata[0]['id']));
         if($drrsubcateg){
         foreach ($drrsubcateg as $key => $finaldetails) {  ?>
-            <section class="before-section<?php echo $d['slug']; ?> pdtb-50 bef-aft <?php if(($ken+2 % 2) == "1") echo "bg-white"; ?>" id="before-section<?php echo $d['slug']; ?>" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
+            <section class="before-section<?php echo $d['slug']; ?> bef-aft" id="before-section<?php echo $d['slug']; ?>" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
                 <div class="container">
                     <div class="section-title mrb-50">
                        <!--  <h3><?php //echo $d['name']; ?></h3> -->
