@@ -82,6 +82,7 @@
              endif; ?>
         </div>
     </div>
+    <div class="bg-wrap">
      <?php
         if($drrsubcat): 
             $lang=$this->session->get_userdata('Language');
@@ -108,4 +109,4 @@
         <?php  } }
             endforeach;
             endif; ?>
-     
+     </div>
