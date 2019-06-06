@@ -257,7 +257,6 @@ class DrrModel extends CI_Model {
         return false;
     }
     public function douploadgallery($file) {
-        //print_r($file);die;
         $config['upload_path'] = './'.GALLERY_PATH;
         $config['allowed_types'] = 'png|jpg|gif|jpeg ';
         $config['encrypt_name'] = TRUE;

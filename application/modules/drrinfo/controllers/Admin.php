@@ -159,10 +159,12 @@ class Admin extends Admin_Controller {
 	{
 		$tbl="hazard_slider";
 	    $id = base64_decode($this->input->get('id'));
+	    $catid = base64_decode($this->input->get('catid'));
+	    
 	    $delete=$this->DrrModel->delete($id,$tbl);
 	    if($delete){
       		$this->session->set_flashdata('msg','Successfully Deleted');
-	        redirect(FOLDER_ADMIN.'/drrinfo/slider_all_images/?id='.base64_encode($id));
+	        redirect(FOLDER_ADMIN.'/drrinfo/slider_all_images/?id='.base64_encode($catid));
     	}
 	}
 	public function delete(){
