@@ -8,7 +8,17 @@
     </section> -->
      <section class="hero-banner breadcrumb-banner">
         <div class="hero-slider owl-carousel breadcrumb-slider">
-            <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
+        <?php if($imagesslider):
+         foreach ($imagesslider as $key => $value) {  ?>
+            <div class="hero-item bg-image" data-background="<?php  echo $value['gly_path'] ?>" >
+                <div class="overlay"></div>
+                <div class="breadcrumb-caption">
+                    <h1><?php  echo $value['title'] ?> </h1>
+                    <p><?php  echo $value['short_summary'] ?></p>
+                </div>
+            </div>
+        <?php } endif; ?>
+            <!-- <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
                 <div class="overlay"></div>
                 <div class="breadcrumb-caption">
                     <h1>पहिरो </h1>
@@ -21,14 +31,7 @@
                     <h1>पहिरो </h1>
                     <p>पहिरो, नेपालको पहाडी भूभागमा सबैभन्दा दोहोरिने प्राकृतिक प्रकोप हो . पहिरो प्राकृतिक र मानव क्रियाकलाप दुवैले गर्दा जान्छन </p>
                 </div>
-            </div>
-            <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
-                <div class="overlay"></div>
-                <div class="breadcrumb-caption">
-                    <h1>पहिरो </h1>
-                    <p>पहिरो, नेपालको पहाडी भूभागमा सबैभन्दा दोहोरिने प्राकृतिक प्रकोप हो . पहिरो प्राकृतिक र मानव क्रियाकलाप दुवैले गर्दा जान्छन </p>
-                </div>
-            </div>
+            </div> -->
         </div>
     </section>
      <div class="shortcut">
