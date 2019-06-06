@@ -41,7 +41,7 @@ class Drrinfo extends Admin_Controller
 		$this->data=array();
 		$this->data['catdata'] = $this->general->get_tbl_data_result('id,slug,description,image,name,svgimage,icon','drrcategory',array('language'=>$language));
 		$id = base64_decode($this->input->get('id'));
-		$this->data['imagesslider'] = $this->general->get_tbl_data_result('*','hazard_slider',array('id'=>$id));
+		$this->data['imagesslider'] = $this->general->get_tbl_data_result('*','hazard_slider',array('hazard_id'=>$id));
 		//echo "<pre>"; print_r($this->data['imagesslider']);die;
 		if($this->session->userdata('Language')==NULL){
 
