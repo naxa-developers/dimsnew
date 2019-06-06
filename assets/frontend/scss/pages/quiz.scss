@@ -102,3 +102,28 @@
         }
     }
 }
+.quiz-section{
+    .quiz-container{
+        .nav-tabs{
+            padding-bottom: 0.6215rem;
+            margin-bottom: 1rem;
+            li{
+                border-radius:4px;
+                margin:0;
+                a{
+                    border-radius: 4px;
+                    margin: 0;
+                    font-size:1rem;
+                    &.active{
+                        margin:0;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+        .btn{
+            margin-top:1rem;
+        }
+    }
+
+}

@@ -2880,6 +2880,7 @@ pre code {
   position: fixed;
   left: 0;
   top: 450px;
+  transform: translateY(-50%);
   z-index: 9;
 }
 .shortcut .shortcut-list a {

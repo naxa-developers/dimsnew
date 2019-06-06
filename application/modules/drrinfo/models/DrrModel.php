@@ -239,7 +239,7 @@ class DrrModel extends CI_Model {
             $dataArray[] = array(
                     'title' => $gly_title[$key],
                     'gly_path' =>$imagename,
-                    'short_summary'=> $gly_status,
+                    'short_summary'=> $gly_content,
                     'hazard_id'=>$gly_catid
             );
         }

@@ -60,18 +60,13 @@
     }
 }
 .legend{
-    @include translatey;
     position: fixed;
+    top:450px;
     right:0;
     z-index: 9;
     .legend-list{
-        background-color: $color-white;
-        padding:0.7rem 0.6125rem;
         max-width: 150px;
-        h4{
-            font-size:1.2rem;
-            margin-bottom: 0.5rem;
-        }
+        text-align: right;
         a{
             margin-bottom: 0.5rem;
             font-size: 1rem;
@@ -80,13 +75,62 @@
             line-height: 1rem;
             min-width: 120px;
             padding:0.5rem 1rem;
+            @include clear;
             &.active{
                 background-color: $color-red;
             }
         }
     }
 }
+.shortcut{
+    // @include translatey;
+    position: fixed;
+    left:0;
+    top:450px;
+    transform:translateY(-50%);
+    z-index: 9;
+    .shortcut-list{
+        a{
+            @include boxshadow;
+            padding:0.5rem 0.7rem 0.5rem 0.5rem;
+            border-radius: 0 2rem 2rem 0;
+            display: block;
+            @include flexjust;
+            flex-wrap:nowrap;
+            align-items: center;
+            @include anim05;
+            height: 36px;
+            width:36px;
+            overflow: hidden;
+            background-color: $color-white;
+            // -webkit-transition: width 2s; 
+            // transition: width 2s;
+            img{
+                max-width: 20px;
+                margin-right: 0.5rem;
+            }
+            span{
+                opacity: 0;
+                visibility: hidden;
+                @include anim05;
+            }
+            &:hover{
+                width:auto;
+                overflow: initial;
+                span{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            
+        }
+    }
+}
+.bg-wrap{
+    background-color: $color-white;
+  }
 .bef-aft{
+    padding-top:2rem;
     .title{
         padding-right: 100px;
     }
@@ -96,28 +140,24 @@
         li{
             position: relative;
             margin-bottom: 1rem;
-            a{
-                padding-left:2rem;
-                display: block;
-                @include anim05;
-                letter-spacing: 0.5px;
-                line-height: 2rem;
-                &::before {
-                    content: "\f274";
-                    font-family: "LineAwesome";
-                    position: absolute;
-                    left:0;
-                    top:0;
-                    color:$color-blue;
-                }
+            padding-left:2rem;
+            display: block;
+            @include anim05;
+            letter-spacing: 0.5px;
+            line-height: 2rem;
+            &::before {
+                content: "\f274";
+                font-family: "LineAwesome";
+                position: absolute;
+                left:0;
+                top:0;
+                color:$color-blue;
             }
             &:hover{
-                a{
-                    padding-left:2.5rem;
-                    color:$color-blue;
-                    &:before{
-                        color:$color-red;
-                    }
+                padding-left:2.5rem;
+                color:$color-blue;
+                &:before{
+                    color:$color-red;
                 }
             }
             
@@ -179,26 +219,4 @@
             padding-right: 0;
         }
     } 
-}
-.quiz-container{
-    .nav-tabs{
-        padding-bottom: 0.6215rem;
-        margin-bottom: 1rem;
-        li{
-            border-radius:4px;
-            margin:0;
-            a{
-                border-radius: 4px;
-                margin: 0;
-                font-size:1rem;
-                &.active{
-                    margin:0;
-                    border-radius: 4px;
-                }
-            }
-        }
-    }
-    .btn{
-        margin-top:1rem;
-    }
 }

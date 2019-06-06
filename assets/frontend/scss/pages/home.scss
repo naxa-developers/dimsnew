@@ -124,6 +124,56 @@
     animation: scrollDown 1.5s infinite;
     box-sizing: border-box;
   }
+  &.breadcrumb-banner{
+    .breadcrumb-slider{
+      .owl-item{
+        .hero-item{
+          position: relative;
+          justify-items: center;
+          align-items: center;
+          min-height: 350px;
+          
+          .overlay{
+            @include overlay;
+            background-color: rgba($color-primary, 0.6);
+          }
+          &::after{
+            @include translatey;
+            right:0;
+            left:0;
+            top:0;
+            bottom:0;
+            height: 100%;
+            width:100%;
+            background-color: rgba($color-primary, 0.85);
+            z-index: 999;
+          }
+          .breadcrumb-caption{
+            color:$color-white;
+            position: relative;
+            z-index:1000;
+            text-align:center;
+            max-width: 500px;
+            margin:0 auto;
+          }
+        }
+      }
+      .owl-dots{
+        right: 0;
+        left:0;
+        bottom:30px;
+        text-align: center;
+        width:100%;
+        top:unset;
+        transform: none;
+        button{
+          display: inline-block;
+          margin-right: 0.2rem;
+        }
+      }
+    }
+    
+  }
 }
 .hazard-section{
   @include clear;
@@ -350,14 +400,13 @@
 .beready-section{
   @include clear;
 }
-@media screen and (max-width:$desktop){
-  .beready-row{
-    .beready-item{
-      .overlay{
-        h3{
-          a{
-            font-size: 1.2rem;
-          }
+
+@media screen and (max-width:1400px){
+  .beready-item{
+    .beready-content{
+      h3{
+        a{
+          font-size: 1.2rem;
         }
       }
     }
@@ -370,11 +419,10 @@
         min-height: 450px;
         .slider-caption{
           justify-content: center;
+          padding:0 1rem;
           
           .capiton-wrapper{
             padding:1rem;
-            width:96%;
-            margin:0 2%;
             h1{
               font-size: 2rem;
             }
@@ -383,11 +431,6 @@
               font-size: 1rem;
             }
             .iset-btn.btn-white{
-              height: 40px;
-              line-height: 40px;
-              display: inline-block;
-              padding: 0 20px;
-              min-width: auto;
               font-size: 0.875rem;
             }
           }
@@ -404,26 +447,50 @@
       }
     }
   }
+  
+  .beready-item{
+    .beready-content{
+      h3{
+        a{
+          font-size:1.1rem;
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width:$lg-tab){
-  .beready-row{
-    display: block;
-    .beready-item{
-      width:100%;
-      height: 300px;
-      min-height: 300px;
-      @include clear;
-      border-bottom: 1px solid rgba($color-white, 0.2);
+  .drr-section{
+    .drr-item{
+      .drr-content{
+        h4{
+          font-size:1.1rem;
+        }
+      }
+    }
+  }
+  .beready-item{
+    margin-bottom: 1rem;
+    min-height: auto;
+    padding:1.5rem;
+    .beready-content{
+      h3{
+        a{
+          font-size:1.1rem;
+        }
+      }
     }
   }
 }
 @media screen and (max-width:$mb-xl){
   .hero-banner{
-    .owl-item {
+    .owl-item{
       .hero-item{
         .slider-caption{
-          h1{
-            font-size: 1.4rem;
+          
+          .capiton-wrapper{
+            h1{
+              font-size: 1.7rem;
+            }
           }
         }
       }
@@ -442,6 +509,12 @@
           margin-right: 0.2rem;
         }
       }
+    }
+  }
+  .hazard-section{
+    .hazard-item{
+      min-height: auto;
+      padding:1rem;
     }
   }
 }

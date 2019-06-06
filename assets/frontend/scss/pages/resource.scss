@@ -10,6 +10,7 @@
             // width:100%;
             // display: inline-block;
             flex:0 0 170px;
+            max-width: 170px;
         }
         .resource-content{
             // width:calc(100% - 170px);
@@ -102,8 +103,21 @@
                 display: block;
                 figure{
                     flex:0 0 100%;
+                    max-width: 100%;
                     margin-bottom: 1rem;
                 }
+            }
+        }
+    }
+}
+@media screen and (max-width:$mb-md){
+    .resource-section{
+        .resource-list{
+            display: block;
+            figure{
+                flex:0 0 100%;
+                max-width: 100%;
+                margin-bottom: 1rem;
             }
         }
     }
