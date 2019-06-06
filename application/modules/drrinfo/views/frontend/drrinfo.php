@@ -8,7 +8,7 @@
     </section> -->
      <section class="hero-banner breadcrumb-banner">
         <div class="hero-slider owl-carousel breadcrumb-slider">
-        <?php if($imagesslider):
+        <?php if($imagesslider){
          foreach ($imagesslider as $key => $value) {  ?>
             <div class="hero-item bg-image" data-background="<?php  echo $value['gly_path'] ?>" >
                 <div class="overlay"></div>
@@ -17,7 +17,8 @@
                     <p><?php  echo $value['short_summary'] ?></p>
                 </div>
             </div>
-        <?php } else; ?>
+        <?php } 
+        }else{ ?>
             <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
                 <div class="overlay"></div>
                 <div class="breadcrumb-caption">
@@ -32,7 +33,7 @@
                     <p><?php echo $drrdata[0]['description'] ?></p>
                 </div>
             </div> 
-        <?php endif; ?>
+        <?php } ?>
         </div>
     </section>
      <div class="shortcut">
