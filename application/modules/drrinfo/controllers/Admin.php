@@ -162,7 +162,7 @@ class Admin extends Admin_Controller {
 	    $delete=$this->DrrModel->delete($id,$tbl);
 	    if($delete){
       		$this->session->set_flashdata('msg','Successfully Deleted');
-	        redirect(FOLDER_ADMIN.'/slider_all_images/?id='.base64_encode($id));
+	        redirect(FOLDER_ADMIN.'/drrinfo/slider_all_images/?id='.base64_encode($id));
     	}
 	}
 	public function delete(){
