@@ -37,7 +37,7 @@
             foreach ($catdata as $key => $kdk) {  ?>
             <a href="<?php echo base_url('drrinfo/drrdetails/') ?>?id=<?php echo base64_encode($kdk['id']) ?>" >
             <?php if($kdk['slug'] == "earthquake"){ ?>
-            <img src="<?php echo base_url('assets/frontend/images/icon/.svg') ?>">
+            <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
             <?php } ?>
             <?php if($kdk['slug'] == "flood"){ ?>
             <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
