@@ -24,6 +24,10 @@
                         <label for="short_desc">Svg Image : </label>
                         <textarea class="form-control"  id="svgimage" name="svgimage" rows="6" placeholder="Please Paste Svg Image Code"><?php echo !empty($drrdataeditdata[0]['svgimage'])?$drrdataeditdata[0]['svgimage']:'' ?></textarea>
                     </div>
+                    <div class="col-md-12">
+                        <label for="short_desc">Svg Icon : </label>
+                        <textarea class="form-control"  id="icon" name="icon" rows="6" placeholder="Please Paste Svg Icon Code"><?php echo !empty($drrdataeditdata[0]['icon'])?$drrdataeditdata[0]['icon']:'' ?></textarea>
+                    </div>
                 </div>
                 <div class="form-group">
                   <div class="form-group ">

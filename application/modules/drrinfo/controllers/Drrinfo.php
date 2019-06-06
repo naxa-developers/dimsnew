@@ -32,7 +32,14 @@ class Drrinfo extends Admin_Controller
 	}
 	public function drrdetails($cond=FALSE)
 	{
+		$lang=$this->session->get_userdata('Language');
+	    if($lang['Language']=='en') {
+	      $language='en';
+	    }else{
+	      $language='nep'; 
+	    }
 		$this->data=array();
+		$this->data['catdata'] = $this->general->get_tbl_data_result('id,slug,description,image,name,svgimage,icon','drrcategory',array('language'=>$language));
 		$id = base64_decode($this->input->get('id'));
 		if($this->session->userdata('Language')==NULL){
 

@@ -1,12 +1,74 @@
 <!-- herobanner start -->
-    <section class="details-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>">
+   <!--  <section class="details-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>">
         <div class="overlay"></div>
         <div class="breadcrumb-content">
             <h1><?php echo $drrdata[0]['name'] ?></h1>
             <p><?php echo $drrdata[0]['description'] ?></p>
         </div>
+    </section> -->
+     <section class="hero-banner breadcrumb-banner">
+        <div class="hero-slider owl-carousel breadcrumb-slider">
+            <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
+                <div class="overlay"></div>
+                <div class="breadcrumb-caption">
+                    <h1>पहिरो </h1>
+                    <p>पहिरो, नेपालको पहाडी भूभागमा सबैभन्दा दोहोरिने प्राकृतिक प्रकोप हो . पहिरो प्राकृतिक र मानव क्रियाकलाप दुवैले गर्दा जान्छन </p>
+                </div>
+            </div>
+            <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
+                <div class="overlay"></div>
+                <div class="breadcrumb-caption">
+                    <h1>पहिरो </h1>
+                    <p>पहिरो, नेपालको पहाडी भूभागमा सबैभन्दा दोहोरिने प्राकृतिक प्रकोप हो . पहिरो प्राकृतिक र मानव क्रियाकलाप दुवैले गर्दा जान्छन </p>
+                </div>
+            </div>
+            <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
+                <div class="overlay"></div>
+                <div class="breadcrumb-caption">
+                    <h1>पहिरो </h1>
+                    <p>पहिरो, नेपालको पहाडी भूभागमा सबैभन्दा दोहोरिने प्राकृतिक प्रकोप हो . पहिरो प्राकृतिक र मानव क्रियाकलाप दुवैले गर्दा जान्छन </p>
+                </div>
+            </div>
+        </div>
     </section>
-
+     <div class="shortcut">
+        <div class="shortcut-list">
+        <?php if($catdata): 
+            foreach ($catdata as $key => $kdk) {  ?>
+            <a href="<?php echo base_url('drrinfo/drrdetails/') ?>?id=<?php echo base64_encode($kdk['id']) ?>" >
+            <?php if($kdk['slug'] == "earthquake"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/.svg') ?>">
+            <?php } ?>
+            <?php if($kdk['slug'] == "flood"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
+            <?php } ?>
+            <?php if($kdk['slug'] == "fire"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/fire.svg') ?>">
+            <?php } ?>
+            <?php if($kdk['slug'] == "drought"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/draought.svg') ?>">
+            <?php } ?>
+            <?php if($kdk['slug'] == "landslide"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/landslide.svg') ?>">
+            <?php } ?>
+             <?php if($kdk['slug'] == "शीतलहर"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
+            <?php } ?>
+             <?php if($kdk['slug'] == "road-accident"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
+            <?php } ?>
+            <?php if($kdk['slug'] == "लु-"){ ?>
+            <img src="<?php echo base_url('assets/frontend/images/icon/earthquacke.svg') ?>">
+            <?php } ?>
+            <span><?php echo $kdk['name'] ?></span> </a>
+        <?php } endif; ?>
+            <!-- <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/landslide.svg') ?>"><span>पहिरो</span> </a>
+            <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/fire.svg') ?>"><span>आगलागी</span> </a>
+            <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/thunder.svg') ?>"><span>चट्यांग</span> </a>
+            <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/wave.svg') ?>"><span>लु </span> </a>
+            <a href="#" ><img src="<?php echo base_url('assets/frontend/images/icon/draought.svg') ?>"><span>सुख्खा खडेरी </span> </a> -->
+        </div>
+    </div>
     <div class="legend">
         <div class="legend-list">
             <h4>Remain Safe</h4>
