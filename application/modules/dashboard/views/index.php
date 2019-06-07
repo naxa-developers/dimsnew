@@ -19,9 +19,9 @@ h1.sub{
         <div class="panel-body">
           <div class="top-stats-panel">
             <div class="daily-visit">
-              <h4 class="widget-h"><?php echo $this->lang->line('total_reports'); ?></h4>
+              <h4 class="widget-h">वेबसाइट अबलोकन  संख्या</h4>
 
-              <h1 class="sub" id="count"><?php echo $report ?></h1>
+              <h1 class="sub" id="count"> <a href="javascript:voiv(0);" target="_blank"><img src="http://www.cutercounter.com/hits.php?id=grppcnq&nd=9&style=10" border="0" alt="visitor counter"></a></h1>
 
 
             </div>

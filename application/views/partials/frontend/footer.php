@@ -5,7 +5,7 @@
         </span>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
                         <h4>महत्वपूर्ण साइटहरु</h4>
                         <div class="ft-content">
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
                         <h4>हाम्रो सामाजिक सञ्जाल</h4>
                         <div class="ft-content">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
                         <h4>सम्पर्क</h4>
                         <div class="ft-content">
@@ -54,14 +54,6 @@
                                 <li><a href="#"><i class="la la-phone"></i><label>फोन :</label></a></li>
                                 <li><a href="#"><i class="la la-envelope"></i><label>इमेल :</label>info@iset.com</a></li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4>वेबसाइट भ्रमण गर्नुहोस्</h4>
-                        <div class="ft-content">
-                            <a href="javascript:voiv(0);" target="_blank"><img src="http://www.cutercounter.com/hits.php?id=grppcnq&nd=9&style=10" border="0" alt="visitor counter"></a>
                         </div>
                     </div>
                 </div>
