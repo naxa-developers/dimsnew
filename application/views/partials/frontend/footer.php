@@ -51,8 +51,8 @@
                         <h4>सम्पर्क</h4>
                         <div class="ft-content">
                             <ul class="contact-links">
-                                <li><a href="#"><i class="la la-phone"></i><label>फोन :</label></a></li>
-                                <li><a href="#"><i class="la la-envelope"></i><label>इमेल :</label>info@iset.com</a></li>
+                                <li><a href="#"><i class="la la-phone"></i><label>फोन : <?php echo !empty(COPY_DATE)?COPY_DATE:'' ?></label></a></li>
+                                <li><a href="#"><i class="la la-envelope"></i><label>इमेल :</label><?php echo !empty(TOLLFREE_ONE)?TOLLFREE_ONE:'' ?></a></li>
                             </ul>
                         </div>
                     </div>
