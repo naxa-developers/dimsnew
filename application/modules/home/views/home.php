@@ -187,7 +187,7 @@
                                           
                                 </figure>';
                                     break;
-                                case "4":
+                                case "5":
                                      $rdyimage = '<figure>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="83.111" height="91.631" viewBox="0 0 83.111 91.631">
                                         <g id="hospital" transform="translate(-6.414 -4.369)">
