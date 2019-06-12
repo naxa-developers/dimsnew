@@ -137,7 +137,7 @@
                         <div class="beready-content">
                         <?php 
                             switch ($rdy['id']) {
-                                case "6":
+                                case "4":
                                     $rdyimage = '<figure>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="76.742" height="83.718" viewBox="0 0 76.742 83.718">
                                         <g id="local_government" data-name="local government" transform="translate(-13.333 -10)">
@@ -148,7 +148,7 @@
                                         </svg>
                                 </figure>';
                                     break;
-                                case "4":
+                                case "6":
                                      $rdyimage = '<figure>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="83.848" height="83.849" viewBox="0 0 83.848 83.849">
                                             <g id="home_ready" data-name="home ready" transform="translate(-241 1204)">
