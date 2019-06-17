@@ -155,6 +155,7 @@ class DrrModel extends CI_Model {
         $this->db->select('name,id,slug');
         $this->db->from('drrsubcategory');
         $this->db->where_in("id",$cond);
+        $this->db->order_by('id','ASC');
         $query = $this->db->get();
         //echo $this->db->last_query();die;
         if ($query->num_rows() > 0)
