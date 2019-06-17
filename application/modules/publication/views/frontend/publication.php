@@ -55,7 +55,7 @@
                                     </a>
                                 </h3>
                                 <div class="post-meta">
-                                    <time><i class="la la-calendar"></i>12 dec 2019,</time><span>Ram Sharma</span>
+                                    <time><i class="la la-calendar"></i><?php echo   date("d", strtotime($d['created_at'])) ?>-<?php echo   date("M", strtotime($d['created_at'])) ?>-<?php echo   date("Y", strtotime($d['created_at'])) ?></time>
                                 </div>
                                 <p><?php echo $this->general->string_limit($d['summary'],100); ?></p>
                             </div>
