@@ -240,11 +240,11 @@ class DrrModel extends CI_Model {
             $dataArray[] = array(
                     'title' => $gly_title[$key],
                     'gly_path' =>$imagename,
-                    'short_summary'=> $gly_content,
+                    'short_summary'=> $gly_content[$key],
                     'hazard_id'=>$gly_catid
             );
         }
-        // print_r($dataArray);die(); 
+        //echo "<pre>";print_r($dataArray);die(); 
         if (!empty($dataArray))
         {
             $this->db->insert_batch('hazard_slider', $dataArray);

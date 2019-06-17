@@ -15,13 +15,6 @@
             <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
                 <div class="overlay"></div>
                 <div class="breadcrumb-caption">
-                    <h1>पहिरो </h1>
-                    <p>पहिरो, नेपालको पहाडी भूभागमा सबैभन्दा दोहोरिने प्राकृतिक प्रकोप हो . पहिरो प्राकृतिक र मानव क्रियाकलाप दुवैले गर्दा जान्छन </p>
-                </div>
-            </div>
-            <div class="hero-item bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>" >
-                <div class="overlay"></div>
-                <div class="breadcrumb-caption">
                     <h1><?php echo $drrdata[0]['name'] ?></h1>
                     <p><?php echo $drrdata[0]['description'] ?></p>
                 </div>
