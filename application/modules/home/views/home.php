@@ -8,7 +8,7 @@
                     <div class="slider-caption">
                         <div class="capiton-wrapper">
                             <h1>
-                            Be Ready Nepal
+                             <?php echo $slid['title'] ?>
                             </h1>
                             <p><?php echo $slid['description']  ?></p>
                             <a href="<?php echo base_url('drrinfo') ?>"><button type="button" class="iset-btn btn-white">थप  जानकारी  <i class="la la-long-arrow-right"></i></button></a>
