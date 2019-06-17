@@ -41,8 +41,8 @@ class Drrinfo extends Admin_Controller
 		$this->data=array();
 		$this->data['catdata'] = $this->general->get_tbl_data_result('id,slug,description,image,name,svgimage,icon','drrcategory',array('language'=>$language));
 		$id = base64_decode($this->input->get('id'));
-		$this->data['imagesslider'] = $this->general->get_tbl_data_result('*','hazard_slider',array('hazard_id'=>$id));
-		//echo "<pre>"; print_r($this->data['imagesslider']);die;
+		$this->data['images_slider'] = $this->general->get_tbl_data_result('*','hazard_slider',array('hazard_id'=>$id));
+		// echo "<pre>"; print_r($this->data['imagesslider']);die;
 		if($this->session->userdata('Language')==NULL){
 
       	$this->session->set_userdata('Language','nep');
@@ -54,11 +54,16 @@ class Drrinfo extends Admin_Controller
 	      $language='nep'; 
 	    }
 	    $this->data['subcat'] = $this->DrrModel->only_information($id);
-	    foreach ($this->data['subcat'] as $key => $value) {
-	    	$list[]=$value['subcat_id'];
-	    }
-	    $this->data['drrsubcat'] = $this->DrrModel->only_information_id($list);
+	    if($this->data['subcat']){
+		    foreach ($this->data['subcat'] as $key => $value) {
+		    	$list[]=$value['subcat_id'];
+		    }
+		    $this->data['drrsubcat'] = $this->DrrModel->only_information_id($list);
+		}else{
+			$this->data['drrsubcat'] = "";
 
+		}
+	    
 	    $this->data['drrdata'] = $this->general->get_tbl_data_result('slug,id,name,description','drrcategory',array('id'=>$id,'language'=>$language));
 	    $this->data['pubd']=$this->Publication_model->get_publication_search();
 	    $this->data['page_title'] ="Disaster Information System";
