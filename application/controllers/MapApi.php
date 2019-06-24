@@ -124,7 +124,7 @@ public function send_msg(){
     // $response['status']=200;
     // $response['success']=$res;
     // $response['reply']=$reply;
-//echo json_encode($response);
+  //echo json_encode($response);
   }else{
 
     $this->session->set_flashdata('msg','Notification Could Not Be Sent At The moment');
@@ -140,13 +140,13 @@ public function send_msg(){
 
 public function test(){
 
-var_dump($_POST);
-$_POST['ans'];
+  var_dump($_POST);
+  $_POST['ans'];
 
-exit();
-    $this->session->set_flashdata('msg','Successfully Notification Sent ');
-    redirect('report_manage');
-}
+  exit();
+      $this->session->set_flashdata('msg','Successfully Notification Sent ');
+      redirect('report_manage');
+  }
 
 
 // if( $data['the geom'] == null){

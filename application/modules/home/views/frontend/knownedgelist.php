@@ -10,7 +10,6 @@
         <form action="" method="POST">
             <div class="row">
                <div class="col-xl-3 col-md-4">
-                   
                  <!--     <div class="input-group"> -->
                         <input type="hidden" name="keywords" class="form-control" value="<?php echo !empty($this->input->post('keywords'))?$this->input->post('keywords'):''; ?>" aria-label="" placeholder="Search Hazard">
                        <!--  <div class="input-group-append">
@@ -45,7 +44,7 @@
                         <?php if($pubcat): 
                         foreach ($pubcat as $key => $pt) { 
                             $npubtype = $this->general->get_tbl_data_result('id,name','publicationfilecat',array('sub_cat_id'=>$pt['id']));
-                           // echo "<pre>"; print_r($npubtype);
+                          // echo "<pre>"; print_r($checkSelectedArray);
                          ?>
                             <div class="card">
                                 <div class="card-header" id="heading-2<?php echo $key+1?>">
@@ -56,14 +55,14 @@
                                         </a>
                                     </h5>
                                 </div>
-                                <div id="collapse-2<?php echo $key+1 ?>" class="collapse <?php if($key+1 == '1'){ echo "show";} ?>" data-parent="#accordion" aria-labelledby="heading-2<?php echo $key+1 ?>">
+                                <div id="collapse-2<?php echo $key+1 ?>" class="collapse <?php if($key+1 == '1'){ echo "show";} ?> <?php if(in_array($pt['id'], $checkSelectedArray)) echo "show" ?>" data-parent="#accordion" aria-labelledby="heading-2<?php echo $key+1 ?>">
                                     <div class="card-body">
                                         <ul>
                                         <?php if($npubtype): 
                                         foreach ($npubtype as $key => $b) { ?>
                                             <li>
                                                 <div class="form-check">
-                                                    <input type="checkbox" name="<?php echo $pt['slug']; ?>[]" class="form-check-input" value="<?php echo $b['id'] ?>" id="exampleCheck1">
+                                                    <input type="checkbox" name="<?php echo $pt['slug']; ?>[]" class="form-check-input" value="<?php echo $b['id'] ?>" id="exampleCheck1" <?php if(in_array($b['id'], $checkSelectedArray)) echo "checked=checked" ?>>
                                                     <label class="form-check-label" for="exampleCheck1"><?php echo $b['name'] ?></label>
                                                 </div>
                                             </li>
@@ -80,7 +79,7 @@
                                     <label>&nbsp;</label>
                                     <button type="submit" class="iset-btn center-block ">बिस्तृतमा  खोजी गर्नुहोस् </button>
                                      <label>&nbsp;</label>
-                                     </div>
+                                </div>
                             </div>
                         </div>
                     </aside>

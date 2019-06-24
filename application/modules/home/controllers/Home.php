@@ -84,10 +84,17 @@ class Home extends Admin_Controller
 
 		//echo "<pre>"; print_r($this->input->post());die;	
 		$this->data['publication']=$this->Publication_model->get_publication();
+		if($this->data['publication']){
+			foreach ($this->data['publication'] as $key => $value) {
+				$newarray[] = $value['subcat'];
+			}
+		}
+		$this->data['checkSelectedArray']=!empty($this->data['publication'])?$newarray:array("0"=>"0");
+		//echo "<pre>"; print_r($this->data['checkSelectedArray']);die;
 	  	$this->data['pub'] = $this->general->get_tbl_data_result('id,name','drrcategory');
       	$this->data['pubcat'] = $this->general->get_tbl_data_result('id,name,slug','publicationsubcat');
       	$this->data['pubcatfiletype'] =$this->config->item('publicationFileType');
-      	//echo "<pre>"; print_r($this->data['pubcat']); die;
+        //echo "<pre>"; print_r($this->data['publication']); die;
 	    $this->template
 			->enable_parser(FALSE)
 			->build('frontend/knownedgelist', $this->data);
