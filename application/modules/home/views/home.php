@@ -7,9 +7,7 @@
                 <div class="hero-item bg-image" data-background="<?php echo base_url('uploads/project/'.$slid['image']) ?>" >
                     <div class="slider-caption">
                         <div class="capiton-wrapper">
-                            <h1>
-                             विपदको पुर्वतयारी गरौँ
-                            </h1>
+                            <h1><?php echo $slid['name']  ?></h1>
                             <p><?php echo $slid['description']  ?></p>
                             <a href="<?php echo base_url('drrinfo') ?>"><button type="button" class="iset-btn btn-white">थप  जानकारी  <i class="la la-long-arrow-right"></i></button></a>
                         </div>

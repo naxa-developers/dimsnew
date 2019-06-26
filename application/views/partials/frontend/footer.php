@@ -12,8 +12,8 @@
                             <ul class="ft-links">
                                 <li><a target="_blank" href="http://www.moha.gov.np/">गृह मन्त्रालय</a></li>
                                 <li><a target="_blank" href="http://neoc.gov.np/en/">राष्ट्रीय आपातकालीन परिचालन केन्द्र</a></li>
-                                <li><a target="_blank" href="http://drrportal.gov.np/">डी. आर्. आर् पोर्टल 
-</a></li>
+                                <li><a target="_blank" href="http://drrportal.gov.np/">डी. आर्. आर् पोर्टल </a></li>
+                                <li><a target="_blank" href="http://bipad.gov.np/"> विपद्</a></li>
                             </ul>
                         </div>
                     </div>
