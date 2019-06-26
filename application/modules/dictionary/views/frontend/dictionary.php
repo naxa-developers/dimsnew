@@ -6,7 +6,7 @@
     <p>के तपाईलाई विपद भनेको के हो थाहा छ? विपदका शब्दावलीहरुको बारेमा थाहा छ? विपदको शब्दहरुको बारे जानकारीकोलागी यो शब्दावली प्रयोग गर्नुस</p>
 </div>
 </section>
-<section class="knowledge pdtb-50">
+<section class="knowledge pdtb-50 ditionary-section">
     <div class="container">
          <div class="row">
                 <div class="col-lg-3">
