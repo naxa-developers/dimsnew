@@ -68,11 +68,13 @@
 
         $('.hero-slider').owlCarousel({
             items: 1,
-            animateOut: 'fadeOut',
-            animateIn: 'fadeIn',
+            // animateOut: 'fadeOut',
+            // animateIn: 'fadeIn',
             loop: true,
             dots: true,
             nav: false,
+            autoplayTimeout:7000,
+            smartSpeed:5000,
             responsiveClass: true,
             responsive: {
                 0: {
@@ -134,13 +136,21 @@
 
         $('[data-toggle="popover"]').popover();
 
+        // $('.shortcut-list').on('mouseover','a', function(){
+        //     $(this).animate({width:'auto'})
+        // });
+        // $('.shortcut-list').on('mouseleave','a', function(){
+        //     $(this).animate({width:'36px'})
+        // });
+        
+
         AOS.init();
 
         function customScroll (){
             $(".dictionary-sidebar .card-body").slimscroll({
                 height: "500px",
-                color: "#8c909a",
-                size: "2px",
+                color: "#356aaa",
+                size: "4px",
                 alwaysVisible: 1,
                 borderRadius: "3px",
                 railBorderRadius: "2px"
@@ -150,6 +160,6 @@
         customScroll();
 
         
-        
     });
 })(jQuery);
+
