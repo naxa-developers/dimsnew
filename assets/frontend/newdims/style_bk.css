@@ -520,11 +520,6 @@ pre code {
   overflow-y: scroll;
 }
 
-@media screen and (max-width: 1200px) {
-  body {
-    font-size: 0.875rem;
-  }
-}
 main {
   position: relative;
   top: 0;
@@ -690,11 +685,11 @@ main {
   }
 }
 .iset-btn {
-  min-width: auto;
+  min-width: 11rem;
   display: inline-block;
   transform: perspective(1px) translateZ(0px);
   vertical-align: middle;
-  padding: 5px 15px;
+  padding: 10px 20px;
   background: #366CAD;
   color: #ffffff;
   overflow: hidden;
@@ -705,7 +700,7 @@ main {
   box-shadow: none;
   border: none;
   text-transform: capitalize;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   position: relative;
 }
@@ -926,7 +921,6 @@ main {
 
 .site-header {
   padding: 15px 0;
-  background-color: #ffffff;
 }
 .site-header .headerWrap {
   display: -webkit-box;
@@ -1024,8 +1018,8 @@ main {
 }
 .site-header .headerWrap .headRight .main-navigation .menu-primary-container ul li a {
   display: block;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 1.2rem 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   position: relative;
   font-weight: 600;
@@ -2168,11 +2162,6 @@ pre code {
   overflow-y: scroll;
 }
 
-@media screen and (max-width: 1200px) {
-  body {
-    font-size: 0.875rem;
-  }
-}
 .ripple-tab ul {
   display: flex;
   justify-content: center;
@@ -2289,25 +2278,20 @@ pre code {
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-end;
+  max-width: 100%;
   width: 100%;
+  margin: 0 auto;
   padding: 0 5rem;
-  position: absolute;
-  right: 0;
-  bottom: 50px;
 }
 .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper {
   max-width: 700px;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: rgba(54, 108, 173, 0.85);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px;
 }
 .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   opacity: 0;
   text-transform: capitalize;
   font-family: "Mukta", sans-serif;
@@ -2328,8 +2312,8 @@ pre code {
   margin: 0 0.5rem;
 }
 .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper p {
-  margin: 1rem 0;
-  font-size: 1rem;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
 }
 .hero-banner .owl-item.active .hero-item .slider-caption .capiton-wrapper h1 {
   opacity: 1;
@@ -2342,15 +2326,15 @@ pre code {
 }
 .hero-banner .hero-slider .owl-dots {
   position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 30px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 50px;
+  right: 30px;
   z-index: 1000;
-  text-align: center;
-}
-.hero-banner .hero-slider .owl-dots button {
-  display: inline-block;
-  margin-right: 0.2rem;
+  text-align: right;
 }
 .hero-banner .hero-slider .owl-dots .owl-dot {
   width: 30px;
@@ -2383,7 +2367,6 @@ pre code {
   -webkit-animation: scrollDown 1.5s infinite;
   animation: scrollDown 1.5s infinite;
   box-sizing: border-box;
-  display: none;
 }
 .hero-banner.breadcrumb-banner .breadcrumb-slider .owl-item .hero-item {
   position: relative;
@@ -2481,9 +2464,6 @@ pre code {
 .hazard-section .hazard-item .hazard-content h4 a {
   color: #366CAD;
 }
-.hazard-section .hazard-item .hazard-content p {
-  margin-bottom: 0;
-}
 .hazard-section .hazard-item::after {
   background: #366CAD;
   bottom: 0;
@@ -2518,7 +2498,7 @@ pre code {
 .hazard-section .hazard-item.hazard-button::after {
   display: none;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 991px) {
   .hazard-section .iset-3 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
@@ -2526,7 +2506,7 @@ pre code {
     max-width: 50%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .hazard-section .iset-3 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 33.333333%;
@@ -2540,18 +2520,6 @@ pre code {
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
     max-width: 25%;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .hazard-section .hazard-item {
-    padding: 1rem;
-    min-height: 280px;
-  }
-  .hazard-section .hazard-item .hazard-content p {
-    line-height: 1.5rem;
-  }
-  .hazard-section figure svg {
-    width: 80px;
   }
 }
 
@@ -2662,7 +2630,7 @@ pre code {
 .beready-item .beready-content h3 a {
   color: #060606;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .beready-item .beready-content h3::after {
   content: "";
@@ -2725,19 +2693,6 @@ pre code {
     font-size: 1.2rem;
   }
 }
-@media screen and (max-width: 1200px) {
-  .drr-section .drr-item figure {
-    width: 70px;
-    height: 70px;
-  }
-  .drr-section .drr-item figure svg {
-    fill: #ffffff;
-    width: 40px;
-  }
-  .drr-section .drr-item .drr-content h4 {
-    font-size: 1.1rem;
-  }
-}
 @media screen and (max-width: 1024px) {
   .hero-banner .owl-item .hero-item {
     min-height: 450px;
@@ -2787,6 +2742,20 @@ pre code {
   .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper h1 {
     font-size: 1.7rem;
   }
+  .hero-banner .hero-slider .owl-dots {
+    right: 0;
+    left: 0;
+    bottom: 30px;
+    text-align: center;
+    width: 100%;
+    top: unset;
+    transform: none;
+  }
+  .hero-banner .hero-slider .owl-dots button {
+    display: inline-block;
+    margin-right: 0.2rem;
+  }
+
   .hazard-section .hazard-item {
     min-height: auto;
     padding: 1rem;
