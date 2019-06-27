@@ -8,8 +8,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
                         <h4>हाम्रो बारेमा </h4>
-                        <?php $sliderhomefinal = $this->general->get_tbl_data_result('image,name,description','homepageslider'); ?>
-                        <p> <?php echo $this->general->string_limit($sliderhomefinal[0]['description'], 152);?> </p>
+                        <?php $sliderhomefinal = $this->general->get_tbl_data_result('summary','about',array('id'=>5)); ?>
+                        <p> <?php echo $this->general->string_limit($sliderhomefinal[0]['summary'], 152);?> </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
