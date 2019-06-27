@@ -19,7 +19,7 @@
                             <img src="<?php echo $dta['image'] ?>" alt="<?php echo $dta['name'] ?>">
                         </figure>
                         <figcaption>
-                            <h4><a href="<?php echo base_url('/drrinfo/drrdetails/'.$dta['id']) ?>"><?php echo $dta['name'] ?></a></h4>
+                            <h4><a href="<?php echo base_url('/drrinfo/')?>drrdetails?id=<?php echo base64_encode($dta['id']);?>"><?php echo $dta['name'] ?></a></h4>
                             <p> <?php echo $dta['description'] ?></p>
                           <a href="<?php echo base_url('/drrinfo/')?>drrdetails?id=<?php echo base64_encode($dta['id']);?>"><button type="button" class="iset-btn">थप  जानकारी <i class="la la-long-arrow-right"></i></button></a>
                         </figcaption>

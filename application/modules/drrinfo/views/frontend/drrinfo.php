@@ -1,5 +1,4 @@
-
-     <section class="hero-banner breadcrumb-banner">
+<section class="hero-banner breadcrumb-banner">
         <div class="hero-slider owl-carousel breadcrumb-slider">
         <?php if($images_slider){
          foreach ($images_slider as $key => $value) {  ?>
