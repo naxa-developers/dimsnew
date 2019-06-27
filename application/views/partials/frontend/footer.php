@@ -9,7 +9,7 @@
                     <div class="footer-widget">
                         <h4>हाम्रो बारेमा </h4>
                         <?php $sliderhomefinal = $this->general->get_tbl_data_result('summary','about',array('id'=>5)); ?>
-                        <p> <?php echo $this->general->string_limit($sliderhomefinal[0]['summary'], 152);?> </p>
+                        <p> <?php echo $this->general->string_limit(strip_tags($sliderhomefinal[0]['summary']), 152);?> </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
