@@ -1359,6 +1359,9 @@ footer.site-footer .footer-widget h4::after {
   display: block;
   margin-top: 0.5rem;
 }
+footer.site-footer .footer-widget p {
+  font-size: 0.875rem;
+}
 footer.site-footer .footer-widget .ft-content {
   margin-top: 1rem;
 }
