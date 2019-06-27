@@ -42,14 +42,13 @@ class Admin extends Admin_Controller {
             $emerg_lang='nep'; 
         }
       	$data['pub'] = $this->general->get_tbl_data_result('id,name','publicationsubcat');
-      
       	//echo "<pre>"; print_r($this->data['pub']);die;
 		if ($this->form_validation->run() == TRUE){
-	      	$page_slug_new = strtolower (preg_replace('/[[:space:]]+/', '-', $this->input->post('name')));
+	      	//$page_slug_new = strtolower (preg_replace('/[[:space:]]+/', '-', $this->input->post('name')));
 	      	$data=array(
 	        	'name'=>$this->input->post('name'),
 	        	'sub_cat_id'=>$this->input->post('category'),
-	        	'slug'=>$page_slug_new,
+	        	//'slug'=>$page_slug_new,
 	      	);
 	      	$insert=$this->Publication_model->add_publiactioncat('publicationfilecat',$data);
 	      	if($insert!=""){
@@ -57,7 +56,7 @@ class Admin extends Admin_Controller {
 		        redirect(FOLDER_ADMIN.'/publication/filecat');
 	        }
 	    }else{
-	      //admin check
+	        //admin check
 	    	$id = base64_decode($this->input->get('id'));
 	    	if($id) {
 				$data['puddata'] = $this->general->get_tbl_data_result('sub_cat_id,id,name','publicationfilecat',array('id'=>$id));
@@ -73,7 +72,6 @@ class Admin extends Admin_Controller {
 	                        ->enable_parser(FALSE)
 	                        ->build('admin/file_cat',$data);
 	    }
-  		
   	}
   	public function delete_filecat(){
 	    $id = $this->input->get('id');

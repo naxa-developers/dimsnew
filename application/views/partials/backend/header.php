@@ -274,7 +274,7 @@
                     </a>
                     <ul class="sub">
 
-                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/about/about/edit_about?id=NQ==">परियोजना बारे<?php //echo $this->lang->line('about_management'); ?></a></li>
+                        <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/about/edit_about?id=NQ==">परियोजना बारे<?php //echo $this->lang->line('about_management'); ?></a></li>
                         <li><a href="<?php echo base_url(FOLDER_ADMIN);?>/about/view_about">नेपाल  इन्फो </a></li>
                       
                     </ul>

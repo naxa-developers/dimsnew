@@ -1,3 +1,12 @@
+<style type="text/css">
+    .form-check-label {
+        margin-bottom: 0;
+        font-size: 0.875rem;
+    }
+   .knoledge-list img{
+            max-height: 170px;
+    }
+</style>
 <section class="resource-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>">
         <div class="overlay"></div>
         <div class="breadcrumb-content">
@@ -44,38 +53,37 @@
                         <?php if($pubcat): 
                         foreach ($pubcat as $key => $pt) { 
                             $npubtype = $this->general->get_tbl_data_result('id,name','publicationfilecat',array('sub_cat_id'=>$pt['id']));
-                          // echo "<pre>"; print_r($checkSelectedArray);
-                         ?>
-                            <div class="card">
-                                <div class="card-header" id="heading-2<?php echo $key+1?>">
-                                    <h5>
-                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2<?php echo $key+1 ?>" aria-expanded="false"
-                                            aria-controls="collapse-2<?php echo $key+1?>">
-                                            <?php echo $pt['name']; ?>
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapse-2<?php echo $key+1 ?>" class="collapse <?php if($key+1 == '1'){ echo "show";} ?> <?php if(in_array($pt['id'], $checkSelectedArray)) echo "show" ?>" data-parent="#accordion" aria-labelledby="heading-2<?php echo $key+1 ?>">
-                                    <div class="card-body">
-                                        <ul>
-                                        <?php if($npubtype): 
-                                        foreach ($npubtype as $key => $b) { ?>
-                                            <li>
-                                                <div class="form-check">
-                                                    <input type="checkbox" name="<?php echo $pt['slug']; ?>[]" class="form-check-input" value="<?php echo $b['id'] ?>" id="exampleCheck1" <?php if(in_array($b['id'], $checkSelectedArray)) echo "checked=checked" ?>>
-                                                    <label class="form-check-label" for="exampleCheck1"><?php echo $b['name'] ?></label>
-                                                </div>
-                                            </li>
-                                        <?php } endif; ?>
-                                        </ul>
-                                    </div>
+                          // echo "<pre>"; print_r($checkSelectedArray); ?>
+                        <div class="card">
+                            <div class="card-header" id="heading-2<?php echo $key+1?>">
+                                <h5>
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2<?php echo $key+1 ?>" aria-expanded="false"
+                                        aria-controls="collapse-2<?php echo $key+1?>">
+                                        <?php echo $pt['name']; ?>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse-2<?php echo $key+1 ?>" class="collapse <?php if($key+1 == '1'){ echo "show";} ?> <?php if(in_array($pt['id'], $checkSelectedArray)) echo "show" ?>" data-parent="#accordion" aria-labelledby="heading-2<?php echo $key+1 ?>">
+                                <div class="card-body">
+                                    <ul>
+                                    <?php if($npubtype): 
+                                    foreach ($npubtype as $key => $b) { ?>
+                                        <li>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="<?php echo $pt['slug']; ?>[]" class="form-check-input" value="<?php echo $b['id'] ?>" id="exampleCheck1" <?php if(in_array($b['id'], $checkSelectedArray)) echo "checked=checked" ?>>
+                                                <label class="form-check-label" for="exampleCheck1"><?php echo $b['name'] ?></label>
+                                            </div>
+                                        </li>
+                                    <?php } endif; ?>
+                                    </ul>
                                 </div>
                             </div>
+                        </div>
                         <?php } endif; ?>
 
                           
-                            <div class="col-xl-2 col-md-4 ">
-                                <div class="col text-center">
+                            <div class="form-control">
+                                <div class="text-center">
                                     <label>&nbsp;</label>
                                     <button type="submit" class="iset-btn center-block ">बिस्तृतमा  खोजी गर्नुहोस् </button>
                                      <label>&nbsp;</label>
