@@ -1361,6 +1361,7 @@ footer.site-footer .footer-widget h4::after {
 }
 footer.site-footer .footer-widget p {
   font-size: 0.875rem;
+  margin-top: 1.5rem;
 }
 footer.site-footer .footer-widget .ft-content {
   margin-top: 1rem;
@@ -2337,7 +2338,7 @@ pre code {
   margin: 0 0.5rem;
 }
 .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper p {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   font-size: 1rem;
 }
 .hero-banner .owl-item.active .hero-item .slider-caption .capiton-wrapper h1 {
@@ -2641,7 +2642,7 @@ pre code {
   transition: all 0.5s;
   position: relative;
   text-align: center;
-  min-height: 200px;
+  min-height: 220px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;

@@ -63,7 +63,8 @@
         color:#fff;
     }
 </style>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
     <section class="details-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>">
         <div class="overlay"></div>
         <div class="breadcrumb-content">
@@ -103,7 +104,7 @@
                                         </div>
                                     </li>
                                     <?php } ?>
-                                    <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
+                                   
                                 </ul>
                             </div>
                         <?php endif; ?>
@@ -115,9 +116,36 @@
             </div> 
         </div> 
     </section>
+<!--     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="modalAnswerWrongRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
+$( document ).ready(function() {
     $(document).off('click','.abc');
     $(document).on('click','.abc', function(){
+        $('#modalAnswerWrongRight').modal('show');
         jQuery.noConflict();
         var base_url='<?php echo base_url(); ?>';
         var urlpost = base_url+'/quiz/check_status';
@@ -138,6 +166,7 @@
                 //console.log(data.result);
                 if(data.status=='success')
                 {
+                    $('#modalAnswerWrongRight').modal('show');
                     $('#FinalAnswerShow'+nqnid).html(data.result);
                     setTimeout(function(){
                         $('#FinalAnswerShow'+nqnid).html("");
@@ -146,6 +175,7 @@
             }
         });
     });
+});
 </script>
 <script type="text/javascript">
      function bootstrapTabControl(){

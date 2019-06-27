@@ -10,7 +10,6 @@
 <section class="resource-breadcrumb inner-banner bg-image" data-background="<?php echo base_url('assets/frontend/images/details-breadcrumb.jpg') ?>">
         <div class="overlay"></div>
         <div class="breadcrumb-content">
-           
             <h1><?php echo !empty(DISASTITLE)?DISASTITLE:'' ?></h1>
             <p><?php echo !empty(DISASDESC)?DISASDESC:'' ?></p>
         </div>
