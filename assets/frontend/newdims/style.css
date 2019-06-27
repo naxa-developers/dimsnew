@@ -522,7 +522,7 @@ pre code {
 
 @media screen and (max-width: 1200px) {
   body {
-    font-size: 0.875rem;
+    font-size: 0.975rem;
   }
 }
 main {
@@ -2179,7 +2179,7 @@ pre code {
 
 @media screen and (max-width: 1200px) {
   body {
-    font-size: 0.875rem;
+    font-size: 0.975rem;
   }
 }
 .ripple-tab ul {
@@ -2758,9 +2758,6 @@ pre code {
   }
   .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper h1 {
     font-size: 1.2rem;
-  }
-  .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper p {
-    margin: 1.5rem 0;
   }
   .hero-banner .owl-item .hero-item .slider-caption .capiton-wrapper .iset-btn.btn-white {
     font-size: 0.875rem;
