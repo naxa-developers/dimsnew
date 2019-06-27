@@ -1349,6 +1349,7 @@ footer.site-footer .footer-widget h4 {
 footer.site-footer .footer-widget h4 a {
   color: #ffffff;
   text-transform: uppercase;
+  font-size: 0.875rem;
 }
 footer.site-footer .footer-widget h4::after {
   content: "";
@@ -1360,6 +1361,9 @@ footer.site-footer .footer-widget h4::after {
 }
 footer.site-footer .footer-widget .ft-content {
   margin-top: 1rem;
+}
+footer.site-footer .footer-widget .ft-content p {
+  font-size: 0.875rem;
 }
 footer.site-footer .footer-widget .ft-content .ft-links li {
   display: block;
@@ -1373,6 +1377,7 @@ footer.site-footer .footer-widget .ft-content .ft-links li a {
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  font-size: 0.875rem;
 }
 footer.site-footer .footer-widget .ft-content .ft-links li a::after {
   content: "";
@@ -1381,7 +1386,7 @@ footer.site-footer .footer-widget .ft-content .ft-links li a::after {
   position: absolute;
   left: 0;
   top: 5px;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.2);
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -1429,6 +1434,7 @@ footer.site-footer .footer-widget .ft-content .social-links li a:hover {
 footer.site-footer .footer-widget .ft-content .contact-links li a {
   display: block;
   color: #ffffff;
+  font-size: 0.875rem;
 }
 footer.site-footer .footer-widget .ft-content .contact-links li a label {
   display: inline-block;
@@ -1514,7 +1520,7 @@ footer.site-footer .footer-widget .ft-content .contact-links li a i:hover {
 }
 .inner-banner .breadcrumb-content h1 {
   text-transform: capitalize;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 .inner-banner .breadcrumb-content p {
   margin: 1.5rem 0;
@@ -2389,7 +2395,7 @@ pre code {
   position: relative;
   justify-items: center;
   align-items: center;
-  min-height: 350px;
+  min-height: 250px;
 }
 .hero-banner.breadcrumb-banner .breadcrumb-slider .owl-item .hero-item .overlay {
   position: absolute;
@@ -2423,6 +2429,9 @@ pre code {
   text-align: center;
   max-width: 500px;
   margin: 0 auto;
+}
+.hero-banner.breadcrumb-banner .breadcrumb-slider .owl-item .hero-item .breadcrumb-caption h1 {
+  font-size: 1.5rem;
 }
 .hero-banner.breadcrumb-banner .breadcrumb-slider .owl-dots {
   right: 0;
@@ -2518,7 +2527,7 @@ pre code {
 .hazard-section .hazard-item.hazard-button::after {
   display: none;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .hazard-section .iset-3 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
@@ -2526,7 +2535,7 @@ pre code {
     max-width: 50%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   .hazard-section .iset-3 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 33.333333%;
@@ -2720,11 +2729,6 @@ pre code {
   display: table;
 }
 
-@media screen and (max-width: 1400px) {
-  .beready-item .beready-content h3 a {
-    font-size: 1.2rem;
-  }
-}
 @media screen and (max-width: 1200px) {
   .drr-section .drr-item figure {
     width: 70px;
@@ -2740,7 +2744,7 @@ pre code {
 }
 @media screen and (max-width: 1024px) {
   .hero-banner .owl-item .hero-item {
-    min-height: 450px;
+    min-height: 400px;
   }
   .hero-banner .owl-item .hero-item .slider-caption {
     justify-content: center;
@@ -2761,20 +2765,12 @@ pre code {
 }
 @media screen and (max-width: 768px) {
   .hero-banner .owl-item .hero-item {
-    min-height: 350px;
-  }
-
-  .beready-item .beready-content h3 a {
-    font-size: 1.1rem;
+    min-height: 300px;
   }
 }
 @media screen and (max-width: 991px) {
   .beready-item {
     margin-bottom: 1rem;
-    min-height: auto;
-  }
-  .beready-item .beready-content h3 a {
-    font-size: 1.1rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -3006,7 +3002,7 @@ pre code {
     margin-top: 3rem;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   .info-wrap {
     padding-right: 0;
   }
