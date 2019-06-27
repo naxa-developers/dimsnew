@@ -9,6 +9,26 @@
     <div class="container">
         <div class="about-list">
             <div class="row">
+                <div class="col-xl-12">
+                    <div class="about-content">
+                        <h4><?php echo $about[0]['title'] ?></h4>
+                        <p><?php echo strip_tags($about[0]['summary']) ?></p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about pdtb-50">
+    <div class="container">
+        <div class="about-list">
+            <div class="row">
+            <div class="col-xl-6">
+                    <div class="about-content">
+                        <h4><?php echo $about[0]['title'] ?></h4>
+                        <p><?php echo $about[0]['summary'] ?></p>
+                    </div>  
+                </div>
                 <div class="col-xl-6">
                 <?php if($about[0]['photo']): ?>
                     <figure>

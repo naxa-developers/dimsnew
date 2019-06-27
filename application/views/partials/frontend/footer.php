@@ -4,7 +4,14 @@
             <i class="la la-angle-double-up"></i>
         </span>
         <div class="container">
-            <div class="row">
+            <div class="row"> 
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-widget">
+                        <h4>हाम्रो बारेमा </h4>
+                        <?php $sliderhomefinal = $this->general->get_tbl_data_result('image,name,description','homepageslider'); ?>
+                        <p> <?php echo $this->general->string_limit($sliderhomefinal[0]['description'], 152);?> </p>
+                    </div>
+                </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
                         <h4>महत्वपूर्ण साइटहरु</h4>
@@ -14,34 +21,6 @@
                                 <li><a target="_blank" href="http://neoc.gov.np/en/">राष्ट्रीय आपातकालीन परिचालन केन्द्र</a></li>
                                 <li><a target="_blank" href="http://drrportal.gov.np/">डी. आर्. आर् पोर्टल </a></li>
                                 <li><a target="_blank" href="http://bipad.gov.np/"> विपद्</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-widget">
-                        <h4>हाम्रो सामाजिक सञ्जाल</h4>
-                        <div class="ft-content">
-                            <ul class="social-links">
-                                <?php if(FACEBOOK): ?>
-                                <li>
-                                    <a href="<?php echo FACEBOOK ?>">
-                                        <i class="la la-facebook"></i>
-                                    </a>
-                                </li>
-                                <?php endif; if(TWITTER): ?>
-                                <li>
-                                    <a href="<?php echo TWITTER ?>">
-                                        <i class="la la-twitter"></i>
-                                    </a>
-                                </li>
-                                <?php endif; if(GOOGLE): ?>
-                                <li>
-                                    <a href="?php echo GOOGLE ?>">
-                                        <i class="la la-youtube"></i>
-                                    </a>
-                                </li>
-                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
