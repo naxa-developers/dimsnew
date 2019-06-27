@@ -9,7 +9,7 @@
                         <div class="capiton-wrapper">
                             <h1><?php echo $slid['name']  ?></h1>
                             <p><?php echo $slid['description']  ?></p>
-                            <a href="<?php echo base_url('drrinfo') ?>"><button type="button" class="iset-btn btn-white">थप  जानकारी  <i class="la la-long-arrow-right"></i></button></a>
+                            <a href="<?php echo base_url('drrinfo') ?>"><span style="color: white">थप  जानकारी  <i class="la la-long-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
