@@ -89,17 +89,18 @@ class Quiz_model extends CI_Model {
             $optn = $this->input->post('question');
             if($qt == "checkbox") {
                 $checkbox = $this->input->post('checkboxoption');
-                $rightanswer = $this->input->post('right_answer_radio');
+                //echo "<pre>";print_r($checkbox);die;
+                //$rightanswer = $this->input->post('checkboxoption');
                 foreach ($checkbox as $key => $opval) {
                         $option= array(
                                "category_id"=>$insert_id,
                                "name"=>$checkbox[$key],
-                               "right_answer"=>$rightanswer[$key],
+                               //"right_answer"=>$rightanswer[$key],
                             );
-                        //echo "<pre>";print_r($option);die;
+                       // echo "<pre>";print_r($option);die;
                     $this->db->insert('quiz_options',$option);
                 }
-                //echo "<pre>";print_r($rightanswer);die;
+                //echo "<pre>";print_r($option);die;
             }
             if($qt == "radio") {
                 $radio = $this->input->post('rdiooprtion');
