@@ -82,7 +82,7 @@
                                 <div class="col-md-3">
                                     <label></label>
                                     <div class="mt-checkbox-list">
-                                    <span>Check The right Answer <input type="checkbox" class="rightAnswer" data-id="1" name="right_answer_radio[]" onclick="$(this).attr('value', this.checked ? 1 : 0)"></input> <input type="hidden" name="checkboxoption" id="checkrightAnswer1" value="2"></input></span>
+                                    <span>Check The right Answer <input type="checkbox" class="rightAnswer" data-id="1" name="right_answer_radio[]" onclick="$(this).attr('value', this.checked ? 1 : 0)"></input> <input type="hidden" name="checkboxoption[]" id="checkrightAnswer1" value="2"></input></span>
                                     </div>
                                 </div>
                                  <div class="col-md-6">
