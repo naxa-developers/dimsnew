@@ -104,7 +104,7 @@
                                         </div>
                                     </li>
                                     <?php } ?>
-                                   
+                                   <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
                                 </ul>
                             </div>
                         <?php endif; ?>
@@ -145,7 +145,7 @@
 $( document ).ready(function() {
     $(document).off('click','.abc');
     $(document).on('click','.abc', function(){
-        $('#modalAnswerWrongRight').modal('show');
+        //$('#modalAnswerWrongRight').modal('show');
         jQuery.noConflict();
         var base_url='<?php echo base_url(); ?>';
         var urlpost = base_url+'/quiz/check_status';
@@ -166,7 +166,7 @@ $( document ).ready(function() {
                 //console.log(data.result);
                 if(data.status=='success')
                 {
-                    $('#modalAnswerWrongRight').modal('show');
+                    //$('#modalAnswerWrongRight').modal('show');
                     $('#FinalAnswerShow'+nqnid).html(data.result);
                     setTimeout(function(){
                         $('#FinalAnswerShow'+nqnid).html("");

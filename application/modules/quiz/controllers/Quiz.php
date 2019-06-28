@@ -77,14 +77,15 @@ class Quiz extends Admin_Controller
                 "question_id"=>$questionid,
                 "option_id"=>$optionsid,
                 "cat_id"=>$catid,
-                "mac"=>$arr1[1],
-                "ip"=>$_SERVER['SERVER_ADDR'],
+               // "mac"=>$arr1[1],
+               // "ip"=>$_SERVER['SERVER_ADDR'],
                 );
             $table="quiz_response";
 
-            $questionsright = $this->general->get_tbl_data_result('*','quiz_response', array('question_id'=>$questionid,'mac'=>$arr1[1]));
-            if(empty($questionsright))
-            {
+            // $questionsright = $this->general->get_tbl_data_result('*','quiz_response', array('question_id'=>$questionid));
+            // print_r($questionsright);die;
+            // if(empty($questionsright))
+            // {
                 $response = $this->quiz_model->insert_data($table,$data_array);
 
                 if($questions[0]['right_answer'] == "1" || $questions[0]['right_answer'] == "on")
@@ -114,10 +115,10 @@ class Quiz extends Admin_Controller
                     print_r(json_encode(array('status'=>'success','result'=>'<div class="alert '.$color.' alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> '.$template.'  </div>Total Wrong<span class="badge badge-secondary">'.$count[0]['total'].' </span>  Total Right<span class="badge badge-secondary">'.$rcount[0]['total'].' </span>','message'=>'Record Selected Successfully')));
                     exit;
                 }
-            }else{
-                print_r(json_encode(array('status'=>'success','result'=>'<div class="alert alert-danger alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> You can not change your choice for this question  !!  </div>','message'=>'Successfully')));
-                exit;
-            }
+            // }else{
+            //     print_r(json_encode(array('status'=>'success','result'=>'<div class="alert alert-danger alert-dismissible"> <i class="la la-times-circle la-2x"></i>   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a><strong></strong> You can not change your choice for this question  !!  </div>','message'=>'Successfully')));
+            //     exit;
+            // }
         }else{
             print_r(json_encode(array('status'=>'error','message'=>'Cannot Perform this Operation')));
             exit;
