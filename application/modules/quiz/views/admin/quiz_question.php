@@ -82,7 +82,7 @@
                                 <div class="col-md-3">
                                     <label></label>
                                     <div class="mt-checkbox-list">
-                                    <span>Check The right Answer <input type="checkbox" class="rightAnswer" data-id="1" name="right_answer_radio[]" onclick="$(this).attr('value', this.checked ? 1 : 0)"></input> <input type="hidden" name="checkboxoption[]" id="checkrightAnswer1" value="2"></input></span>
+                                    <span>Check The right Answer <input type="checkbox" class="rightAnswer" data-id="1" name="checkboxoption[]" onclick="$(this).attr('value', this.checked ? 1 : 0)"></input> <!-- <input type="checkbox" name="checkboxoption[]" id="checkrightAnswer1" value="2"></input> --></span>
                                     </div>
                                 </div>
                                  <div class="col-md-6">
@@ -151,22 +151,22 @@
 </script>
 <script>
 
-    $(".rightAnswer").change(function () {
-        var recentid = $(this).data('id');
-        // alert(recentid);
-        // console.log(recentid);
-        if ($(this).prop("checked")) {
-            $(this).attr('value', 1);
-            $("#checkrightAnswer1").attr('value', 1);
-            $("#checkrightAnswer2").attr('value', 1);
-            $("#checkrightAnswer3").attr('value', 1);
-            $("#checkrightAnswer4").attr('value', 1);
-            $("#checkrightAnswer5").attr('value', 1);
-        }
-        else {
-           $(this).attr('value', 1);
-        }
-    });
+    // $(".rightAnswer").change(function () {
+    //     var recentid = $(this).data('id');
+    //     // alert(recentid);
+    //     // console.log(recentid);
+    //     if ($(this).prop("checked")) {
+    //         $(this).attr('value', 1);
+    //         $("#checkrightAnswer1").attr('value', 1);
+    //         $("#checkrightAnswer2").attr('value', 1);
+    //         $("#checkrightAnswer3").attr('value', 1);
+    //         $("#checkrightAnswer4").attr('value', 1);
+    //         $("#checkrightAnswer5").attr('value', 1);
+    //     }
+    //     else {
+    //        $(this).attr('value', 1);
+    //     }
+    // });
 
     $(document).off('click','#addOptionsMore');
     $(document).on('click','#addOptionsMore', function(){ 
