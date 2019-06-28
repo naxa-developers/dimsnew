@@ -116,10 +116,6 @@
             </div> 
         </div> 
     </section>
-<!--     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button> -->
-
 <!-- Modal -->
 <div class="modal fade" id="modalAnswerWrongRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -131,7 +127,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div id="FinalAnswerShow<?php echo $catevalue['id'] ?>"></div>
+        <!-- <div id="FinalAnswerShow"></div> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -167,6 +163,7 @@ $( document ).ready(function() {
                 if(data.status=='success')
                 {
                     //$('#modalAnswerWrongRight').modal('show');
+                    $('#FinalAnswerShow').html(data.result);
                     $('#FinalAnswerShow'+nqnid).html(data.result);
                     setTimeout(function(){
                         $('#FinalAnswerShow'+nqnid).html("");

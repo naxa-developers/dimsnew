@@ -9,11 +9,10 @@
     <section class="before-section pdtb-50 bef-aft aos-init aos-animate active" id="before-section" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-offset="0">
         <div class="container">
             <div class="before-list bef-aft-list">
-            <!-- <figure>
-                <img src="<?php echo base_url('uploads/project/'.$beready[0]['image']) ?>" alt="<?php echo $beready[0]['name'] ?>">
-            </figure> -->
-            <?php echo $beready[0]['description'] ?>
-               
+                <?php echo $beready[0]['description'] ?>
+                <?php if($beready[0]['copy']){ ?>
+                Source:    <?php echo $beready[0]['copy'];
+                } ?>  
             </div>
         </div>
     </section>

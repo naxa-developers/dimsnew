@@ -62,6 +62,10 @@
                                 <input type="hidden" class="btn btn-primary" id="image" name="old_image" value="<?php echo !empty($drrdataeditdata[0]['image'])?$drrdataeditdata[0]['image']:'' ?>">
                             </div>
                         <?php endif; ?>
+                      <div class="col-sm-6">
+                        <label for="copy">Soure Text:</label>
+                        <input type="text" name="copy" class="form-control" id="copy" value="<?php echo !empty($drrdataeditdata[0]['copy'])?$drrdataeditdata[0]['copy']:'' ?>" placeholder="ENTER SOURCE TITLE">
+                        </div>
                         <div class="col-md-6">
                             <label for="submit">&nbsp;&nbsp;</label><br>
                             <button type="submit" name="submit" class="btn btn-primary" ><?php if($drrdataeditdata){ echo "Update";}else{ echo"Submit";} ?></button>

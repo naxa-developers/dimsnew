@@ -71,7 +71,7 @@ class Home extends Admin_Controller
 	{
 		$this->template->set_layout('frontend/default');
 		$data= array();
-		$data['beready'] = $this->general->get_tbl_data_result('id,slug,name,description,image','beready',array('slug'=>$slug));
+		$data['beready'] = $this->general->get_tbl_data_result('id,slug,name,description,image,copy','beready',array('slug'=>$slug));
 		//echo "<pre>"; print_r($this->data['beready']); die;	
 	    $this->template
 			->enable_parser(FALSE)

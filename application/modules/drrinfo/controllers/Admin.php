@@ -216,12 +216,14 @@ class Admin extends Admin_Controller {
 	      	$file_name = $_FILES['image']['name'];
 	      	// echo "<pre>"; print_r($file_name); die;
 		      	$data=array(
+		      		'copy'=>$this->input->post('copy'),
 		        	'category_id'=>$this->input->post('category_id'),
 		        	'subcat_id'=>$this->input->post('subcat_id'),
 		        	'short_desc'=>$this->input->post('short_desc'),
 		        	'description'=>$this->input->post('description'),
 		        	'language'=>$emerg_lang,
 		      	);
+		      	//echo"<pre>"; print_r($this->input->post());die;
 		      	$insert=$this->DrrModel->add_drrinfo('drrinformation',$data);
 		      	if($insert!=""){
 		      		$old_image=$this->input->post('old_image');
@@ -254,7 +256,7 @@ class Admin extends Admin_Controller {
 	    	$id = base64_decode($this->input->get('id'));
 	    	//print_r($id);die;
 	    	if($id) {
-				$this->data['drrdataeditdata'] = $this->general->get_tbl_data_result('id,short_desc,subcat_id,category_id,image,description','drrinformation',array('id'=>$id));
+				$this->data['drrdataeditdata'] = $this->general->get_tbl_data_result('copy,id,short_desc,subcat_id,category_id,image,description','drrinformation',array('id'=>$id));
 	    	}else{
 	    		$this->data['drrdataeditdata'] = array();	
 	    	}

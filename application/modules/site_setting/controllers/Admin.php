@@ -397,7 +397,7 @@ class Admin extends Admin_Controller {
         $this->data['drrdataeditdata']=array();
         if(!empty($bnr_id))
         { 
-            $bnr_data=$this->general->get_tbl_data_result('id,image,name,description','beready',array('id'=>$bnr_id));
+            $bnr_data=$this->general->get_tbl_data_result('id,image,name,description,copy','beready',array('id'=>$bnr_id));
             if(empty($bnr_data))
             {
                 redirect(site_url(FOLDER_ADMIN.'/site_setting/beready'),'refresh');

@@ -76,7 +76,7 @@
             }else{
               $language='nep'; 
             }
-            foreach ($drrsubcat as $ken => $d):
+            foreach ($drrsubcat as $ken => $d): 
             $drrsubcateg = $this->general->get_tbl_data_result('*','drrinformation',array('subcat_id'=>$d['id'],'language'=>$language,'category_id'=>$drrdata[0]['id']));
         if($drrsubcateg){
         foreach ($drrsubcateg as $key => $finaldetails) {  ?>
@@ -89,6 +89,9 @@
                     <div class="before-list bef-aft-list">
                          <?php echo $finaldetails['description']; ?>
                     </div>
+                    <?php if($finaldetails['copy']){ ?>
+                        <span>Source : <?php echo $finaldetails['copy']; ?></span>
+                    <?php } ?>
                 </div>
             </section>
         <?php  } }

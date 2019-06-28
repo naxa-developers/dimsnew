@@ -30,6 +30,10 @@
                               <textarea  class="form-control ckeditor" rows="4" cols="50" name="description"><?php echo !empty($drrdataeditdata[0]['description'])?$drrdataeditdata[0]['description']:'' ?></textarea>
                             </div>
                         </div>
+                        <div class="col-sm-12">
+                          <label for="copy">Soure Text:</label>
+                          <input type="text" name="copy" class="form-control" id="copy" value="<?php echo !empty($drrdataeditdata[0]['copy'])?$drrdataeditdata[0]['copy']:'' ?>" placeholder="ENTER SOURCE TITLE">
+                        </div>
                         <div class="col-md-12">
                             <button style="margin-top: 10px;" type="submit" class="btn btn-info"><?php if($drrdataeditdata) { echo "Update";}else{echo "Submit";} ?></button>
                         </div>
