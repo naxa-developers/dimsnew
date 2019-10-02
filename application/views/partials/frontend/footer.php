@@ -3,7 +3,7 @@
         <span class="scroll-up">
             <i class="la la-angle-double-up"></i>
         </span>
-        <div class="container">
+        <!-- <div class="container">
             <div class="row"> 
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-widget">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </footer> <section class="copyright">
                     ©
                     <?php echo date('Y'); ?>,

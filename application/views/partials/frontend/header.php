@@ -44,7 +44,7 @@
                 <div class="headerWrap">
                     <div class="headLeft">
                         <div class="logo">
-                            <a href="<?php echo base_url() ?>"><img src="<?php  echo SITE_SLOGAN_EN; ?>" alt="logo"></a>
+                            <!-- <a href="<?php echo base_url() ?>"><img src="<?php  echo SITE_SLOGAN_EN; ?>" alt="logo"></a> -->
                         </div>
                     </div>
                     <div class="headRight">
@@ -71,6 +71,9 @@
                                     </li>
                                     <li class="<?php if($this->uri->segment(1)==="nepal_info"){ echo "menu-item-has-current"; }else{ echo "menu-item"; } ?>">
                                         <a href="<?php echo base_url('nepal_info') ?>">नेपाल  इन्फो </a>
+                                    </li>
+                                    <li class="">
+                                        <a target="_blank"  href="https://cbdrmplatform.org/" >CBDRM</a>
                                     </li>
                                 </ul>
                             </div>
